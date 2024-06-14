@@ -4,7 +4,7 @@
     {% for post in site.news limit:3 %}
       <article class="news-item">
         <span class="news-date">{{ post.date | date: "%b %d, %Y" }} - </span>
-        <a href="{{ post.url }}">{{ post.title }}</a> 
+        <a href="{{ post.link }}">{{ post.title }}</a> 
         <a href="{{ post.link }}" class="news-link">[link]</a>
       </article>
     {% endfor %}
