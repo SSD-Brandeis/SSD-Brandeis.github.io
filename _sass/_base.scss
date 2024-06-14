@@ -1587,24 +1587,31 @@ ninja-keys::part(ninja-input-wrapper) {
   }
 
   .banner-text {
-    padding-top: 15vh;
+    padding-top: 18vh;
     height: 30vh;
   }
 
   .banner-text-item {
-    font-size: 35px;
+    font-size: 25px;
   }
 
   .banner-text-item span {
-    font-size: 45px;
+    font-size: 30px;
   }
 
   .banner-text h2 {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .banner-text p {
-    font-size: 20px;
+    padding-top: 30px;
+    font-size: 15px;
+  }
+
+  .read-more {
+    margin-top: 10px;
+    padding: 4px 8px;
+    font-size: 12px;
   }
 
   .card {
