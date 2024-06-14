@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://SSD-Brandeis.github.io/sitemap.xml
