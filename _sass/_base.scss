@@ -1128,6 +1128,7 @@ body::before {
   margin-top: 10px;
   margin: auto;
   max-width: 60vw;
+  border-radius: 10px;
 }
 
 .news-item {
@@ -1224,26 +1225,44 @@ iframe {
   background: #f9f9f9;
 }
 
+.admin-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
 .team-container {
   display: flex;
   justify-content: center; /* Center the content horizontally */
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 20px;
+}
+
+.admin-member {
+  position: relative;
+  text-align: center;
+  width: 400px; /* Uniform size for all */
 }
 
 .team-member {
   position: relative;
   text-align: center;
-  width: 150px; /* Uniform size for all */
+  width: 200px; /* Uniform size for all */
 }
 
 .team-photo {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  border: 2px solid #ccc; /* Consistent border styling */
+  border: 8px solid white; /* Consistent border styling */
   object-fit: cover;
+}
+
+.team-photo:hover {
+  border: 6px solid #097ac8;
 }
 
 .member-info {
@@ -1252,9 +1271,19 @@ iframe {
 
 .member-name {
   font-weight: bold;
-  color: #007bff;
-  text-decoration: underline;
+  color: #097ac8;
+  text-decoration: none;
   margin-top: 8px;
+  font-size: 20px;
+}
+
+.team-member p, .admin-member p {
+  color: #333;
+  text-decoration: none;
+  margin-top: 8px;
+  font-size: 25px; 
+  font-style: italic;
+  font-family: 'Brush Script MT', cursive;
 }
 
 @media (max-width: 768px) {
