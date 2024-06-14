@@ -250,3 +250,15 @@ let initTheme = () => {
     applyTheme();
   });
 };
+
+
+window.onscroll = function() {
+  const navbar = document.getElementById('navbar');
+  if (window.pageYOffset > 50) { // Adjust the 50 to whatever scroll threshold you prefer
+    navbar.style.backgroundColor = '#262626';
+    navbar.style.opacity = 1;
+  } else {
+    navbar.style.backgroundColor = 'transparent';
+    navbar.style.opacity = 0.95;
+  }
+};

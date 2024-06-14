@@ -21,7 +21,7 @@
     {% include header.liquid %}
 
     <!-- Content -->
-    <div class="container mt-5" role="main">
+    <div class="container" role="main">
       {% if page.toc and page.toc.sidebar %}
         {% if page.toc.sidebar == 'right' %}
           <div class="row">
@@ -46,6 +46,13 @@
         {{ content }}
       {% endif %}
     </div>
+    {%  include research.liquid %}
+
+    {%  include news.liquid %}
+
+    {% include team.liquid %}
+
+    {% include contact.liquid %}
 
     <!-- Footer -->
     {% include footer.liquid %}

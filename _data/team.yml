@@ -1,0 +1,36 @@
+- name: Subhadeep Sarkar
+  role: admin
+  image: /assets/img/subhadeep_sarkar.png
+  designation: Assistant Professor of Computer Science
+  email: subhadeep@brandeis.com
+  office: "1234 Office Address"
+- name: Shubham Kaushik
+  role: member
+  image: /assets/img/shubham_kaushik.jpg
+  designation: PhD Researcher
+  email: kaushiks@brandeis.edu
+  office: "5678 Office Address"
+- name: James Chen
+  role: member
+  image: /assets/img/james_chen.jpeg
+  designation: PhD Researcher
+  email: boaochen@brandeis.edu
+  office: "91011 Office Address"
+- name: Arpita Saha
+  role: member
+  image: /assets/img/arpita_saha.png
+  designation: Researcher
+  email: arpitasaha1996@gmail.com
+  office: "91011 Office Address"
+- name: Alexander Ott
+  role: member
+  image: /assets/img/alexander_ott.jpg
+  designation: Researcher
+  email: aott01@protonmail.ch
+  office: "91011 Office Address"
+- name: Yu-Cheng Huang
+  role: member
+  image: /assets/img/yuchen_huang.jpg
+  designation: Researcher
+  email: ychuang2@bu.edu
+  office: "91011 Office Address"

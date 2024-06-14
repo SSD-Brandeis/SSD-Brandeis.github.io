@@ -1,0 +1,26 @@
+<section class="research-agenda" id="research">
+    <div class="research"><h1>{{ page.heading }}</h1></div>
+    <div class="research"><p>{{ page.small_description }}</p></div>
+    <div class="card-container">
+        {% for post in site.researchs %}
+        <div class="card">
+            <div class="card-front">
+                <div class="card-image" style="background-image: url('{{ post.image }}');"></div>
+                <div class="card-title">{{ post.title }}</div>
+            </div>
+            <div class="card-back">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+                <div class="button-row">
+                    {% if post.github %}
+                    <a href="{{ post.github }}" class="button">GitHub</a>
+                    {% endif %}
+                    {% if post.learn_more %}
+                    <a href="{{ post.pdf }}" class="button">Learn More</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>        
+</section>
