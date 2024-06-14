@@ -236,7 +236,7 @@ ul.task-list input[type="checkbox"] {
 .navbar {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
-  // background-color: var(--global-bg-color);
+  background-color: transparent;
   opacity: 0.95;
 }
 
@@ -885,21 +885,21 @@ html.transition *:after {
   }
 }
 
-body, html {
+.top-container {
   height: 100%; /* Ensure the minimum height is the full viewport */
   margin: 0; /* Remove default margin */
   padding: 0; /* Remove default padding */
-  position: relative;
 }
 
-body {
+.top-container {
   background-image: url('/assets/img/background.webp');
   background-repeat: no-repeat;
   background-size: cover; /* Cover the entire viewport */
   background-position: center;
+  height: 100vh;
 }
 
-body::before {
+.top-container::before {
   content: ""; /* Required for the pseudo-element to work */
   position: absolute; /* Position it relative to the body */
   top: 0;
@@ -975,7 +975,7 @@ body::before {
 
 .research-agenda {
   background-color: white;
-  margin-top: 10px;
+  padding-top: 20px;
   margin: auto;
   max-width: 80vw;
   margin-bottom: 40px;
@@ -1062,6 +1062,7 @@ body::before {
   h3 {
     color: black;
     font-size: 22px;
+    text-align: center;
   }
 
   p {
@@ -1069,19 +1070,25 @@ body::before {
   }
 }
 
+.scrollable-text {
+  width: auto;  /* Adjust width as needed */
+  height: fit-content;  /* Adjust height as needed */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  margin: 10px;
+}
+
+.scrollable-text p {
+  margin: 0;  /* Removes default margin of the paragraph */
+  word-wrap: break-word;  /* Ensures words do not overflow the container */
+}
+
+
 .button-row {
   display: flex;
   justify-content: space-around; /* Evenly spaces buttons */
 }
 
 .button {
-  // padding: 8px 16px;
-  // text-decoration: none;
-  // border: 1px solid gray;
-  // color: black;
-  // background-color: transparent;
-  // border-radius: 4px;
-  // text-align: center;
   background: transparent;        /* Transparent background */
   border: 2px solid;              /* Solid border with 3px thickness */
   border-image: linear-gradient(to right, rgb(233, 135, 135), rgb(114, 114, 207)) 1; /* Gradient border from red to blue */
@@ -1091,7 +1098,7 @@ body::before {
   padding: 10px 20px;             /* Padding around the text */
   cursor: pointer;                /* Pointer cursor on hover */
   margin: auto;
-  margin-top: 70px;
+  margin-top: 10px;
   width: auto;
   transition: all 0.3s ease;      /* Smooth transition for hover effects */
 }
@@ -1547,4 +1554,109 @@ ninja-keys::part(ninja-input) {
 }
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
+}
+
+
+// phone-screen
+
+@media (max-width: 80em) {
+  .navbar {
+    .container {
+      max-width: 100%;
+    }
+  }
+
+  .top-container {
+    background-image: url('/assets/img/background.webp');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 40vh;
+  }
+
+  .top-container::before {
+    content: ""; /* Required for the pseudo-element to work */
+    position: absolute; /* Position it relative to the body */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
+    z-index: 1; /* Ensure it's above the background image */
+    max-height: 40vh;
+  }
+
+  .banner-text {
+    padding-top: 15vh;
+    height: 30vh;
+  }
+
+  .banner-text-item {
+    font-size: 35px;
+  }
+
+  .banner-text-item span {
+    font-size: 45px;
+  }
+
+  .banner-text h2 {
+    font-size: 20px;
+  }
+
+  .banner-text p {
+    font-size: 20px;
+  }
+
+  .card {
+    width: 200px;
+    height: 250px;
+  }
+
+  .card-title {
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  .card-back {
+    padding: 15px;
+
+    h3 {
+      font-size: 15px;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .button {
+    margin-top: 2px;
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .research h1 {
+    font-size: 30px;
+  }
+
+  .research p {
+    padding: 4px;
+    max-width: 70vw;
+  }
+
+  .news-section h2 {
+    font-size: 30px;
+  }
+
+  .news-container {
+    max-width: 70vw;
+  }
+
+  .contact-info h2 {
+    font-size: 30px;
+  }
+
+  .team-section h2 {
+    font-size: 30px;
+  }
 }

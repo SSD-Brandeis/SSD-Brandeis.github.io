@@ -10,7 +10,7 @@
             </div>
             <div class="card-back">
                 <h3>{{ post.title }}</h3>
-                <p>{{ post.excerpt }}</p>
+                <div class="scrollable-text"><p>{{ post.excerpt }}</p></div>
                 <div class="button-row">
                     {% if post.github %}
                     <a href="{{ post.github }}" class="button">GitHub</a>

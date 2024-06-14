@@ -16,8 +16,9 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  <body>
     <!-- Header -->
+     <div class="top-container">
     {% include header.liquid %}
 
     <!-- Content -->
@@ -45,6 +46,7 @@
       {% else %}
         {{ content }}
       {% endif %}
+    </div>
     </div>
     {%  include research.liquid %}
 
