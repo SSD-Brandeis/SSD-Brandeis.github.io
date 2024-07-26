@@ -4,7 +4,7 @@
     <div class="container">
       
         <a class="navbar-brand title font-weight-lighter" style="margin: 0px; padding: 0px" href="{{ site.baseurl }}/">
-          <img height="40px" src="/assets/img/SSD-logo.png">
+          <img height="40px" src="/assets/img/SSD lab-logo.png">
         </a>
       
       <!-- Navbar Toggle -->
@@ -31,7 +31,7 @@
 
           <!-- About -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-            <a class="nav-link" href="{{ '/' | relative_url }}">
+            <a class="nav-link" href="{{ '#home' | relative_url }}">
               {{- about_title | capitalize }}
               {% if page.permalink == '/' %}
                 <span class="sr-only">(current)</span>

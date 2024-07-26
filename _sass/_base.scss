@@ -19,6 +19,11 @@ strong {
   color: var(--global-text-color);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
 hr {
   border-top: 1px solid var(--global-divider-color);
 }
@@ -1143,6 +1148,8 @@ html.transition *:after {
   margin: 5px 0;
   padding: 10px;
   border-bottom: 1px solid #ccc; /* Separates each news item */
+  display: flex;
+  flex-direction: row;
 }
 
 .news-item a {
@@ -1150,20 +1157,31 @@ html.transition *:after {
 }
 
 .news-date {
+  width: 10%;
   font-weight: bold;
   color: #097ac8;
+  margin: 0 0 0 10px;
+}
+
+.news-item .news-desc {
+  width: 80%;
+  margin-left: 5px;
 }
 
 .news-section .news-link {
-  margin-left: 10px;
-  font-size: 20px;
+  margin: 5px 2px 0px 0px;
+  font-size: 16px;
   font-weight: bold;
   text-decoration: none;
-  color: #ca0909; /* Ensure this is the most specific or last loaded rule */
+  border: 1px dashed silver;
+  padding: 4px;
+  width: fit-content;
+  font-family: serif;
 }
 
 .news-link:hover {
-  text-decoration: underline; /* Optional: only underline on hover */
+  text-decoration: none; /* Optional: only underline on hover */
+  border: 1px solid black;
 }
 
 
@@ -1665,5 +1683,10 @@ ninja-keys::part(ninja-input-wrapper) {
 
   .team-section h2 {
     font-size: 30px;
+  }
+
+  .news-item .news-desc {
+    width: 60%;
+    margin-left: 40px;
   }
 }
