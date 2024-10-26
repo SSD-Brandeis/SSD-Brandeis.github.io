@@ -38,6 +38,16 @@
               {% endif %}
             </a>
           </li>
+          
+          <!-- News -->
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+          <a class="nav-link" href="{{ '#news' | relative_url }}">
+            News
+            {% if page.permalink == '#news' %}
+              <span class="sr-only">(current)</span>
+            {% endif %}
+          </a>
+        </li>
 
           <!-- Research -->
           <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
@@ -48,16 +58,6 @@
             {% endif %}
           </a>
         </li>
-
-        <!-- News -->
-        <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
-        <a class="nav-link" href="{{ '#news' | relative_url }}">
-          News
-          {% if page.permalink == '#news' %}
-            <span class="sr-only">(current)</span>
-          {% endif %}
-        </a>
-      </li>
 
       <!-- Team -->
       <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">

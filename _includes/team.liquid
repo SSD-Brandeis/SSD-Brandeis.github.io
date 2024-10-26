@@ -1,26 +1,26 @@
 <section class="team-section" id="team">
     <h2>Team</h2>
-    <div class="admin-container">
+    <div class="team-container">
         {% for member in site.data.team %}
             {% if member.role == 'admin' %}
             <div class="admin-member">
                 <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo">
                 <div class="member-info">
                     <div class="member-name">{{ member.name }}</div>
-                    <p>{{ member.designation }}</p>
+                    <p>{{ member.designation }}<br>{{ member.email }}<br>{{ member.office1 }}<br>{{ member.office2 }}</p>
                 </div>
             </div>
             {% endif %}
         {% endfor %}
-    </div>
-    <div class="team-container members-container">
+    {% comment %} </div>
+    <div class="team-container"> {% endcomment %}
         {% for member in site.data.team %}
             {% if member.role != 'admin' %}
             <div class="team-member">
                 <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo">
                 <div class="member-info">
                     <div class="member-name">{{ member.name }}</div>
-                    <p>{{ member.designation }}</p>
+                    <p>{{ member.designation }}<br>{{ member.email }}<br>{{ member.office1 }}<br>{{ member.office2 }}</p>
                 </div>
             </div>
             {% endif %}
