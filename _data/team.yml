@@ -3,32 +3,33 @@
   image: /assets/img/sarkar_cropped.png
   designation: Assistant Professor
   email: subhadeep@brandeis.com
-  office1: "Volen 259, 415 South Street"
-  office2: "Waltham, MA 02453"
+  office: "Office Volen 259"
 - name: Shubham Kaushik
   role: member
   image: /assets/img/shubham_kaushik.jpg
   designation: PhD Researcher
   email: kaushiks@brandeis.edu
-  office1: "Volen 110, 417 South Street"
-  office2: "Waltham, MA 02453"
+  office: "Office Volen 110"
+  alumni: false
 - name: James Chen
   role: member
   image: /assets/img/james_chen.jpeg
   designation: PhD Researcher
   email: boaochen@brandeis.edu
-  office1: "Volen 111, 417 South Street"
-  office2: "Waltham, MA 02453"
+  office: "Office Volen 111"
+  alumni: false
 - name: Yu-Cheng Huang
   role: member
   image: /assets/img/yuchen_huang.jpg
   designation: Researcher
   email: ychuang2@bu.edu
+  alumni: false
   # office: "91011 Office Address"
 - name: Arpita Saha
   role: member
   image: /assets/img/arpita_saha.png
   designation: Researcher
+  alumni: true
   # email: arpitasaha1996@gmail.com
   # office: "91011 Office Address"
 - name: Alexander Ott
@@ -36,4 +37,5 @@
   image: /assets/img/alexander_ott.jpg
   designation: Researcher
   email: alexanderott@brandeis.edu
+  alumni: false
   # office: "91011 Office Address"

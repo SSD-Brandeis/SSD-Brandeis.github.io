@@ -1322,6 +1322,15 @@ iframe {
   font-size: large;
 }
 
+.designation {
+  color: black;
+  text-decoration: underline;
+}
+
+.email {
+  color: blueviolet;
+}
+
 @media (max-width: 768px) {
   .team-container {
       justify-content: space-around; /* Ensures better spacing on smaller screens */

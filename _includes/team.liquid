@@ -7,7 +7,7 @@
                 <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo">
                 <div class="member-info">
                     <div class="member-name">{{ member.name }}</div>
-                    <p>{{ member.designation }}<br>{{ member.email }}<br>{{ member.office1 }}<br>{{ member.office2 }}</p>
+                    <p><span class="designation">{{ member.designation }}</span>{% if member.office %}<br>{{ member.office }}{% endif %}<br><span  class="email">{{ member.email }}</span></p>
                 </div>
             </div>
             {% endif %}
@@ -16,14 +16,16 @@
     <div class="team-container"> {% endcomment %}
         {% for member in site.data.team %}
             {% if member.role != 'admin' %}
+                {% if member.alumni == false %}
             <div class="team-member">
                 <img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo">
                 <div class="member-info">
                     <div class="member-name">{{ member.name }}</div>
-                    <p>{{ member.designation }}<br>{{ member.email }}<br>{{ member.office1 }}<br>{{ member.office2 }}</p>
+                    <p><span class="designation">{{ member.designation }}</span>{% if member.office %}<br>{{ member.office }}{% endif %}<br><span  class="email">{{ member.email }}</span></p>
                 </div>
             </div>
+        {% endif %}
             {% endif %}
-        {% endfor %}
+    {% endfor %}
     </div>
 </section>
