@@ -29,7 +29,7 @@
   role: member
   image: /assets/img/arpita_saha.png
   designation: Researcher
-  alumni: true
+  alumni: false
   # email: arpitasaha1996@gmail.com
   # office: "91011 Office Address"
 - name: Alexander Ott
