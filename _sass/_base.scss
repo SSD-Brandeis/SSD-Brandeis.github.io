@@ -1282,18 +1282,18 @@ iframe {
 .admin-member {
   position: relative;
   text-align: center;
-  width: 300px; /* Uniform size for all */
+  width: 230px; /* Uniform size for all */
 }
 
 .team-member {
   position: relative;
   text-align: center;
-  width: 300px; /* Uniform size for all */
+  width: 230px; /* Uniform size for all */
 }
 
 .team-photo {
-  width: 300px;
-  height: 300px;
+  width: 220px;
+  height: 220px;
   border-radius: 20%;
   border: 8px solid white; /* Consistent border styling */
   object-fit: cover;
@@ -1319,6 +1319,7 @@ iframe {
 
 .team-member p, .admin-member p {
   color: black;
+  font-size: large;
 }
 
 @media (max-width: 768px) {

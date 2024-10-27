@@ -19,6 +19,12 @@
   email: boaochen@brandeis.edu
   office1: "Volen 111, 417 South Street"
   office2: "Waltham, MA 02453"
+- name: Yu-Cheng Huang
+  role: member
+  image: /assets/img/yuchen_huang.jpg
+  designation: Researcher
+  email: ychuang2@bu.edu
+  # office: "91011 Office Address"
 - name: Arpita Saha
   role: member
   image: /assets/img/arpita_saha.png
@@ -30,10 +36,4 @@
   image: /assets/img/alexander_ott.jpg
   designation: Researcher
   email: alexanderott@brandeis.edu
-  # office: "91011 Office Address"
-- name: Yu-Cheng Huang
-  role: member
-  image: /assets/img/yuchen_huang.jpg
-  designation: Researcher
-  email: ychuang2@bu.edu
   # office: "91011 Office Address"
