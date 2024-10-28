@@ -12,8 +12,6 @@
             </div>
             {% endif %}
         {% endfor %}
-    {% comment %} </div>
-    <div class="team-container"> {% endcomment %}
         {% for member in site.data.team %}
             {% if member.role != 'admin' %}
                 {% if member.alumni == false %}
