@@ -1,9 +1,9 @@
 <section class="news-section" id="news">
-  <h2>Latest News</h2>
+  <h1>Latest News</h1>
   <div class="news-container">
     {% for post in site.news limit:3 %}
     <div class="news-item">
-      <h4 class="news-date"><span style="color: #097ac8;">{{ post.date | date: "%b, %Y" }} </span></h4>
+      <h4 class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></h4>
       <div class="news-desc">
           <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
           {% if post.document_link %}

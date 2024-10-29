@@ -290,6 +290,7 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-text-color);
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 20px;
 
     &:hover {
       color: var(--global-hover-color);
@@ -927,41 +928,32 @@ html.transition *:after {
 }
 
 .banner-text {
-  display: flex;             /* Enables flexbox */
-  justify-content: center;   /* Centers content horizontally */
-  align-items: center;       /* Centers content vertically */
-  height: 45vh;             /* Makes the banner full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
   text-align: center;
 }
 
 .banner-text h2 {
   font-size: 30px;
   color: white;
-  // font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-.banner-text p {
-  padding-top: 70px;
-  font-size: 35px;
-  color: white;
-  // font-family: 'Monaco';
 }
 
 .row {
-  display: flex;             /* Enables flexbox */
-  flex-direction: column;    /* Stacks children vertically */
-  width: 100%;               /* Ensures it takes the full width of its parent */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .banner-text-item {
-  font-size: 60px;
+  font-size: 65px;
   color: white;
-  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .banner-text-item span {
   color: white;
-  font-size: 80px;
+  font-size: 85px;
 }
 
 .banner-text-item span.logo-initial {
@@ -985,31 +977,27 @@ html.transition *:after {
 
 .research-agenda {
   background-color: #f9f9f9;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 
 .research-box {
   margin: auto;
   max-width: 80vw;
-  margin-bottom: 40px;
 }
 
 .research h1 {
   text-align: center;
-  margin: auto;
+  margin-top: 10px;
   color: #333;
-  font-size: 45px;
-  font-weight: bold;
-  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .research p {
   text-align: center;
   margin: auto;
   color: rgb(50, 50, 50);
-  padding: 10px;
-  max-width: 40vw;
+  padding: 2px;
+  font-size: 20px;
 }
 
 .card-container {
@@ -1019,10 +1007,10 @@ html.transition *:after {
 }
 
 .card {
-  width: 300px;
-  height: 400px;
+  width: 350px;
+  height: 300px;
   perspective: 1000px;
-  margin: 10px;
+  margin: 5px;
   position: relative;
 }
 
@@ -1132,48 +1120,53 @@ html.transition *:after {
 
 // news
 .news-section {
-  padding: 20px;
+  margin: auto;
+  max-width: 80vw;
 }
 
 .news-section h2 {
   text-align: center;
   color: #333;
-  font-size: 45px;
   font-weight: bold;
 }
+
+.news-section h1 {
+  text-align: center;
+  color: #333;
+  margin-top: 20px;
+}
+
 .news-container {
   max-height: 450px; /* Adjust based on the total height of three items */
   overflow-y: auto;
   margin-top: 10px;
-  margin: auto;
-  max-width: 60vw;
   border-radius: 10px;
 }
 
 .news-item {
   background: white;
   margin: 5px 0;
-  padding: 10px;
+  padding: 1px;
   display: flex;
   flex-direction: row;
-  box-shadow: -2px -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-radius: 5px; /* Slight rounding to complement the shadow */
-  transition: box-shadow 0.3s ease;
+  // border-bottom: 0.5px solid silver;
+}
+
+.news-item:not(:last-child) {
+  border-bottom: 0.5px solid silver; /* Adds a silver border to all but the last item */
 }
 
 .news-item a {
-  color: #333;
   text-decoration: none;
+  color: black;
 }
 
 .news-date {
-  width: 20%;
-  font-weight: bold;
-  color: #097ac8;
+  width: 15%;
 }
 
 .news-desc {
-  width: 70%;
+  width: 85%;
 }
 
 .news-desc h4 {
@@ -1186,8 +1179,7 @@ html.transition *:after {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: silver;
-  font-size: 18px;
+  background-color: rgb(239, 238, 238);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -1196,7 +1188,7 @@ html.transition *:after {
   font-weight: bold;
   display: flex;
   align-items: center;
-  padding: 2px;
+  padding: 1px;
   gap: 8px; /* Space between icon and text */
 }
 
@@ -1220,14 +1212,13 @@ html.transition *:after {
 .contact-info-box {
   max-width: 80vw;
   margin: auto;
-  padding: 30px;
+  padding: 10px;
 }
 
-.contact-info h2 {
+.contact-info h1 {
   text-align: center;
   color: #333;
-  font-size: 45px;
-  font-weight: bold;
+  margin-top: 10px;
 }
 
 .contact-block {
@@ -1265,17 +1256,14 @@ iframe {
 
 
 // team
-.team-section h2 {
+.team-section h1 {
   text-align: center;
   color: #333;
-  font-size: 45px;
-  font-weight: bold;
-  // font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 20px;
 }
 
 .team-section {
   text-align: center;
-  padding: 20px;
   background: white;
   max-width: 80vw;
   margin: auto;
@@ -1704,7 +1692,6 @@ ninja-keys::part(ninja-input-wrapper) {
 
   .research p {
     padding: 4px;
-    max-width: 70vw;
   }
 
   .news-section h2 {

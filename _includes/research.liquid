@@ -1,6 +1,6 @@
 <section class="research-agenda" id="research">
     <div class="research-box">
-    <div class="research"><h1>{{ page.heading }}</h1></div>
+        <div class="research"><h1>{{ page.heading }}</h1></div>
     <div class="research"><p>{{ page.small_description }}</p></div>
     <div class="card-container">
         {% for post in site.researchs %}
@@ -11,7 +11,7 @@
             </div>
             <div class="card-back">
                 <h3>{{ post.title }}</h3>
-                <div class="scrollable-text"><p>{{ post.excerpt }}</p></div>
+                <div class="scrollable-text"><h3>{{ post.excerpt }}</h3></div>
                 <div class="button-row">
                     {% if post.github %}
                     <a href="{{ post.github }}" class="button">GitHub</a>
