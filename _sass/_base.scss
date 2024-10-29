@@ -1140,6 +1140,7 @@ html.transition *:after {
   max-height: 450px; /* Adjust based on the total height of three items */
   overflow-y: auto;
   margin-top: 10px;
+  padding: 0px 15px 0px 15px;
   border-radius: 10px;
 }
 
@@ -1631,7 +1632,7 @@ ninja-keys::part(ninja-input-wrapper) {
   }
 
   .banner-text {
-    padding-top: 18vh;
+    padding-top: 20vh;
     height: 30vh;
   }
 
