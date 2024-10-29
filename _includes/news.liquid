@@ -2,17 +2,33 @@
   <h2>Latest News</h2>
   <div class="news-container">
     {% for post in site.news limit:3 %}
-    <article class="news-item">
-      <span class="news-date">{{ post.date | date: "%b, %Y" }} </span>
-      <div class="news-desc row">
-          <a href="{{ post.link }}">{{ post.title }}</a>
-          <div>
-            <a href="{{ post.link }}" class="news-link">PDF</a>
-            <a href="{{ post.link }}" class="news-link">Slides</a>
-            <a href="{{ post.link }}" class="news-link">Video</a>
-          </div>
+    <div class="news-item">
+      <h4 class="news-date"><span style="color: #097ac8;">{{ post.date | date: "%b, %Y" }} </span></h4>
+      <div class="news-desc">
+          <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
+          {% if post.document_link %}
+            <button class="news-link">
+            <a href="{{ post.document_link }}">
+              <span class="icon" style="color: #189dfb;"><i class="fa-solid fa-book-open-reader"></i></span> 
+            </a>
+          </button>
+        {% endif %}
+        {% if post.slides_link %}
+          <button class="news-link">
+            <a href="{{ post.slides_link }}">
+              <span class="icon" style="color: rgb(255, 140, 0);"><i class="fa-brands fa-slideshare"></i></span> 
+            </a>
+          </button>
+        {% endif %}
+        {% if post.video_link %}
+          <button class="news-link">
+            <a href="{{ post.video_link }}">
+              <span class="icon" style="color: rgb(247, 66, 66);"><i class="fa-solid fa-video"></i></span>
+            </a>
+          </button>
+          {% endif %}
       </div>
-    </article>
+    </div>
     {% endfor %}
   </div>
 </section>

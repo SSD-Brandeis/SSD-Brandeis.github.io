@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Query Driven Compaction"
+title: "Query Optimization in No-SQL Systems"
 image: "/assets/img/query_driven_compaction.webp"
 # learn_more: "https://github.com/SSD-Brandeis/LSMQueryDrivenCompaction"
 github: "https://github.com/SSD-Brandeis/LSMQueryDrivenCompaction"
