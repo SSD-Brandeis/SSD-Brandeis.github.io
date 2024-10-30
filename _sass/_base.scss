@@ -475,12 +475,17 @@ footer.sticky-bottom {
   justify-content: center;
   align-items: center;
   text-align: center; /* Centers the "Classes" title */
+  padding-bottom: 10px;
+}
+
+.classes h1{
+  padding-bottom: 10px;
 }
 
 .icon-container {
   display: flex;
   justify-content: center; /* Centers icons horizontally */
-  gap: 40px;
+  gap: 80px;
 }
 
 .course-icon {
@@ -505,15 +510,19 @@ footer.sticky-bottom {
 
 .course-text {
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
   color: #fff;
-  padding: 10px;
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: center;
+  padding: 10px;
 }
-
 
 // CV
 
@@ -1027,12 +1036,12 @@ html.transition *:after {
 .research-agenda {
   background-color: #f9f9f9;
   padding-top: 10px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .publication-agenda {
   background-color: white;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 15px 10px 15px;
 }
 
 .research h1 {
@@ -1168,10 +1177,9 @@ html.transition *:after {
 
 
 // // news
-// .news-section {
-//   margin: auto;
-//   max-width: 80vw;
-// }
+.news-section {
+  padding-bottom: 20px;
+}
 
 .news-section h2 {
   text-align: center;
