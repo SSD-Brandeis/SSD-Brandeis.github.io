@@ -59,6 +59,16 @@
           </a>
         </li>
 
+          <!-- Publication -->
+          <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
+          <a class="nav-link" href="{{ '#publication' | relative_url }}">
+            Publication
+            {% if page.permalink == '#publication' %}
+              <span class="sr-only">(current)</span>
+            {% endif %}
+          </a>
+        </li>
+
       <!-- Team -->
       <li class="nav-item {% if page.permalink == '/' %}active{% endif %}">
       <a class="nav-link" href="{{ '#team' | relative_url }}">

@@ -50,7 +50,7 @@ search_enabled: false
 socials_in_search: true
 
 # Dimensions
-max_width: 80vw
+max_width: 70vw
 
 # TODO: add layout settings (single page vs. multi-page)
 
@@ -623,3 +623,5 @@ jsonresume:
   - languages
   - interests
   - references
+
+selected_papers: true
