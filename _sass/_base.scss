@@ -290,7 +290,7 @@ ul.task-list input[type="checkbox"] {
     color: var(--global-text-color);
     padding-left: 20px;
     padding-right: 20px;
-    font-size: 20px;
+    font-size: $global-text-size;
 
     &:hover {
       color: var(--global-hover-color);
@@ -519,7 +519,7 @@ footer.sticky-bottom {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
   color: #fff;
-  font-size: 1.2em;
+  font-size: $global-text-size;
   text-align: center;
   padding: 10px;
 }
@@ -718,10 +718,11 @@ footer.sticky-bottom {
   margin: auto;
   width: 80vw;
   color: black;
+  font-size: $global-text-size;
 
   h1 {
     color: var(--global-theme-color);
-    font-size: 2rem;
+    font-size: $global-text-size;
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -731,7 +732,7 @@ footer.sticky-bottom {
     margin-bottom: 1rem;
 
     span {
-      font-size: 1.5rem;
+      font-size: $global-text-size;
     }
   }
 
@@ -1018,21 +1019,6 @@ html.transition *:after {
   font-weight: bold;
 }
 
-.read-more {
-  background: transparent;        /* Transparent background */
-  border: 2px solid;              /* Solid border with 3px thickness */
-  border-image: linear-gradient(to right, rgb(233, 135, 135), rgb(114, 114, 207)) 1; /* Gradient border from red to blue */
-  color: white;                     /* Red text color */
-  font-weight: bold;              /* Bold text */
-  font-size: 16px;                /* Text size */
-  padding: 10px 20px;             /* Padding around the text */
-  cursor: pointer;                /* Pointer cursor on hover */
-  margin: auto;
-  margin-top: 70px;
-  width: auto;
-  transition: all 0.3s ease;      /* Smooth transition for hover effects */
-}
-
 .research-agenda {
   background-color: #f9f9f9;
   padding-top: 10px;
@@ -1055,7 +1041,7 @@ html.transition *:after {
   margin: auto;
   color: rgb(50, 50, 50);
   padding: 2px;
-  font-size: 20px;
+  font-size: $global-text-size;
 }
 
 .card-container {
@@ -1102,7 +1088,7 @@ html.transition *:after {
   text-align: center;
   justify-content: center;
   color: #333;
-  font-size: 20px;
+  font-size: $global-text-size;
   border-bottom-left-radius: 8px; /* Rounded corners for the bottom */
   border-bottom-right-radius: 8px;
   margin-bottom: 0px;
@@ -1154,7 +1140,7 @@ html.transition *:after {
   border-image: linear-gradient(to right, rgb(233, 135, 135), rgb(114, 114, 207)) 1; /* Gradient border from red to blue */
   color: black;                     /* Red text color */
   font-weight: bold;              /* Bold text */
-  font-size: 16px;                /* Text size */
+  font-size: $global-text-size;                /* Text size */
   padding: 10px 20px;             /* Padding around the text */
   cursor: pointer;                /* Pointer cursor on hover */
   margin: auto;
@@ -1176,15 +1162,9 @@ html.transition *:after {
 }
 
 
-// // news
+// news
 .news-section {
   padding-bottom: 20px;
-}
-
-.news-section h2 {
-  text-align: center;
-  color: #333;
-  font-weight: bold;
 }
 
 .news-section h1 {
@@ -1193,25 +1173,15 @@ html.transition *:after {
   margin-top: 20px;
 }
 
-.news-container {
-  max-height: 450px; /* Adjust based on the total height of three items */
-  overflow-y: auto;
-  margin-top: 10px;
-  padding: 0px 15px 0px 15px;
-  border-radius: 10px;
-}
-
 .news-item {
   background: white;
-  margin: 5px 0;
-  padding: 1px;
   display: flex;
   flex-direction: row;
-  // border-bottom: 0.5px solid silver;
+  height: 30px;
 }
 
 .news-item:not(:last-child) {
-  border-bottom: 0.5px solid silver; /* Adds a silver border to all but the last item */
+  border-bottom: 0.5px solid silver;
 }
 
 .news-item a {
@@ -1221,24 +1191,33 @@ html.transition *:after {
 
 .news-date {
   width: 15%;
+  font-size: $global-text-size;
 }
 
 .news-desc {
   width: 85%;
+  display: flex;
+  gap: 8px;
+
+  a {
+  font-size: $global-text-size;
+  }
 }
 
 .news-desc h4 {
   display: inline;
+  margin: 0px;
+  padding: 0px;
 }
 
 .news-link {
   display: inline-flex;
   align-items: center;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  background-color: rgb(239, 238, 238);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  // background-color: rgb(239, 238, 238);
+  transition: background-color 0.1s ease, transform 0.1s ease;
 }
 
 .news-link a {
@@ -1246,8 +1225,11 @@ html.transition *:after {
   font-weight: bold;
   display: flex;
   align-items: center;
-  padding: 1px;
-  gap: 8px; /* Space between icon and text */
+  padding: 0.2px;
+}
+
+.news-link span i {
+  font-size: $global-text-size;
 }
 
 .news-link:hover {
@@ -1366,7 +1348,7 @@ iframe {
 
 .member-info {
   padding-left: 5%;
-  font-size: 20px; /* Adjust size as needed */
+  font-size: $global-text-size;
   text-align: left;
 }
 
@@ -1374,7 +1356,7 @@ iframe {
   font-weight: bold;
   color: black;
   margin-top: 8px;
-  font-size: 20px;
+  font-size: $global-text-size;
 }
 
 .team-member p, .admin-member p {
@@ -1688,14 +1670,6 @@ ninja-keys::part(ninja-input-wrapper) {
     padding-top: 20vh;
     height: 30vh;
   }
-
-  // .banner-text-item {
-  //   font-size: 20px;
-  // }
-
-  // .banner-text-item span {
-  //   font-size: 25px;
-  // }
 
   .banner-text h2 {
     font-size: 12px;

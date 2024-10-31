@@ -1,34 +1,32 @@
 <section class="news-section container" id="news">
-  <h1>Latest News</h1>
-  <div class="news-container">
+<h1>Latest News</h1>
     {% for post in site.news limit:3 %}
     <div class="news-item">
-      <h4 class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></h4>
+      <p class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
       <div class="news-desc">
           <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
           {% if post.document_link %}
-            <button class="news-link">
+            <div class="news-link">
             <a href="{{ post.document_link }}">
               <span class="icon" style="color: #189dfb;"><i class="fa-solid fa-book-open-reader"></i></span> 
             </a>
-          </button>
+          </div>
         {% endif %}
         {% if post.slides_link %}
-          <button class="news-link">
+          <div class="news-link">
             <a href="{{ post.slides_link }}">
               <span class="icon" style="color: rgb(255, 140, 0);"><i class="fa-brands fa-slideshare"></i></span> 
             </a>
-          </button>
+          </div>
         {% endif %}
         {% if post.video_link %}
-          <button class="news-link">
+          <div class="news-link">
             <a href="{{ post.video_link }}">
               <span class="icon" style="color: rgb(247, 66, 66);"><i class="fa-solid fa-video"></i></span>
             </a>
-          </button>
+          </div>
           {% endif %}
       </div>
     </div>
     {% endfor %}
-  </div>
 </section>
