@@ -4,6 +4,7 @@
   designation: Assistant Professor
   email: subhadeep@brandeis.com
   office: "Office Volen 259"
+  website: https://subhadeep.net/
 - name: Shubham Kaushik
   role: member
   image: /assets/img/shubham_kaushik.jpg
@@ -11,6 +12,7 @@
   email: kaushiks@brandeis.edu
   office: "Office Volen 110"
   alumni: false
+  website: https://shubhamkaushik.com/
 - name: James Chen
   role: member
   image: /assets/img/james_chen.jpeg

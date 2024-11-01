@@ -1636,110 +1636,204 @@ ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
 }
 
+@media (max-width: 576px) {
 
-// phone-screen
-
-@media (max-width: 80em) {
-  .navbar {
-    .container {
-      max-width: 100%;
-    }
+  .container {
+    max-width: 98vw;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
-  .top-container {
-    background-image: url('/assets/img/background.webp');
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    height: 40vh;
+  /* Navbar */
+  .navbar-nav .nav-item .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .top-container::before {
-    content: ""; /* Required for the pseudo-element to work */
-    position: absolute; /* Position it relative to the body */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
-    z-index: 1; /* Ensure it's above the background image */
-    max-height: 40vh;
+  .navbar-brand {
+    font-size: 1.3rem;
   }
 
-  .banner-text {
-    padding-top: 20vh;
-    height: 30vh;
+  /* Profile Section */
+  .profile {
+    width: 100%;
   }
 
+  .profile .address p {
+    display: inline;
+  }
+
+  /* Social Section */
+  .social .contact-icons {
+    font-size: 2rem;
+  }
+
+  /* Footer */
+  footer.sticky-bottom {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* Team Section */
+  .team-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .team-container, .admin-container {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .team-member, .admin-member {
+    width: 100%;
+  }
+
+  .team-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 10%;
+    border: 5px solid white;
+  }
+
+  .member-info {
+    font-size: 1.0rem;
+  }
+
+  .member-name {
+    font-size: 1.1rem;
+  }
+
+  /* Banner Text */
   .banner-text h2 {
-    font-size: 12px;
+    font-size: 24px;
   }
 
-  .banner-text p {
-    padding-top: 30px;
-    font-size: 15px;
+  .banner-text-item {
+    font-size: 40px;
   }
 
-  .read-more {
-    margin-top: 10px;
-    padding: 4px 8px;
-    font-size: 12px;
+  .banner-text-item span {
+    font-size: 50px;
+  }
+
+  /* Card Section */
+  .card-container {
+    justify-content: center;
   }
 
   .card {
-    width: 200px;
+    width: 250px;
     height: 250px;
   }
 
   .card-title {
-    padding: 6px;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
-  .card-back {
-    padding: 15px;
+  /* News Section */
+  .news-section h1 {
+    font-size: 1.5rem;
+  }
 
-    h3 {
-      font-size: 15px;
+  .news-item {
+    height: auto;
+    flex-direction: row-reverse;
+  }
+
+  .news-date {
+    width: 20%;
+  }
+
+  .news-date, .news-desc {
+    font-size: 1.0rem;
+
+    a {
+      font-size: 1.0rem;
     }
-
-    p {
-      font-size: 13px;
-    }
   }
 
-  .button {
-    margin-top: 2px;
-    padding: 4px 8px;
-    font-size: 12px;
+  .news-link span i {
+    font-size: 0.8rem;
   }
 
+  /* Contact Info */
+  .contact-info h1 {
+    font-size: 1.2rem;
+  }
+
+  .contact-info-box, .contact-block {
+    padding: 8px;
+  }
+
+  .contact-block h2 {
+    font-size: 1rem;
+  }
+
+  /* Card Animations */
+  .card:hover .card-front, .card:hover .card-back {
+    transform: none; /* Disable the card flip effect on smaller screens */
+  }
+
+  /* Progress Bar */
+  progress, .progress-bar {
+    height: 2px;
+  }
+
+  /* Banner Container */
+  .top-container {
+    height: 40vh;
+  }
+
+  .top-container::before {
+    height: 40vh;
+  }
+
+  /* Research section */
   .research h1 {
-    font-size: 30px;
+    font-size: 1.5rem;
   }
 
   .research p {
-    padding: 4px;
+    font-size: 1.0rem;
   }
 
-  .news-section h2 {
-    font-size: 30px;
+  /* Classes Section */
+  .icon-container {
+    gap: 20px;
   }
 
-  .news-container {
-    max-width: 70vw;
+  .course-icon {
+    width: 160px;
+    height: 160px;
   }
 
-  .contact-info h2 {
-    font-size: 30px;
+  .course-text {
+    font-size: 0.8rem;
+    padding: 5px;
   }
 
-  .team-section h2 {
-    font-size: 30px;
+  /* Publications */
+  .publications {
+    font-size: 1.0rem;
+  
+    h1 {
+      font-size: 1.0rem;
+    }
+  
+    h2 {
+      margin-bottom: 1rem;
+  
+      span {
+        font-size: 1.0rem;
+      }
+    }
   }
 
-  .news-item .news-desc {
-    width: 60%;
-    margin-left: 40px;
+  /* Table of Contents */
+  nav[data-toggle="toc"] {
+    visibility: hidden;
+    height: 0;
+    top: 0;
   }
+  
 }
