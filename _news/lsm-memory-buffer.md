@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
-date: Oct 2024
+title: "Exciting News Update"
+date: June 2024
 link: "/"
 video_link: "#"
+excerpt: "This is a brief overview of our latest news, covering the recent updates and what they mean for our community."
 ---
