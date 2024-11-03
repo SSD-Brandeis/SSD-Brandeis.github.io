@@ -1,6 +1,6 @@
 <section class="news-section container" id="news">
 <h1>Latest News</h1>
-    {% for post in site.news %}
+    {% for post in site.data.news %}
     <div class="news-item">
       <p class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
       <div class="news-desc">
