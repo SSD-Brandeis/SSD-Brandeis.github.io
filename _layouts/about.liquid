@@ -4,35 +4,38 @@ layout: default
 <section class="banner">
   <div class="banner-text">
     <div class="row">
-      <h1 class="banner-text-item"><span class="logo-initial">S</span>mart and <span class="logo-initial">S</span>calable <span class="logo-initial">D</span>ata <span>S</span>ystems <span>L</span>ab</h1>
+      <h1 class="banner-text-item"><span class="logo-initial">S</span>mart and <span
+          class="logo-initial">S</span>calable <span class="logo-initial">D</span>ata <span>S</span>ystems
+        <span>L</span>ab
+      </h1>
       <h2>@ Department of Computer Science | Brandeis University</h2>
-      </div>
+    </div>
   </div>
 </section>
 
-  <article>
-    <!-- News -->
-    {% if page.news and site.announcements.enabled %}
-      <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-      </h2>
-      {% include news.liquid limit=true %}
-    {% endif %}
+<article>
+  <!-- News -->
+  {% if page.news and site.announcements.enabled %}
+  <h2>
+    <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+  </h2>
+  {% include news.liquid limit=true %}
+  {% endif %}
 
-    <!-- Selected papers -->
-    {% if page.selected_papers %}
-      <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-      </h2>
-      {% include selected_papers.liquid %}
-    {% endif %}
+  <!-- Selected papers -->
+  {% if page.selected_papers %}
+  <h2>
+    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+  </h2>
+  {% include selected_papers.liquid %}
+  {% endif %}
 
-    <!-- Social -->
-    {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% include social.liquid %}</div>
+  <!-- Social -->
+  {% if page.social %}
+  <div class="social">
+    <div class="contact-icons">{% include social.liquid %}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
-    {% endif %}
-  </article>
+    <div class="contact-note">{{ site.contact_note }}</div>
+  </div>
+  {% endif %}
+</article>

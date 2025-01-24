@@ -1,113 +1,70 @@
----
----
-
-@string{aps = {American Physical Society,}}
-
-@book{einstein1920relativity,
-  title={Relativity: the Special and General Theory},
-  author={Einstein, Albert},
-  year={1920},
-  publisher={Methuen & Co Ltd},
-  html={relativity.html}
+@inproceedings{DBLP:conf/dbtest-ws/KaushikS24,
+  author    = {Shubham Kaushik and Subhadeep Sarkar},
+  title     = {Anatomy of the {LSM} Memory Buffer: Insights {\&} Implications},
+  booktitle = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
+  pages     = {23--29},
+  year      = {2024},
+  url       = {https://doi.org/10.1145/3662165.3662766},
+  doi       = {10.1145/3662165.3662766},
+  abbr      = {DBTest},
+  abstract  = {Log-structured merge (LSM) tree is an ingestion-optimized data structure that is widely used in modern NoSQL key-value stores. To support high throughput for writes, LSM-trees maintain an in-memory buffer that absorbs the incoming entries before writing them to slower secondary storage. We point out that the choice of the data structure and implementation of the memory buffer has a significant impact on the overall performance of LSM-based storage engines. In fact, even with the same implementation of the buffer, the performance of a storage engine can vary by up to several orders of magnitude if there is a shift in the input workload.
+               
+               <br>In this paper, we benchmark the performance of LSM-based storage engines with different memory buffer implementations and under different workload characteristics. We experiment with four buffer implementations, namely, (i) vector, (ii) skip-list, (iii) hash skip-list, and (iv) hash linked-list, and for each implementation, we vary any design choices (such as bucket count in a hash skip-list and prefix length in a hash linked-list). We present a comprehensive performance benchmark for each buffer configuration, and highlight how the relative performance of the different buffer implementations varies with a shift in input workload. Lastly, we present a guideline for selecting the appropriate buffer implementation for a given workload and performance goal.},
+  pdf       = {Anatomy_of_the_LSM_Memory_Buffer_Insights_&_Implications.pdf},
+  selected  = {true}
+}
+@inproceedings{DBLP:conf/dbtest-ws/ZhuSAS24,
+  author    = {Zichen Zhu and Arpita Saha and Manos Athanassoulis and Subhadeep Sarkar},
+  title     = {{KVB}ench: {A} Key-Value Benchmarking Suite},
+  booktitle = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
+  pages     = {9--15},
+  year      = {2024},
+  url       = {https://doi.org/10.1145/3662165.3662765},
+  doi       = {10.1145/3662165.3662765},
+  abbr      = {DBTest},
+  abstract  = {Key-value stores are at the core of several modern NoSQL-based data systems, and thus, a comprehensive benchmark tool is of paramount importance in evaluating their performance under different workloads. Prior research reveals that real-world workloads have a diverse range of characteristics, such as the fraction of point queries that target non-existing keys, point and range deletes, as well as, different distributions for queries and updates, all of which have very different performance implications. State-of-the-art key-value workload generators, such as YCSB and db_bench, fail to generate workloads that emulate these practical workloads, limiting the dimensions on which we can benchmark the systems' performance.
+               
+               <br>In this paper, we present KVBench, a novel synthetic workload generator that fills the gap between classical key-value workload generators and more complex real-life workloads. KVBench supports a wide range of operations, including point queries, range queries, inserts, updates, deletes, range deletes, and among these options, inserts, queries, and updates can be customized by different distributions. Compared to state-of-the-art key-value workload generators, KVBench offers a richer array of knobs, including the proportion of empty point queries, customized distributions for updates and queries, and range deletes with specific selectivity, constituting a significantly flexible framework that can better emulate real-world workloads.},
+  pdf       = {KVBench_A_Key-Value_Benchmarking_Suite.pdf},
+  selected  = {true}
 }
 
-@book{einstein1956investigations,
-  bibtex_show={true},
-  title={Investigations on the Theory of the Brownian Movement},
-  author={Einstein, Albert},
-  year={1956},
-  publisher={Courier Corporation},
-  preview={brownian-motion.gif}
+@inproceedings{DBLP:conf/edbt/Raman2025,
+  author    = {Raman, Aneesh and Karatsenidis, Konstantinos and Xie, Shaolin and Olma, Matthaios and Sarkar, Subhadeep and Athanassoulis, Manos},
+  title     = {{QuIT your B+-tree for the Quick Insertion Tree}},
+  booktitle = {Proceedings of the International Conference on Extending Database Technology (EDBT)},
+  year      = {2025},
+  pages     = {451-463},
+  publisher = {{EDBT}},
+  abbr      = {EDBT},
+  abstract  = {Search trees, like B+-trees, are often used as index structures in data systems to improve query performance at the cost of index construction and maintenance. Production data systems drastically reduce the index construction cost when the data arrives fully sorted by employing a fast-path ingestion technique to their B+-tree that directly appends the incoming entries to the tail leaf. However, this optimization is only effective if the incoming data is fully sorted or has very few out-of-order entries. The state-of-the-art sortedness-aware design (SWARE) employs an in-memory buffer to capture near-sortedness to reduce the index construction cost when the data is nearly sorted. This, however, sacrifices performance during lookups and introduces additional design complexity.
+              
+              <br>To address these challenges, we present Quick Insertion Tree (QuIT), a new sortedness-aware index that improves ingestion performance with minimal design complexity and no read over- head. QuIT maintains in memory a pointer to the predicted- ordered-leaf (𝑝𝑜ℓ𝑒) that provides a sortedness-aware fast-path optimization, and facilitates faster ingestion. The key benefit comes from accurately predicting 𝑝𝑜ℓ𝑒 throughout data ingestion. Further, QuIT achieves high memory utilization by maintaining tightly packed leaf nodes when the ingested data arrives with high sortedness. This, in turn, helps improve performance during range lookups. Overall, QuIT outperforms B+-tree (SWARE) by up to 3× (2×) for ingestion, while also offering up to 1.32× faster (than SWARE) point lookup performance and accessing up to 2× fewer leaf nodes than the B+-tree during range lookups.},
+  doi       = {10.48786/edbt.2025.36},
+  url       = {https://dx.doi.org/10.48786/edbt.2025.36},
+  pdf       = {QuIT_your_B+-tree_for_the_Quick_Insertion_Tree.pdf},
+  selected  = {true}
 }
 
-@article{einstein1950meaning,
-  abbr={AJP},
-  bibtex_show={true},
-  title={The meaning of relativity},
-  author={Einstein, Albert and Taub, AH},
-  journal={American Journal of Physics},
-  volume={18},
-  number={6},
-  pages={403--404},
-  year={1950},
-  publisher={American Association of Physics Teachers}
-}
 
-@article{PhysRev.47.777,
-  abbr={PhysRev},
-  title={Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?},
-  author={Einstein, A. and Podolsky, B. and Rosen, N.},
-  abstract={In a complete theory there is an element corresponding to each element of reality. A sufficient condition for the reality of a physical quantity is the possibility of predicting it with certainty, without disturbing the system. In quantum mechanics in the case of two physical quantities described by non-commuting operators, the knowledge of one precludes the knowledge of the other. Then either (1) the description of reality given by the wave function in quantum mechanics is not complete or (2) these two quantities cannot have simultaneous reality. Consideration of the problem of making predictions concerning a system on the basis of measurements made on another system that had previously interacted with it leads to the result that if (1) is false then (2) is also false. One is thus led to conclude that the description of reality as given by a wave function is not complete.},
-  journal={Phys. Rev.},
-  location={New Jersey},
-  volume={47},
-  issue={10},
-  pages={777--780},
-  numpages={0},
-  year={1935},
-  month={May},
-  publisher=aps,
-  doi={10.1103/PhysRev.47.777},
-  url={http://link.aps.org/doi/10.1103/PhysRev.47.777},
-  html={https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777},
-  pdf={example_pdf.pdf},
-  altmetric={248277},
-  dimensions={true},
-  google_scholar_id={qyhmnyLat1gC},
-  video={https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ},
-  additional_info={. *More Information* can be [found here](https://github.com/alshedivat/al-folio/)},
-  selected={true}
-}
-
-@article{einstein1905molekularkinetischen,
-  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
-  author={Einstein, A.},
-  journal={Annalen der physik},
-  volume={322},
-  number={8},
-  pages={549--560},
-  year={1905},
-  publisher={Wiley Online Library}
-}
-
-@article{einstein1905movement,
-  abbr={Ann. Phys.},
-  title={Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat},
-  author={Einstein, A.},
-  journal={Ann. Phys.},
-  volume={17},
-  pages={549--560},
-  year={1905}
-}
-
-@article{einstein1905electrodynamics,
-  title={On the electrodynamics of moving bodies},
-  author={Einstein, A.},
-  year={1905}
-}
-
-@Article{einstein1905photoelectriceffect,
-  bibtex_show={true},
-  abbr={Ann. Phys.},
-  title="{{\"U}ber einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt}",
-  author={Albert Einstein},
-  abstract={This is the abstract text.},
-  journal={Ann. Phys.},
-  volume={322},
-  number={6},
-  pages={132--148},
-  year={1905},
-  doi={10.1002/andp.19053220607},
-  award={Albert Einstein receveid the **Nobel Prize in Physics** 1921 *for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect*},
-  award_name={Nobel Prize}
-}
-
-@book{przibram1967letters,
-  bibtex_show={true},
-  title={Letters on wave mechanics},
-  author={Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},
-  year={1967},
-  publisher={Vision},
-  preview={wave-mechanics.gif},
-  abbr={Vision}
+@article{DBLP:journals/tods/SarkarPSZA23,
+  author    = {Subhadeep Sarkar and Tarikul Islam Papon and Zichen Zhu and Dimitris Staratzis and Manos Athanassoulis},
+  title     = {Enabling Timely and Persistent Deletion in {LSM-E}ngines},
+  journal   = {ACM Transactions on Database Systems},
+  volume    = {48},
+  issue     = {3},
+  pages     = {1--40},
+  publisher = {{ACM}},
+  year      = {2023},
+  abbr      = {TODS},
+  url       = {https://doi.org/10.1145/3612919},
+  doi       = {10.1145/3612919},
+  abstract  = {Data-intensive applications have fueled the evolution of log-structured merge (LSM) based key-value engines that employ the out-of-place paradigm to support high ingestion rates with low read/write interference. These benefits, however, come at the cost of treating deletes as second-class citizens. A delete operation inserts a tombstone that invalidates older instances of the deleted key. State-of-the-art LSM-engines do not provide guarantees as to how fast a tombstone will propagate to persist the deletion. 
+               
+               <br>Further, LSM-engines only support deletion on the sort key. To delete on another attribute (e.g., timestamp), the entire tree is read and re-written, leading to undesired latency spikes and increasing the overall operational cost of a database. Efficient and persistent deletion is key to support: (i) streaming systems operating on a window of data, (ii) privacy with latency guarantees on data deletion, and (iii) en masse cloud deployment of data systems. Further, we document that LSM-based key-value engines perform suboptimally in presence of deletes in a workload. Tombstone-driven logical deletes, by design, are unable to purge the deleted entries in a timely manner, and retaining the invalidated entries perpetually affects the overall performance of LSM-engines in terms of space amplification, write amplification, and read performance. Moreover, the potentially unbounded latency for persistent deletes brings in critical privacy concerns in light of the data privacy protection regulations, such as the right to be forgotten in EU's GDPR, the right to delete in California's CCPA and CPRA, and deletion right in Virginia's VCDPA. Toward this, we introduce the delete design space for LSM-trees and highlight the performance implications of the different classes of delete operations.
+               
+               <br>To address these challenges, in this article, we build a new key-value storage engine, Lethe+, that uses a very small amount of additional metadata, a set of new delete-aware compaction policies, and a new physical data layout that weaves the sort and the delete key order. We show that Lethe+ supports any user-defined threshold for the delete persistence latency offering higher read throughput (1.17x-1.4x) and lower space amplification (2.1x-9.8x), with a modest increase in write amplification (between 4% and 25%) that can be further amortized to less than 1%. In addition, Lethe+ supports efficient range deletes on a secondary delete key by dropping entire data pages without sacrificing read performance or employing a costly full tree merge.
+               },
+  pdf       = {Enabling_Timely_and_Persistent_Deletion_in_LSM-Engines.pdf},
+  selected  = {true}
 }
