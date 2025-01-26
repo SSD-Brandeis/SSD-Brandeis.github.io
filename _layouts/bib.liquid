@@ -1,7 +1,6 @@
 ---
 ---
 <div class="row">
-  {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}
         {%- if site.data.venues[entry.abbr] -%}
@@ -42,7 +41,6 @@
         {% endif %}
       {% endif %}
     </div>
-  {% endif %}
 
   <!-- Entry bib key -->
   <div id="{{entry.key}}" class="{% if site.enable_publication_thumbnails %}col-sm-8{% else %}col-sm-10{% endif %}">
@@ -76,9 +74,11 @@
           {% endfor %}
         {%- endif -%}
 
-        {%- if forloop.length > 1 -%}
+        {%- if forloop.length > 2 -%}
           {% if forloop.first == false %},&nbsp;{% endif %}
           {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
+        {% elsif author_array_size == 2 -%}
+          {%- if forloop.last %}&nbsp;and{% endif %}
         {% endif %}
         {%- if author_is_self -%}
           <em>
