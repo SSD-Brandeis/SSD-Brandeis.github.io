@@ -1177,11 +1177,10 @@ html.transition *:after {
   background: white;
   display: flex;
   flex-direction: row;
-  height: 30px;
 }
 
 .news-item:not(:last-child) {
-  border-bottom: 0.5px solid silver;
+  border-bottom: 0.1px solid silver;
 }
 
 .news-item a {
@@ -1194,10 +1193,13 @@ html.transition *:after {
   font-size: $global-text-size;
 }
 
+.news-item p {
+  margin: 1px;
+}
+
 .news-desc {
   width: 85%;
   display: flex;
-  gap: 8px;
 
   a {
   font-size: $global-text-size;

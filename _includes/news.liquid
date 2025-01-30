@@ -4,28 +4,22 @@
     <div class="news-item">
       <p class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
       <div class="news-desc">
-          <h4><a href="{{ post.link }}">{{ post.title }}</a></h4>
+          <h4><a href="{{ post.link }}">{{ post.title }}</a>
           {% if post.document_link %}
-            <div class="news-link">
             <a href="{{ post.document_link }}">
               <span class="icon" style="color: #189dfb;"><i class="fa-solid fa-book-open-reader"></i></span> 
             </a>
-          </div>
         {% endif %}
         {% if post.slides_link %}
-          <div class="news-link">
             <a href="{{ post.slides_link }}">
               <span class="icon" style="color: rgb(255, 140, 0);"><i class="fa-brands fa-slideshare"></i></span> 
             </a>
-          </div>
         {% endif %}
         {% if post.video_link %}
-          <div class="news-link">
             <a href="{{ post.video_link }}">
               <span class="icon" style="color: rgb(247, 66, 66);"><i class="fa-solid fa-video"></i></span>
             </a>
-          </div>
-          {% endif %}
+          {% endif %}</h4>
       </div>
     </div>
     {% endfor %}
