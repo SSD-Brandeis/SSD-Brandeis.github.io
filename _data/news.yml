@@ -1,10 +1,20 @@
 - title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
   date: Oct 2024
   link: "/"
-  video_link: "#"
-- title: "Exciting News Update"
+  # video_link: "#"
+
+- title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
   date: June 2024
   link: "/"
   document_link: "#"
   slides_link: "#"
   excerpt: "This is a brief overview of our latest news, covering the recent updates and what they mean for our community."
+
+
+- title: "Our paper ''Anatomy of the LSM Memory Buffer: Insights & Implications'' is accepted for publication in DBTest 2024."
+  date: May 2024
+  link: "/"
+
+- title: "Our paper ''KVBench: A Key-Value Benchmarking Suite'' is accepted for publication in DBTest 2024."
+  date: May 2024
+  link: "/"
