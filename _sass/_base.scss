@@ -1179,9 +1179,9 @@ html.transition *:after {
   flex-direction: row;
 }
 
-.news-item:not(:last-child) {
-  border-bottom: 0.1px solid silver;
-}
+// .news-item:not(:last-child) {
+//   border-bottom: 0.1px solid silver;
+// }
 
 .news-item a {
   text-decoration: none;
@@ -1189,7 +1189,7 @@ html.transition *:after {
 }
 
 .news-date {
-  width: 15%;
+  width: 10%;
   font-size: $global-text-size;
 }
 
@@ -1198,7 +1198,7 @@ html.transition *:after {
 }
 
 .news-desc {
-  width: 85%;
+  width: 90%;
   display: flex;
 
   a {

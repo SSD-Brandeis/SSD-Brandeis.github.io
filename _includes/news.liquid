@@ -1,10 +1,11 @@
+
 <section class="news-section container" id="news">
 <h1>Latest News</h1>
     {% for post in site.data.news %}
     <div class="news-item">
-      <p class="news-date"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
+      <p class="news-date" style="font-size: 13pt;"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
       <div class="news-desc">
-          <h4><a href="{{ post.link }}">{{ post.title }}</a>
+          <h5 style="font-size: 13pt;">{{ post.title }}
           {% if post.document_link %}
             <a href="{{ post.document_link }}">
               <span class="icon" style="color: #189dfb;"><i class="fa-solid fa-book-open-reader"></i></span> 
@@ -19,8 +20,13 @@
             <a href="{{ post.video_link }}">
               <span class="icon" style="color: rgb(247, 66, 66);"><i class="fa-solid fa-video"></i></span>
             </a>
-          {% endif %}</h4>
+        {% endif %}</h5>
       </div>
     </div>
     {% endfor %}
 </section>
+
+
+
+
+

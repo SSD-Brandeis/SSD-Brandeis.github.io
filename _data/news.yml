@@ -1,20 +1,45 @@
+
+
+
+- title: "We are hosting North-East Database Day 2025 at Brandeis! SSD Lab presents three posters!" 
+  date: Jan 2025
+  link: "/"
+
+
+# - title: "Congratulations, Arpita Saha, for starting her new position in as a PhD student at Tufts!" 
+#   date: Nov 2024
+#   link: "/"
+
+
 - title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
   date: Oct 2024
-  link: "/"
-  # video_link: "#"
-
-- title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
-  date: June 2024
-  link: "/"
+  # link: "/"
   document_link: "#"
-  slides_link: "#"
-  excerpt: "This is a brief overview of our latest news, covering the recent updates and what they mean for our community."
 
+
+- title: "Congratulations, Alex Ott! Alex gets full scholarship to attend the Brandeis x Possible program." 
+  date: Sep 2024
+  link: "/"
 
 - title: "Our paper ''Anatomy of the LSM Memory Buffer: Insights & Implications'' is accepted for publication in DBTest 2024."
   date: May 2024
-  link: "/"
+  slides_link: "#"
 
 - title: "Our paper ''KVBench: A Key-Value Benchmarking Suite'' is accepted for publication in DBTest 2024."
   date: May 2024
+  link: "/"
+
+
+- title: "SSD Lab goes to North-East Database Day 2024 with two posters!" 
+  date: Apr 2024
+  link: "/"
+
+
+- title: "Congratulations to Alex Ott for being selected for the Gordon Science Research Fellowship!" 
+  date: Mar 2024
+  link: "/"
+
+
+- title: "Our paper ''Enabling Timely and Persistent Deletion in LSM-Engines'' is now published in ACM ToDS."
+  date: Aug 2023
   link: "/"

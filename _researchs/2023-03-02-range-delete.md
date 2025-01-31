@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Delete Compliance Databases"
+title: "Deletion-Compliant Databases"
 image: "/assets/img/range_delete_filter.webp"
 # learn_more: "https://github.com/SSD-Brandeis/LSMRangeDeletes"
 github: "https://github.com/SSD-Brandeis/LSMRangeDeletes"
