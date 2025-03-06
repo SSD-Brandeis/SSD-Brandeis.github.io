@@ -36,7 +36,7 @@
   # office: "91011 Office Address"
 - name: Alexander Ott
   role: member
-  image: /assets/img/alexander_ott.jpg
+  image: /assets/img/alexander_ott.webp
   designation: Researcher
   email: alexanderott@brandeis.edu
   alumni: false
