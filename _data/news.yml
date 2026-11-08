@@ -44,9 +44,6 @@
   video: https://www.youtube.com/watch?v=xgJ2g_CLjSQ
   code: https://github.com/SSD-Brandeis/RangeReduce
 
-- date: Sep 2025
-  text: 'Prof. Sarkar will serve as the <i>General Co-Chair</i> of <a href="https://nedbday.github.io/2026/" target="_blank" rel="noopener">North-East Database Day 2026</a>.'
-
 - date: Aug 2025
   text: 'Our paper "Tectonic: Bridging Synthetic and Real-World Workloads for Key-Value Benchmarking" is <i>accepted for publication</i> in <a href="https://www.tpc.org/tpctc/tpctc2025/default5.asp?lang=cn" target="_blank" rel="noopener">TPCTC 2025</a>.'
   pdf: Tectonic_Bridging_Synthetic_and_Real-World_Workloads_for_Key-Value_Benchmarking.pdf
@@ -59,9 +56,6 @@
 # - date: Nov 2024
 #   text: 'Congratulations, Arpita Saha, on starting her new position as a PhD student at Tufts!'
 
-- date: Nov 2024
-  text: 'Prof. Sarkar will deliver a talk on "Building Deletion-Compliant Data Systems" at <i>Williams College</i>.'
-
 - date: Oct 2024
   text: 'Our paper "QuIT your B<sup>+</sup>-tree for the Quick Insertion Tree" is <i>accepted for publication</i> in <a href="https://openproceedings.org/2025/conf/edbt/paper-118.pdf" target="_blank" rel="noopener">EDBT 2025</a>.'
   pdf: QuIT_your_B+_tree_for_the_Quick_Insertion_Tree.pdf
@@ -70,9 +64,6 @@
 
 - date: Sep 2024
   text: 'Congratulations, Alex Ott! Alex received a <i>full scholarship</i> to attend the Brandeis x Possible program.'
-
-- date: Aug 2024
-  text: 'Prof. Sarkar will serve as the <i>General Chair</i> of <a href="https://nedbday.github.io/2025/" target="_blank" rel="noopener">North-East Database Day 2025</a>, to be held at Brandeis on Jan 9, 2025.'
 
 - date: May 2024
   text: 'Our paper "Anatomy of the LSM Memory Buffer: Insights &amp; Implications" is <i>accepted for publication</i> in <a href="https://dl.acm.org/doi/10.1145/3662165.3662766" target="_blank" rel="noopener">DBTest 2024</a>.'
@@ -87,13 +78,7 @@
   code: https://github.com/BU-DiSC/kv-bench
 
 - date: Apr 2024
-  text: 'Prof. Sarkar will serve as the <i>Program Chair</i> of <a href="https://bu-disc.github.io/nedbday/2024/" target="_blank" rel="noopener">North-East Database Day 2024</a>.'
-
-- date: Apr 2024
   text: 'The SSD Lab goes to <a href="https://bu-disc.github.io/nedbday/2024/" target="_blank" rel="noopener">North-East Database Day 2024</a> with <i>two posters</i>!'
-
-- date: Apr 2024
-  text: 'Prof. Sarkar will deliver a <i>guest lecture</i> on "Toward Privacy-Aware Data Systems" at <i>Boston University</i>.'
 
 - date: Mar 2024
   text: 'Congratulations to Alex Ott on being selected for the <i>Gordon Science Research Fellowship</i>!'
@@ -125,14 +110,6 @@
   slides: Sware_ICDE.pdf
   poster: SWARE_ICDE_poster.pdf
   code: https://github.com/BU-DiSC/sware
-
-- date: Nov 2022
-  text: 'Prof. Sarkar will deliver a talk on "Constructing and Analyzing the LSM Compaction Design Space" at <i>MongoDB</i>.'
-
-- date: Oct 2022
-  text: 'Prof. Sarkar will deliver an <i>invited talk</i> on "Toward Building Deletion-Compliant Data Systems" at <a href="http://hpts.ws/agenda.html" target="_blank" rel="noopener">HPTS 2022</a>.'
-  pdf: Toward_Building_Deletion_Compliant_Data_Systems.pdf
-  slides: HPTS.pdf
 
 - date: Aug 2022
   text: 'Our paper "BoDS: A Benchmark on Data Sortedness" is <i>accepted for publication</i> in <a href="https://link.springer.com/chapter/10.1007/978-3-031-29576-8_2" target="_blank" rel="noopener">TPCTC 2022</a>.'
