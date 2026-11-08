@@ -46,8 +46,8 @@
           {% endif %}
           <div class="sp-alumni-name">{{ member.name }}</div>
           <div class="sp-alumni-role">{{ member.designation }}</div>
-          {% if member.now_at %}
-          <div class="sp-alumni-now">Now at {{ member.now_at }}</div>
+          {% if member.next %}
+          <div class="sp-alumni-now">Next: {{ member.next }}</div>
           {% endif %}
         </div>
         {% endif %}
@@ -121,7 +121,11 @@
       closeBtn.addEventListener('click', close);
       box.querySelector('.sp-lb-prev').addEventListener('click', function () { show(current - 1); });
       box.querySelector('.sp-lb-next').addEventListener('click', function () { show(current + 1); });
-      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      // Any click outside the photo itself (backdrop, caption, margins) closes; arrows keep browsing.
+      box.addEventListener('click', function (e) {
+        if (e.target.closest('.sp-lb-img, .sp-lb-prev, .sp-lb-next')) return;
+        close();
+      });
       document.addEventListener('keydown', function (e) {
         if (box.hidden) return;
         if (e.key === 'Escape') close();
