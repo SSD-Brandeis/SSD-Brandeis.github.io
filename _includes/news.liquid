@@ -1,4 +1,4 @@
-{% assign news_visible = 15 %}
+{% assign news_visible = 10 %}
 <section class="sp-section" id="news">
   <div class="container">
     <div class="sp-section-header">
@@ -57,7 +57,7 @@
   var wrap = document.querySelector('#news .sp-news-toggle');
   if (!list || !wrap) return;
   var rows = Array.from(list.querySelectorAll('li.sp-news-extra'));
-  var step = parseInt(list.dataset.visible, 10) || 15;
+  var step = parseInt(list.dataset.visible, 10) || 10;
   var more = document.getElementById('sp-news-more');
   var less = document.getElementById('sp-news-less');
   var shown = 0;

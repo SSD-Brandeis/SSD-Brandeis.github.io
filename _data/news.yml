@@ -1,4 +1,4 @@
-# Lab news, newest first. The homepage shows the first 15; the rest sit behind "Show more".
+# Lab news, newest first. The homepage shows the first 10; the rest sit behind "Show more".
 #
 #   date:    "Mon YYYY"
 #   text:    one sentence; inline HTML allowed (links, <i>, <sup>)
