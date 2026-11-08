@@ -1769,13 +1769,9 @@ ninja-keys::part(ninja-input-wrapper) {
     height: 2px;
   }
 
-  /* Banner Container */
+  /* Banner Container: grow with the hero (a fixed 40vh let the title spill into News) */
   .top-container {
-    height: 40vh;
-  }
-
-  .top-container::before {
-    height: 40vh;
+    height: auto;
   }
 
   /* Research section */

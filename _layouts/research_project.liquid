@@ -9,6 +9,7 @@ layout: default
     {% if page.image %}
       <div class="rp-figure">
         <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        {% if page.image_caption %}<div class="rp-figure-caption">{{ page.image_caption }}</div>{% endif %}
       </div>
     {% endif %}
 

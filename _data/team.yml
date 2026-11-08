@@ -26,13 +26,19 @@
   designation: Undergraduate Researcher
   alumni: false
   website: https://www.linkedin.com/in/hongchen-yang-3803b4294/
-# Alumni, most recent first
 - name: Artem Lavrov
   role: member
   image: /assets/people/artem_lavrov.jpeg
   designation: Undergraduate Researcher
-  alumni: true
+  alumni: false
   website: https://www.linkedin.com/in/artem-lavrov-76371428b/
+- name: Alexander Ott
+  role: member
+  image: /assets/people/alexander_ott.webp
+  designation: Undergraduate Researcher
+  # email: alexanderott@brandeis.edu
+  alumni: false
+  website: https://www.linkedin.com/in/alexanderhott/
 - name: Yu-Cheng Huang
   role: member
   image: /assets/people/yuchen_huang.jpg
@@ -41,19 +47,18 @@
   alumni: true
   now_at: Realtek Semiconductor Corp.
   website: https://www.linkedin.com/in/yu-cheng-huang-181b67231/?locale=en
-- name: Alexander Ott
+- name: Arun Shrestha
   role: member
-  image: /assets/people/alexander_ott.webp
-  designation: Undergraduate Researcher
-  # email: alexanderott@brandeis.edu
-  alumni: true
-  website: https://www.linkedin.com/in/alexanderhott/
-- name: Parthiv Ganguly
-  role: member
-  image: /assets/people/placeholder_avatar.svg
+  image: /assets/people/arun_shrestha.JPG
   designation: Graduate Researcher
   alumni: true
-  now_at: Nebulaa IT Solutions
+- name: Sherren Jielita
+  role: member
+  image: /assets/people/sherren_jielita.jpeg
+  designation: Undergraduate Researcher
+  alumni: true
+  now_at: Meta
+  website: https://www.linkedin.com/in/sherrenjie/
 - name: Minjie Tang
   role: member
   image: /assets/people/minjie_tang.jpeg
@@ -61,11 +66,12 @@
   alumni: true
   now_at: Circle Cat
   website: https://www.linkedin.com/in/minjie-tang/
-- name: Arun Shrestha
+- name: Parthiv Ganguly
   role: member
-  image: /assets/people/arun_shrestha.JPG
+  image: /assets/people/placeholder_avatar.svg
   designation: Graduate Researcher
   alumni: true
+  now_at: Nebulaa IT Solutions
 - name: Arpita Saha
   role: member
   image: /assets/people/arpita_saha.png
@@ -74,10 +80,3 @@
   now_at: Tufts University (PhD)
   website: https://www.linkedin.com/in/arp-saha/
   # email: arpitasaha1996@gmail.com
-- name: Sherren Jielita
-  role: member
-  image: /assets/people/sherren_jielita.jpeg
-  designation: Undergraduate Researcher
-  alumni: true
-  now_at: Meta
-  website: https://www.linkedin.com/in/sherrenjie/

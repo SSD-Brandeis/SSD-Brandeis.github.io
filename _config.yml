@@ -309,7 +309,7 @@ scholar:
   # See https://github.com/alshedivat/al-folio/issues/357.
   bibtex_filters: [latex, smallcaps, superscript]
 
-  sort_by: year
+  sort_by: none  # keep papers.bib order (= publication.json order, as on subhadeep.net)
   order: descending
 
   replace_strings: true

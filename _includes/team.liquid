@@ -59,12 +59,84 @@
     <div class="sp-students-label sp-gallery-label">Lab Life</div>
     <div class="sp-gallery-grid">
       {% for photo in site.data.gallery %}
-      <div class="sp-gallery-item">
+      <a class="sp-gallery-item" href="{{ photo.image }}" data-caption="{{ photo.caption | escape }}">
         <img src="{{ photo.image }}" alt="{{ photo.caption | default: 'SSD Lab' }}" loading="lazy">
         {% if photo.caption %}<div class="sp-gallery-caption">{{ photo.caption }}</div>{% endif %}
-      </div>
+      </a>
       {% endfor %}
     </div>
+
+    <div class="sp-lightbox" id="sp-lightbox" role="dialog" aria-modal="true" aria-label="Lab Life photo" hidden>
+      <button type="button" class="sp-lb-btn sp-lb-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      <button type="button" class="sp-lb-btn sp-lb-prev" aria-label="Previous photo"><i class="fa-solid fa-chevron-left"></i></button>
+      <figure class="sp-lb-figure">
+        <img class="sp-lb-img" src="" alt="">
+        <figcaption class="sp-lb-caption"><span class="sp-lb-text"></span><span class="sp-lb-count"></span></figcaption>
+      </figure>
+      <button type="button" class="sp-lb-btn sp-lb-next" aria-label="Next photo"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <script>
+    // Lab Life viewer. Each tile is a plain link to its photo, so this is progressive enhancement.
+    (function () {
+      var items = Array.from(document.querySelectorAll('.sp-gallery-grid .sp-gallery-item'));
+      var box = document.getElementById('sp-lightbox');
+      if (!items.length || !box) return;
+      // Escape the section's stacking context so the viewer covers the fixed navbar too.
+      document.body.appendChild(box);
+      var img = box.querySelector('.sp-lb-img');
+      var text = box.querySelector('.sp-lb-text');
+      var count = box.querySelector('.sp-lb-count');
+      var closeBtn = box.querySelector('.sp-lb-close');
+      var current = 0, opener = null, touchX = null;
+
+      function show(i) {
+        current = (i + items.length) % items.length;
+        var it = items[current];
+        img.src = it.getAttribute('href');
+        img.alt = it.dataset.caption || 'SSD Lab';
+        text.textContent = it.dataset.caption || '';
+        count.textContent = (current + 1) + ' / ' + items.length;
+        // Warm the neighbours so arrowing through feels instant.
+        [current + 1, current - 1].forEach(function (j) {
+          new Image().src = items[(j + items.length) % items.length].getAttribute('href');
+        });
+      }
+      function open(i) {
+        opener = document.activeElement;
+        show(i);
+        box.hidden = false;
+        document.body.classList.add('sp-lb-lock');
+        closeBtn.focus();
+      }
+      function close() {
+        box.hidden = true;
+        document.body.classList.remove('sp-lb-lock');
+        img.src = '';
+        if (opener) opener.focus();
+      }
+
+      items.forEach(function (it, i) {
+        it.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+      });
+      closeBtn.addEventListener('click', close);
+      box.querySelector('.sp-lb-prev').addEventListener('click', function () { show(current - 1); });
+      box.querySelector('.sp-lb-next').addEventListener('click', function () { show(current + 1); });
+      box.addEventListener('click', function (e) { if (e.target === box) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (box.hidden) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current - 1);
+        else if (e.key === 'ArrowRight') show(current + 1);
+      });
+      box.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
+      box.addEventListener('touchend', function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+        touchX = null;
+      });
+    })();
+    </script>
     {% endif %}
   </div>
 </section>

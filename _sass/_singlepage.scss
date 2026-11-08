@@ -36,6 +36,12 @@ $sp-white:   #ffffff;
   background-color: $sp-gray-bg;
 }
 
+// Phones: keep a side gutter (the theme's container padding is zeroed elsewhere).
+@media (max-width: 576px) {
+  .sp-section > .container,
+  #navbar > .container { padding-left: 16px; padding-right: 16px; }
+}
+
 .sp-section-header {
   margin-bottom: 20px;
 
@@ -164,6 +170,12 @@ $sp-white:   #ffffff;
     font-family: 'Linux Libertine', Georgia, 'Times New Roman', Times, serif;
     color: $sp-white;
     margin-bottom: 56px;
+  }
+
+  @media (max-width: 768px) {
+    .sp-hero-inner { padding: 5rem 1rem 2rem; max-width: 100%; }
+    h1 { font-size: 36px; margin-bottom: 14px; .sp-accent { font-size: 46px; } }
+    h2 { font-size: 19px; margin-bottom: 28px; }
   }
 
   .sp-hero-actions {
@@ -752,6 +764,90 @@ $sp-white:   #ffffff;
   }
 }
 
+.sp-gallery-grid a.sp-gallery-item {
+  display: block;
+  cursor: zoom-in;
+  &:focus-visible { outline: 2px solid $sp-blue; outline-offset: 2px; }
+}
+
+// Lab Life viewer
+body.sp-lb-lock { overflow: hidden; }
+
+.sp-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 64px;
+  background: rgba(12, 14, 20, 0.92);
+  animation: sp-lb-in 0.2s ease both;
+
+  &[hidden] { display: none !important; }
+
+  .sp-lb-figure {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sp-lb-img {
+    max-width: min(1600px, 100%);
+    max-height: calc(100vh - 140px);
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .sp-lb-caption {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+
+    .sp-lb-count {
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .sp-lb-btn {
+    position: absolute;
+    background: none;
+    border: 0;
+    padding: 10px;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.15s ease;
+
+    &:hover, &:focus-visible { color: $sp-white; outline: none; transform: scale(1.1); }
+  }
+
+  .sp-lb-close { top: 14px; right: 18px; }
+  .sp-lb-prev  { left: 14px;  top: 50%; margin-top: -22px; }
+  .sp-lb-next  { right: 14px; top: 50%; margin-top: -22px; }
+
+  @media (max-width: 640px) {
+    padding: 48px 8px;
+    .sp-lb-prev, .sp-lb-next { top: auto; bottom: 14px; margin-top: 0; }
+  }
+}
+
+@keyframes sp-lb-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 // ── News ─────────────────────────────────────────────────────
 #news.sp-section {
   padding-top: 16px;
@@ -947,6 +1043,16 @@ $sp-white:   #ffffff;
       height: auto;
       border-radius: 6px;
       box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    // Optional `image_caption` front matter; matches in-article figcaptions.
+    .rp-figure-caption {
+      margin-top: 8px;
+      font-family: 'Roboto', system-ui, sans-serif;
+      font-size: 0.78rem;
+      color: $sp-muted;
+      line-height: 1.4;
+      text-align: left;
     }
   }
 
