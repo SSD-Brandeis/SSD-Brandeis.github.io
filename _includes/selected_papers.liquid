@@ -1,6 +1,99 @@
-<section class="publication-agenda container" id="publication">
-      <div class="research"><h1>Publication</h1></div>
-<div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
-</div>
+<section class="sp-section sp-pub-section" id="publication">
+  <div class="container">
+    <div class="sp-section-header">
+      <h2>Latest Publications</h2>
+      <div class="sp-rule"></div>
+      <p>
+        Recent work from the SSD Lab. For a full list see
+        <a href="https://scholar.google.com/citations?user=lKxl5G4AAAAJ" target="_blank" rel="noopener">Google Scholar</a>.
+      </p>
+    </div>
+    <div class="publications">
+      {% comment %} Every lab paper: papers.bib holds only lab-era papers, synced from publication.json. {% endcomment %}
+      {% bibliography --group_by none --query @* %}
+    </div>
+  </div>
 </section>
+<script>
+(function () {
+  var ol = document.querySelector('.sp-pub-section ol.bibliography');
+  if (!ol) return;
+
+  var items = Array.from(ol.children);
+
+  var wrap = document.createElement('div');
+  wrap.className = 'pub-cols';
+  var colA = document.createElement('div');
+  colA.className = 'pub-col';
+  var colB = document.createElement('div');
+  colB.className = 'pub-col';
+  wrap.appendChild(colA);
+  wrap.appendChild(colB);
+
+  items.forEach(function (li, i) {
+    var entry = document.createElement('div');
+    entry.className = 'pub-entry';
+
+    var src = li.querySelector('.col-sm-2');
+    var thumb = document.createElement('div');
+    thumb.className = 'pub-thumb';
+    if (src) while (src.firstChild) thumb.appendChild(src.firstChild);
+
+    var det = li.querySelector('.col-sm-8, .col-sm-10');
+    var details = document.createElement('div');
+    details.className = 'pub-details';
+    if (det) {
+      if (det.id) details.id = det.id;
+      while (det.firstChild) details.appendChild(det.firstChild);
+    }
+
+    entry.appendChild(thumb);
+    entry.appendChild(details);
+    (i % 2 === 0 ? colA : colB).appendChild(entry);
+
+    // Clicking the details area or the PDF preview toggles the abstract.
+    // Real links/icons (PDF, arXiv, Code, BibTeX, co-authors, …) keep
+    // their own behavior and never trigger the abstract toggle.
+    var abs = details.querySelector('div.abstract.hidden');
+    if (abs) {
+      var toggle = function (e) {
+        if (e.target.closest('a, button')) return;
+        if (e.target.closest('div.abstract')) return;  // let users read/select
+        abs.classList.toggle('open');
+      };
+      details.addEventListener('click', toggle);
+
+      thumb.addEventListener('click', function (e) {
+        var link = e.target.closest('a');
+        if (link) e.preventDefault();   // don't open the PDF on preview click
+        abs.classList.toggle('open');
+      });
+
+      thumb.style.cursor = 'pointer';
+      details.style.cursor = 'pointer';
+    }
+
+    // Expanded blocks (abstract/bibtex/award) must start with a 16px gap
+    // BELOW the PDF thumbnail. For entries whose text is shorter than the
+    // thumbnail, the natural flow position would overlap it — measure the
+    // deficit on open and add it to the block's top margin.
+    var blocks = details.querySelectorAll('div.abstract.hidden, div.bibtex.hidden, div.award.hidden');
+    var adjustBlocks = function () {
+      var GAP = 16;
+      blocks.forEach(function (b) {
+        b.style.marginTop = '';
+        if (!b.classList.contains('open')) return;
+        var deficit = (thumb.getBoundingClientRect().bottom + GAP) - b.getBoundingClientRect().top;
+        if (deficit > 0) b.style.marginTop = (GAP + deficit) + 'px';
+      });
+    };
+    // Runs after ANY toggle path (details/thumb click here, or the
+    // Abs/BibTeX links handled by common.js), since clicks bubble up.
+    if (blocks.length) {
+      entry.addEventListener('click', function () { setTimeout(adjustBlocks, 0); });
+    }
+  });
+
+  ol.parentNode.replaceChild(wrap, ol);
+})();
+</script>

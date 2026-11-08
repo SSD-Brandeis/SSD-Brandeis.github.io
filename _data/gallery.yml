@@ -1,0 +1,31 @@
+# Lab Life photos. Web copies (≤1600px, EXIF stripped) live in assets/img/gallery/;
+# full-size originals are kept locally in assets/img/gallery/_originals/ (git-ignored).
+# `caption` is optional — add one only when the event is known.
+
+- image: /assets/img/gallery/lab-2026-posters-group.jpg
+- image: /assets/img/gallery/lab-2026-talk.jpg
+- image: /assets/img/gallery/lab-2026-poster-tectonic-1.jpg
+- image: /assets/img/gallery/lab-2026-poster-tectonic-2.jpg
+- image: /assets/img/gallery/lab-2026-poster-tectonic-3.jpg
+- image: /assets/img/gallery/vldb2025-tectonic.jpg
+  caption: Tectonic at TPCTC, VLDB 2025 (London)
+- image: /assets/img/gallery/vldb2025-tectonic-talk-1.jpg
+  caption: TPCTC @ VLDB 2025
+- image: /assets/img/gallery/vldb2025-tectonic-talk-2.jpg
+  caption: TPCTC @ VLDB 2025
+- image: /assets/img/gallery/lab-outing-1.jpg
+- image: /assets/img/gallery/lab-outing-2.jpg
+- image: /assets/img/gallery/lab-2026-posters.jpg
+- image: /assets/img/gallery/lab-conference-group.jpg
+- image: /assets/img/gallery/lab-conference-reception.jpg
+- image: /assets/img/gallery/lab-poster-rangereduce.jpg
+- image: /assets/img/gallery/lab-candid.jpg
+- image: /assets/img/gallery/nedb2025-talks.jpg
+  caption: NEDB Day 2025 at Brandeis
+- image: /assets/img/gallery/nedb2025-posters-1.jpg
+  caption: NEDB Day 2025 at Brandeis
+- image: /assets/img/gallery/nedb2025-posters-2.jpg
+  caption: NEDB Day 2025 at Brandeis
+- image: /assets/img/gallery/lab-poster-session.jpg
+- image: /assets/img/gallery/nedb2024-posters.jpg
+  caption: NEDB Day 2024

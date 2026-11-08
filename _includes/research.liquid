@@ -1,28 +1,22 @@
-<section class="research-agenda" id="research">
-    <div class="container">
-        <div class="research"><h1>{{ page.heading }}</h1></div>
-    <div class="research"><p>{{ page.small_description }}</p></div>
-    <div class="card-container">
-        {% for post in site.researchs %}
-        <div class="card">
-            <div class="card-front">
-                <div class="card-image" style="background-image: url('{{ post.image }}');"></div>
-                <div class="card-title">{{ post.title }}</div>
-            </div>
-            <div class="card-back">
-                <h3>{{ post.title }}</h3>
-                <div class="scrollable-text"><h3>{{ post.excerpt }}</h3></div>
-                <div class="button-row">
-                    {% if post.github %}
-                    <a href="{{ post.github }}" class="button">GitHub</a>
-                    {% endif %}
-                    {% if post.learn_more %}
-                    <a href="{{ post.pdf }}" class="button">Learn More</a>
-                    {% endif %}
-                </div>
-            </div>
+<section class="sp-section sp-section-alt" id="research">
+  <div class="container">
+    <div class="sp-section-header">
+      <h2>Explore Our Research</h2>
+      <div class="sp-rule"></div>
+      <p>{{ page.small_description }}</p>
+    </div>
+
+    <div class="sp-research-grid">
+      {% for post in site.researchs %}
+      {% assign more_url = post.learn_more | default: post.url %}
+      <a href="{{ more_url | relative_url }}" class="sp-research-card"{% if post.learn_more %} target="_blank" rel="noopener"{% endif %}>
+        <div class="sp-rc-title">{{ post.title }}</div>
+        <div class="sp-rc-img" style="background-image: url('{{ post.image }}');"></div>
+        <div class="sp-rc-body">
+          <div class="sp-rc-desc">{% if post.teaser %}{{ post.teaser }}{% else %}{{ post.excerpt | strip_html | truncate: 160 }}{% endif %}</div>
         </div>
-        {% endfor %}
+      </a>
+      {% endfor %}
     </div>
-    </div>
+  </div>
 </section>

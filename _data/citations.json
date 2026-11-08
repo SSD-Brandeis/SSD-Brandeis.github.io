@@ -1,0 +1,350 @@
+{
+  "profile": {
+    "name": "Subhadeep Sarkar",
+    "citedby": 2288,
+    "hindex": 17,
+    "i10index": 22
+  },
+  "publications": [
+    {
+      "title": "Assessment of the Suitability of Fog Computing in the Context of Internet of Things",
+      "authors": "S Sarkar, S Chatterjee, S Misra",
+      "year": 2018,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 860,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:tOudhMTPpwUC",
+      "eprint": ""
+    },
+    {
+      "title": "Theoretical modelling of fog computing: A green computing paradigm to support IoT applications",
+      "authors": "S Sarkar, S Misra",
+      "year": 2016,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 481,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:O3NaXMp0MMsC",
+      "eprint": ""
+    },
+    {
+      "title": "Priority-Based Time-Slot Allocation in Wireless Body Area Networks During Medical Emergency Situations: An Evolutionary Game-Theoretic Perspective",
+      "authors": "S Misra, S Sarkar",
+      "year": 2015,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 158,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:u5HHmVD_uO8C",
+      "eprint": ""
+    },
+    {
+      "title": "From Micro to Nano: The Evolution of Wireless Sensor-Based Health Care",
+      "authors": "S Sarkar, S Misra",
+      "year": 2016,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 116,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:r0BpntZqJG4C",
+      "eprint": ""
+    },
+    {
+      "title": "Lethe: A Tunable Delete-Aware LSM Engine",
+      "authors": "S Sarkar, TI Papon, D Staratzis, M Athanassoulis",
+      "year": 2020,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 105,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:SeFeTyx0c_EC",
+      "eprint": ""
+    },
+    {
+      "title": "Constructing and analyzing the LSM compaction design space",
+      "authors": "S Sarkar, D Staratzis, Z Zhu, M Athanassoulis",
+      "year": 2021,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 91,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:5Ul4iDaHHb8C",
+      "eprint": ""
+    },
+    {
+      "title": "Performance Analysis of IEEE 802.15.6 MAC Protocol Under Non-ideal Channel Conditions and Saturated Traffic Regime",
+      "authors": "S Sarkar, S Misra, B Bandyopadhyay, C Chakraborty, M Obaidat",
+      "year": 2015,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 84,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:TQgYirikUcIC",
+      "eprint": ""
+    },
+    {
+      "title": "i-MAC: In-body sensor MAC in wireless body area networks for healthcare IoT",
+      "authors": "S Misra, PK Bishoyi, S Sarkar",
+      "year": 2020,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 58,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:4fKUyHm3Qg0C",
+      "eprint": ""
+    },
+    {
+      "title": "Dissecting, Designing, and Optimizing LSM-based Data Stores",
+      "authors": "S Sarkar, M Athanassoulis",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 38,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:fQNAKQ3IYiAC",
+      "eprint": ""
+    },
+    {
+      "title": "Towards Enforcement of the EU GDPR: Enabling Data Erasure",
+      "authors": "S Sarkar, JP Banâtre, L Rilling, C Morin",
+      "year": 2018,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 35,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:pqnbT2bcN3wC",
+      "eprint": ""
+    },
+    {
+      "title": "Compactionary: A Dictionary for LSM Compactions",
+      "authors": "S Sarkar, K Chen, Z Zhu, M Athanassoulis",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 29,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:VOx2b1Wkg3QC",
+      "eprint": ""
+    },
+    {
+      "title": "The LSM Design Space and its Read Optimizations",
+      "authors": "S Sarkar, N Dayan, M Athanassoulis",
+      "year": 2023,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 27,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:BrmTIyaxlBUC",
+      "eprint": ""
+    },
+    {
+      "title": "Energy-efficient data transmission in sensor-cloud",
+      "authors": "S Chatterjee, S Sarkar, S Misra",
+      "year": 2015,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 24,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:_Qo2XoVZTnwC",
+      "eprint": ""
+    },
+    {
+      "title": "Building Deletion-Compliant Data Systems",
+      "authors": "M Athanassoulis, S Sarkar, TI Papon, Z Zhu, D Staratzis",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 23,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:eJXPG6dFmWUC",
+      "eprint": ""
+    },
+    {
+      "title": "Analysis of reliability and throughput under saturation condition of IEEE 802.15.6 CSMA/CA for wireless body area networks",
+      "authors": "S Sarkar, S Misra, C Chakraborty, MS Obaidat",
+      "year": 2014,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 23,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:R3hNpaxXUhUC",
+      "eprint": ""
+    },
+    {
+      "title": "Privacy-aware blind cloud framework for advanced healthcare",
+      "authors": "S Sarkar, S Chatterjee, S Misra, R Kudupudi",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 21,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:2P1L_qKh6hAC",
+      "eprint": ""
+    },
+    {
+      "title": "Query Language Support for Timely Data Deletion",
+      "authors": "S Sarkar, M Athanassoulis",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 20,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:LPZeul_q3PIC",
+      "eprint": ""
+    },
+    {
+      "title": "Optimal decision rule-based ex-ante frequency hopping for jamming avoidance in wireless sensor networks",
+      "authors": "P Bhavathankar, S Sarkar, S Misra",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 13,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:J_g5lzvAfSwC",
+      "eprint": ""
+    },
+    {
+      "title": "KVBench: A Key-Value Benchmarking Suite",
+      "authors": "Z Zhu, A Saha, M Athanassoulis, S Sarkar",
+      "year": 2024,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 12,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:HE397vMXCloC",
+      "eprint": ""
+    },
+    {
+      "title": "Enabling timely and persistent deletion in lsm-engines",
+      "authors": "S Sarkar, TI Papon, D Staratzis, Z Zhu, M Athanassoulis",
+      "year": 2023,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:t6usbXjVLHcC",
+      "eprint": ""
+    },
+    {
+      "title": "Indexing for Near-Sorted Data",
+      "authors": "A Raman, S Sarkar, M Olma, M Athanassoulis",
+      "year": 2023,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:eflP2zaiRacC",
+      "eprint": ""
+    },
+    {
+      "title": "Evacuation and Emergency Management Using a Federated Cloud",
+      "authors": "S Sarkar, S Chatterjee, S Misra",
+      "year": 2014,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 10,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:e5wmG9Sq2KIC",
+      "eprint": ""
+    },
+    {
+      "title": "BoDS: A Benchmark on Data Sortedness",
+      "authors": "A Raman, K Karatsenidis, S Sarkar, M Olma, M Athanassoulis",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 8,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:D_sINldO8mEC",
+      "eprint": ""
+    },
+    {
+      "title": "Sensors, Cloud, and Fog: The Enabling Technologies for the Internet of Things",
+      "authors": "S Misra, S Sarkar, S Chatterjee",
+      "year": 2019,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 8,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:HoB7MX3m0LUC",
+      "eprint": ""
+    },
+    {
+      "title": "Anatomy of the LSM Memory Buffer: Insights & Implications",
+      "authors": "S Kaushik, S Sarkar",
+      "year": 2024,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 6,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:WA5NYHcadZ8C",
+      "eprint": ""
+    },
+    {
+      "title": "Acheron: Persisting Tombstones in LSM Engines",
+      "authors": "Z Zhu, S Sarkar, M Athanassoulis",
+      "year": 2023,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 6,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:mvPsJ3kp5DgC",
+      "eprint": ""
+    },
+    {
+      "title": "QuIT your B+-tree for the Quick Insertion Tree",
+      "authors": "A Raman, K Karatsenidis, S Xie, M Olma, S Sarkar, M Athanassoulis",
+      "year": 2025,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:AXPGKjj_ei8C",
+      "eprint": ""
+    },
+    {
+      "title": "Resource allocation for wireless body area networks in presence of selfish agents",
+      "authors": "S Sarkar, S Misra, MS Obaidat",
+      "year": 2016,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:NaGl4SEjCO4C",
+      "eprint": ""
+    },
+    {
+      "title": "Quantification of node misbehavior in wireless sensor networks: A social choice-based approach",
+      "authors": "S Chatterjee, S Sarkar, S Misra",
+      "year": 2015,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 3,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:RHpTSmoSYBkC",
+      "eprint": ""
+    },
+    {
+      "title": "Student Member",
+      "authors": "S Sarkar",
+      "year": 2018,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 2,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:vRqMK49ujn8C",
+      "eprint": ""
+    },
+    {
+      "title": "Tectonic: Bridging Synthetic and Real-World Workloads for Key-Value Benchmarking",
+      "authors": "AH Ott, S Kaushik, B Chen, S Sarkar",
+      "year": 2025,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:eMMeJKvmdy0C",
+      "eprint": ""
+    },
+    {
+      "title": "Toward Building Deletion Compliant Data Systems",
+      "authors": "S Sarkar",
+      "year": 2022,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:Mojj43d5GZwC",
+      "eprint": ""
+    },
+    {
+      "title": "Analysis of Delay in Wireless Communication for Healthcare Systems",
+      "authors": "S Sarkar",
+      "year": 2017,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:g5m5HwL7SMYC",
+      "eprint": ""
+    },
+    {
+      "title": "A Privacy-Aware Ambulatory Healthcare System Using Wireless Body Area Networks (WBANs)",
+      "authors": "SS Subhadeep Sarkar, Subarna Chatterjee, Sudip Misra, E. A. Ansari, D. Ghatak",
+      "year": 2016,
+      "venue": "",
+      "abstract": "",
+      "cited_by": 0,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=lKxl5G4AAAAJ&pagesize=100&citation_for_view=lKxl5G4AAAAJ:70eg2SAEIzsC",
+      "eprint": ""
+    }
+  ]
+}

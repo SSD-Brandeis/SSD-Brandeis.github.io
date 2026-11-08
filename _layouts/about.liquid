@@ -1,41 +1,19 @@
 ---
 layout: default
 ---
-<section class="banner">
-  <div class="banner-text">
-    <div class="row">
-      <h1 class="banner-text-item"><span class="logo-initial">S</span>mart and <span
-          class="logo-initial">S</span>calable <span class="logo-initial">D</span>ata <span>S</span>ystems
-        <span>L</span>ab
-      </h1>
-      <h2>@ Department of Computer Science | Brandeis University</h2>
+
+<div class="sp-hero" id="home">
+  <div class="sp-hero-inner">
+    <h1>
+      <span class="sp-accent sp-accent-blue">S</span>mart &amp; <span class="sp-accent sp-accent-split">S</span>calable
+      <span class="sp-accent">D</span>ata Systems Lab
+    </h1>
+    <h2>Department of Computer Science &nbsp;&bull;&nbsp; Brandeis University</h2>
+    <div class="sp-hero-actions">
+      <a href="#research" class="sp-btn-primary">Explore Research</a>
+      <a href="#publication" class="sp-btn-outline">Publications</a>
     </div>
   </div>
-</section>
+</div>
 
-<article>
-  <!-- News -->
-  {% if page.news and site.announcements.enabled %}
-  <h2>
-    <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
-  </h2>
-  {% include news.liquid limit=true %}
-  {% endif %}
-
-  <!-- Selected papers -->
-  {% if page.selected_papers %}
-  <h2>
-    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
-  </h2>
-  {% include selected_papers.liquid %}
-  {% endif %}
-
-  <!-- Social -->
-  {% if page.social %}
-  <div class="social">
-    <div class="contact-icons">{% include social.liquid %}</div>
-
-    <div class="contact-note">{{ site.contact_note }}</div>
-  </div>
-  {% endif %}
-</article>
+{{ content }}

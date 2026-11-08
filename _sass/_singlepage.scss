@@ -1,0 +1,1238 @@
+/* =============================================================
+   SSD Lab — Single-Page Redesign
+   Font sizes keyed to $sp-base (20px) from _variables.scss
+   Inspired by: DiSC Lab (BU), DASlab (Harvard), tpapon research
+   ============================================================= */
+
+// ── Palette ──────────────────────────────────────────────────
+$sp-base:    16px;
+$sp-navy:    #1c2433;          // deep charcoal — navbar & dark elements
+
+// Dual-color theme — mirrors the banner initials and logo
+$sp-red:     #c04040;          // matte red — primary actions, badges, rules
+$sp-red-dk:  #8f2a2a;          // darker red — text on white
+$sp-red-lt:  #d45a5a;          // lighter red — hover on dark bg
+$sp-blue:    #4a90d9;          // medium blue — links, labels, secondary actions
+$sp-blue-dk: #2f6aab;          // darker blue — text on white
+$sp-blue-lt: #6aaae3;          // lighter blue — hover states
+
+// Keep single-accent aliases pointing to red for existing usages
+$sp-accent:    $sp-red;
+$sp-accent-lt: $sp-red-lt;
+$sp-accent-dk: $sp-red-dk;
+
+$sp-gray-bg: #f5f5f3;
+$sp-border:  #e2e2e2;
+$sp-text:    #1e1e1e;
+$sp-muted:   #5a5652;
+$sp-white:   #ffffff;
+
+// ── Shared section chrome ─────────────────────────────────────
+.sp-section {
+  padding: 28px 0 32px;
+}
+
+.sp-section-alt {
+  background-color: $sp-gray-bg;
+}
+
+.sp-section-header {
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 1.6rem;           // ~26px at 16px root; 32px at 20px root — close to live site h1
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 6px;
+    margin-top: 10px;
+  }
+
+  .sp-rule {
+    width: 40px;
+    height: 3px;
+    background: $sp-accent;
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-size: $sp-base;
+    color: $sp-muted;
+    max-width: 760px;
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+// ── Navbar ───────────────────────────────────────────────────
+#navbar.navbar {
+  background-color: rgba(28, 36, 51, 0.92) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.9rem 0;
+
+  .navbar-brand img {
+    height: 34px;
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.82) !important;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    padding: 0.45rem 0.85rem !important;
+    transition: color 0.18s;
+
+    &:hover {
+      color: $sp-blue-lt !important;
+      text-decoration: none;
+    }
+  }
+
+  .icon-bar { background-color: #fff; }
+  .navbar-toggler { border-color: rgba(255, 255, 255, 0.3); }
+}
+
+// ── Hero ─────────────────────────────────────────────────────
+.sp-hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background-image: url('/assets/img/media/background.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 52vh;
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .sp-hero-inner {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 6rem 4rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 65px;
+    font-weight: normal;
+    font-family: 'Linux Libertine', Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.2;
+    color: $sp-white;
+    margin-bottom: 24px;
+
+    .sp-accent {
+      font-size: 85px;
+      font-weight: bold;
+      color: $sp-accent-lt;
+    }
+
+    .sp-accent-blue {
+      color: $sp-blue;
+    }
+
+    .sp-accent-split {
+      background: linear-gradient(110deg, $sp-blue 50%, $sp-red 50%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: normal;
+    font-family: 'Linux Libertine', Georgia, 'Times New Roman', Times, serif;
+    color: $sp-white;
+    margin-bottom: 56px;
+  }
+
+  .sp-hero-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      padding: 0.52rem 1.5rem;
+      border-radius: 5px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: all 0.2s;
+
+      &.sp-btn-primary {
+        background: $sp-accent;
+        color: $sp-white;
+        border: 2px solid $sp-accent;
+        &:hover { background: $sp-accent-lt; border-color: $sp-accent-lt; transform: translateY(-1px); }
+      }
+
+      &.sp-btn-outline {
+        background: transparent;
+        color: rgba(255, 255, 255, 0.88);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        &:hover { border-color: $sp-blue-lt; color: $sp-blue-lt; }
+      }
+    }
+  }
+}
+
+// ── Research Cards ───────────────────────────────────────────
+#research .sp-section-header p {
+  width: 100%;
+  max-width: none;
+  color: $sp-text;
+}
+
+.sp-research-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sp-research-card {
+  width: 320px;
+  border-radius: 4px;
+  border: 1px solid $sp-border;
+  border-left: 4px solid $sp-red;
+  box-shadow: none;
+  overflow: hidden;
+  background: $sp-white;
+  transition: box-shadow 0.22s, transform 0.18s;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  text-decoration: none !important;
+  color: inherit;
+
+  &:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    transform: translateY(-2px);
+    color: inherit;
+    text-decoration: none !important;
+  }
+
+  .sp-rc-title {
+    font-family: 'Linux Libertine', Georgia, 'Times New Roman', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: $sp-navy;
+    line-height: 1.25;
+    padding: 14px 12px 0;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  .sp-rc-img {
+    width: 100%;
+    height: 160px;
+    padding: 10px 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content-box;
+    background-color: transparent;
+  }
+
+  .sp-rc-body {
+    padding: 0 16px 16px;
+    margin-top: -10px;
+  }
+
+  .sp-rc-desc {
+    font-size: 0.92rem;
+    color: $sp-muted;
+    line-height: 1.6;
+    margin-bottom: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+// Alternating red / blue left border
+.sp-research-grid .sp-research-card:nth-child(odd) {
+  border-left-color: $sp-red;
+  &:hover { border-left-color: $sp-red-dk; }
+}
+.sp-research-grid .sp-research-card:nth-child(even) {
+  border-left-color: $sp-blue;
+  &:hover { border-left-color: $sp-blue-dk; }
+}
+
+
+// ── Publications ─────────────────────────────────────────────
+.sp-pub-section {
+  // Brand the section accent bar with the blue→red banner
+  .sp-section-header .sp-rule {
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(90deg, $sp-blue 0%, $sp-blue-dk 48%, $sp-red-dk 52%, $sp-red 100%);
+  }
+
+  // Hide the raw bibliography list once JS has built the two-column layout
+  ol.bibliography { display: none; }
+
+  // Two independent side-by-side columns. Each column flows on its own, so
+  // expanding an abstract only pushes the entries below it in THAT column —
+  // the other column is never affected (no coupled row heights, no overlay).
+  .pub-cols {
+    width: 86%;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .pub-col {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .pub-entry {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px 12px;
+  }
+
+  .pub-thumb {
+    flex: 0 0 auto;
+  }
+
+  .pub-details {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  // Content styles
+  .pub-cols {
+    // Venue badge overlaid at the bottom of the thumbnail
+    .preview-wrap {
+      position: relative;
+      display: inline-block;
+      line-height: 0;
+
+      abbr.badge {
+        position: absolute !important;
+        bottom: 0; left: 0; right: 0;
+        width: 100% !important;
+        z-index: 1;
+        border-radius: 0 0 3px 3px !important;
+        background: rgba(18, 28, 46, 0.82) !important;
+        color: #fff !important;
+        font-size: 0.58rem;
+        font-weight: 700;
+        padding: 2px 4px !important;
+        text-align: center;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        white-space: nowrap;
+        display: block !important;
+        line-height: 1.5;
+        a, div { color: #fff !important; text-decoration: none !important; display: inline; }
+      }
+    }
+
+    .pub-thumb > abbr.badge {
+      background: $sp-navy !important;
+      color: $sp-white !important;
+      font-size: 0.63rem;
+      font-weight: 700;
+      padding: 3px 7px !important;
+      border-radius: 4px !important;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      display: inline-block !important;
+      a, div { color: $sp-white !important; text-decoration: none !important; display: inline; }
+    }
+
+    img.preview {
+      width: 84px;
+      height: 112px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      border-radius: 3px;
+      border: 1px solid $sp-border;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .preview-link {
+      display: block;
+      text-decoration: none !important;
+      &:hover img.preview {
+        transform: scale(1.04);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+      }
+    }
+
+    .title {
+      font-size: 0.93rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1px;
+      line-height: 1.28;
+      display: block;
+    }
+
+    .author {
+      font-size: 0.83rem;
+      color: $sp-muted;
+      margin-bottom: 0;
+      display: block;
+      line-height: 1.3;
+      em { font-style: normal; font-weight: 600; color: $sp-text; }
+    }
+
+    .periodical, .booktitle {
+      font-size: 0.83rem;
+      color: $sp-muted;
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .links {
+      margin-top: 4px;
+      display: flex;
+      gap: 11px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    // Abstract / bibtex / award are toggled by common.js (it adds `.open`).
+    // They expand INLINE within the entry, so only the entries below it in
+    // the same column move down — the other column stays put.
+    div.abstract.hidden,
+    div.bibtex.hidden,
+    div.award.hidden {
+      display: none;
+    }
+    div.abstract.hidden.open,
+    div.bibtex.hidden.open,
+    div.award.hidden.open {
+      display: block;
+      margin-top: 16px;
+      // break out of the details column to span the full entry width,
+      // filling the empty space under the thumbnail too
+      // (84px thumbnail + 10px .pub-entry gap = 94px)
+      margin-left: -94px;
+      width: calc(100% + 94px);
+      padding: 4px 12px 10px;
+      background: $sp-gray-bg;
+      border-radius: 5px;
+      text-align: left;
+    }
+
+    div.abstract.hidden.open {
+      border-left: 3px solid $sp-blue;
+      p {
+        margin: 0;
+        font-size: 0.8rem;
+        line-height: 1.55;
+        color: $sp-text;
+        text-align: justify;
+      }
+    }
+
+    div.award.hidden.open {
+      border-left: 3px solid #b8860b;
+      p { margin: 0; font-size: 0.8rem; color: $sp-text; }
+    }
+
+    div.bibtex.hidden.open {
+      border-left: 3px solid $sp-red-dk;
+      overflow-x: auto;
+      pre, code { font-size: 0.72rem; margin: 0; }
+    }
+  }
+}
+
+// ── Classes ──────────────────────────────────────────────────
+.sp-classes-grid {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sp-course-card {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+  max-width: 260px;
+  border: 1px solid $sp-border;
+  border-radius: 10px;
+  overflow: hidden;
+  background: $sp-white;
+  text-decoration: none;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px $sp-red;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
+    transform: translateY(-6px);
+    border-color: transparent;
+    text-decoration: none;
+
+    &::after { opacity: 1; }
+
+    img { transform: scale(1.08); }
+  }
+
+  .sp-course-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 210px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.28) 100%);
+      z-index: 1;
+      transition: background 0.25s ease;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+  }
+
+  // Frosted-glass banner, floating across the vertical middle of the image.
+  .sp-course-label {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 7px;
+    padding: 15px 16px;
+    background: rgba(20, 20, 22, 0.32);
+    -webkit-backdrop-filter: blur(9px) saturate(140%);
+    backdrop-filter: blur(9px) saturate(140%);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.015em;
+    line-height: 1.3;
+    color: $sp-white;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+    &::after {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.55);
+      transition: width 0.3s ease;
+    }
+  }
+
+  .sp-course-soon {
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+    text-shadow: none;
+  }
+
+  &:hover .sp-course-label {
+    background: rgba(20, 20, 22, 0.42);
+    border-color: rgba(255, 255, 255, 0.32);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+
+    &::after { width: 40px; }
+  }
+}
+
+.sp-course-card-placeholder {
+  cursor: default;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transform: none;
+    border-color: $sp-border;
+
+    &::after { opacity: 0; }
+
+    img { transform: none; }
+  }
+}
+
+// ── Team ─────────────────────────────────────────────────────
+.sp-students-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid $sp-border;
+}
+
+.sp-students-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
+  justify-content: center;
+  gap: 20px 16px;
+
+  .sp-student-card {
+    text-align: center;
+
+    img {
+      width: 180px;
+      height: 180px;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 2px solid $sp-border;
+      margin-bottom: 6px;
+      transition: border-color 0.16s;
+    }
+
+    a:hover img { border-color: $sp-blue-dk; }
+
+    .sp-student-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0;
+    }
+
+    .sp-student-role {
+      font-size: 0.92rem;
+      color: $sp-blue-dk;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .sp-student-email {
+      font-size: 0.85rem;
+      color: $sp-muted;
+      margin-top: 1px;
+      word-break: break-word;
+    }
+  }
+}
+
+// ── Alumni ───────────────────────────────────────────────────
+.sp-alumni-label { margin-top: 40px; }
+
+.sp-alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 220px));
+  justify-content: center;
+  gap: 20px 16px;
+
+  .sp-alumni-card {
+    text-align: center;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $sp-border;
+      margin-bottom: 6px;
+      transition: border-color 0.16s;
+    }
+
+    a:hover img { border-color: $sp-blue-dk; }
+
+    .sp-alumni-name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .sp-alumni-role {
+      font-size: 0.72rem;
+      color: $sp-muted;
+      font-weight: 600;
+    }
+
+    .sp-alumni-now {
+      font-size: 0.7rem;
+      color: $sp-blue-dk;
+      margin-top: 2px;
+    }
+  }
+}
+
+// ── Lab photo gallery ────────────────────────────────────────
+.sp-gallery-label { margin-top: 40px; }
+
+.sp-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-auto-rows: 140px;
+  gap: 10px;
+
+  .sp-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid $sp-border;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img { transform: scale(1.06); }
+
+    .sp-gallery-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 6px 8px;
+      font-size: 0.7rem;
+      color: $sp-white;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
+    }
+  }
+}
+
+// ── News ─────────────────────────────────────────────────────
+#news.sp-section {
+  padding-top: 16px;
+
+  .sp-section-header {
+    margin-bottom: 8px;
+  }
+}
+
+.sp-news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    flex-direction: row;
+    padding: 2px 0;
+    align-items: baseline;
+    border-bottom: none;
+  }
+
+  .sp-news-date {
+    width: 9%;
+    font-size: $sp-base;
+    color: $sp-muted;
+    font-weight: normal;
+    flex-shrink: 0;
+  }
+
+  .sp-news-text {
+    width: 91%;
+    font-size: $sp-base;
+    color: $sp-text;
+    line-height: 1.3;
+
+    b { font-weight: 700; color: #111; }
+
+    a:not(.pub-icon) {
+      color: $sp-blue-dk;
+      text-decoration: none;
+      &:hover { color: $sp-red-dk; text-decoration: underline; }
+    }
+  }
+
+  // Same bare-glyph icons as the publications; kept on one line with the text's tail.
+  .sp-news-links {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+    margin-left: 8px;
+    white-space: nowrap;
+    vertical-align: baseline;
+
+    .pub-icon { font-size: 0.85rem; padding-bottom: 2px; }
+  }
+
+  li[hidden] { display: none !important; }
+  li.sp-news-extra:not([hidden]) { animation: sp-news-in 0.35s ease both; }
+
+  @media (max-width: 768px) {
+    li { flex-direction: column; padding: 5px 0; }
+    .sp-news-date, .sp-news-text { width: 100%; }
+    .sp-news-date { font-size: 0.8rem; }
+  }
+}
+
+@keyframes sp-news-in {
+  from { opacity: 0; transform: translateY(-3px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.sp-news-toggle {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+
+  &[hidden], [hidden] { display: none !important; }
+}
+
+.sp-news-btn {
+  background: transparent;
+  border: 1px solid $sp-border;
+  border-radius: 999px;
+  padding: 5px 18px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $sp-muted;
+  cursor: pointer;
+  transition: color 0.18s ease, border-color 0.18s ease;
+
+  &:hover, &:focus-visible { color: $sp-red; border-color: $sp-red; outline: none; }
+}
+
+// ── Contact ──────────────────────────────────────────────────
+.sp-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 28px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-contact-info {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    address {
+      font-style: normal;
+      font-size: $sp-base;
+      color: $sp-muted;
+      line-height: 1.85;
+    }
+
+    a { color: $sp-blue-dk; text-decoration: none; &:hover { text-decoration: underline; } }
+
+    .sp-contact-email-block {
+      margin-top: 12px;
+      padding: 10px 12px;
+      background: $sp-white;
+      border-radius: 6px;
+      border-left: 3px solid $sp-blue;
+      font-size: $sp-base;
+      color: $sp-muted;
+      strong { color: #333; }
+    }
+  }
+
+  iframe {
+    width: 100%;
+    height: 260px;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+    margin: 0;
+  }
+}
+
+// ── Research project pages ───────────────────────────────────
+// DiSC-style layout: title at top on white, centered hero image,
+// section headers in clean sans-serif, body in serif, structured
+// publications list at the bottom.
+.rp {
+  background: $sp-white;
+
+  .rp-container {
+    // Top padding clears the fixed translucent navbar (~64px tall) plus
+    // breathing room for the breadcrumb above the title.
+    padding-top: 84px;
+    padding-bottom: 64px;
+    max-width: 860px;
+  }
+
+  .rp-crumb {
+    display: inline-block;
+    color: $sp-muted;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-bottom: 14px;
+
+    &:hover {
+      color: $sp-blue-dk;
+      text-decoration: none;
+    }
+  }
+
+  .rp-title {
+    color: #1a1a1a;
+    font-family: 'Linux Libertine', Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 2.6rem;
+    line-height: 1.15;
+    margin: 0 0 10px;
+  }
+
+  .rp-figure {
+    margin: 0 0 28px;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  .rp-actions {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .rp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.45rem 0.9rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: transform 0.18s ease, background 0.18s ease,
+      border-color 0.18s ease, color 0.18s ease;
+
+    i { font-size: 0.95rem; }
+
+    &.rp-btn-primary {
+      background: $sp-navy;
+      color: $sp-white;
+      border-color: $sp-navy;
+      &:hover {
+        background: lighten($sp-navy, 8%);
+        border-color: lighten($sp-navy, 8%);
+        color: $sp-white;
+        transform: translateY(-1px);
+        text-decoration: none;
+      }
+    }
+  }
+
+  .rp-content {
+    color: $sp-text;
+    font-family: 'Linux Libertine', Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+
+    p { margin: 0 0 1.05em; }
+
+    // inline paper figures: image + caption
+    figure {
+      margin: 1.6em 0;
+      text-align: center;
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+      }
+      figcaption {
+        margin-top: 8px;
+        font-family: 'Roboto', system-ui, sans-serif;
+        font-size: 0.78rem;
+        color: $sp-muted;
+        line-height: 1.4;
+      }
+    }
+
+    // pull-quote: a highlighted insight or thesis
+    blockquote.rp-pull {
+      font-family: 'Linux Libertine', Georgia, serif;
+      font-style: italic;
+      font-size: 1.18rem;
+      line-height: 1.45;
+      color: #2a2a2a;
+      margin: 1.5em 0;
+      padding: 6px 0 6px 20px;
+      border-left: 3px solid $sp-blue-dk;
+      background: transparent;
+    }
+
+    // a callout for headline metrics
+    .rp-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 1.6em 0;
+
+      .rp-metric {
+        flex: 1 1 180px;
+        padding: 14px 16px;
+        background: $sp-gray-bg;
+        border-left: 3px solid $sp-red-dk;
+        border-radius: 0 4px 4px 0;
+
+        .rp-metric-value {
+          font-family: 'Roboto', system-ui, sans-serif;
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: $sp-red-dk;
+          line-height: 1.1;
+          display: block;
+        }
+        .rp-metric-label {
+          font-family: 'Roboto', system-ui, sans-serif;
+          font-size: 0.78rem;
+          color: $sp-muted;
+          margin-top: 4px;
+          display: block;
+          line-height: 1.35;
+        }
+      }
+
+      // Five or six metrics: a 3-column grid (3+2 / 3+3) instead of a lone, full-width last row.
+      &:has(> .rp-metric:nth-child(5)) {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        @media (max-width: 640px) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+    }
+
+    h2 {
+      font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+      margin: 2em 0 0.6em;
+      line-height: 1.25;
+    }
+    h3 {
+      font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin: 1.7em 0 0.5em;
+    }
+
+    strong { color: #111; }
+
+    a {
+      color: $sp-blue-dk;
+      &:hover { color: $sp-red-dk; }
+    }
+
+    // Publications list: compact numbered entries, inline links
+    ol.rp-pubs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      counter-reset: rp-pub;
+      font-family: 'Roboto', system-ui, sans-serif;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      color: $sp-text;
+
+      li {
+        counter-increment: rp-pub;
+        position: relative;
+        padding: 6px 0 6px 32px;
+
+        &::before {
+          content: '[' counter(rp-pub) ']';
+          position: absolute;
+          left: 0;
+          top: 6px;
+          color: $sp-muted;
+          font-size: 0.82rem;
+          font-weight: 700;
+        }
+
+        .rp-pub-authors { color: $sp-text; }
+        .rp-pub-title { font-weight: 600; color: #1a1a1a; }
+        .rp-pub-venue { color: $sp-muted; font-style: italic; }
+
+        .rp-pub-links {
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          margin-left: 10px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    // Inline citation marker: [1], [2], ... — same font/size as body, blue
+    a.rp-cite {
+      color: $sp-blue-dk;
+      text-decoration: none;
+      &:hover { color: $sp-red-dk; text-decoration: none; }
+    }
+  }
+
+  .rp-back {
+    margin-top: 48px;
+    padding-top: 20px;
+    border-top: 1px solid $sp-border;
+    font-size: 0.85rem;
+
+    a {
+      color: $sp-muted;
+      text-decoration: none;
+      &:hover { color: $sp-blue-dk; text-decoration: none; }
+    }
+  }
+}
+
+// ── Publication action icons (global) ────────────────────────
+// Used by both the homepage Publications section and the per-project pages.
+// Bare outline glyphs that expand to show their aria-label on hover, with
+// an accent "ink" underline drawn left→right.
+.pub-icon {
+  --pi-accent: #3f6184;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--pi-accent);
+  font-size: 0.95rem;
+  line-height: 1;
+  padding-bottom: 4px;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.18s ease;
+
+  i {
+    line-height: 1;
+    display: block;
+  }
+
+  &::after {
+    content: attr(aria-label);
+    max-width: 0;
+    margin-left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: max-width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.2s ease;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--pi-accent);
+    border-radius: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &:hover { transform: translateY(-1px); }
+  &:hover::after {
+    max-width: 8rem;
+    margin-left: 0.4rem;
+    opacity: 1;
+  }
+  &:hover::before { transform: scaleX(1); }
+
+  &:nth-child(odd)  { --pi-accent: #a64a4a; }
+  &:nth-child(even) { --pi-accent: #3f6184; }
+
+  &.bibtex i { transform: scaleY(1.3); }
+  &.bibtex i::before {
+    -webkit-text-stroke: 1.2px var(--pi-accent);
+    color: transparent;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// ── Footer ───────────────────────────────────────────────────
+footer {
+  background-color: $sp-navy !important;
+  position: relative !important;
+  padding: 14px 0 !important;
+  margin-top: 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.06);
+
+  * { color: rgba(255, 255, 255, 0.5) !important; font-size: 0.8rem; }
+  a { color: rgba(255, 255, 255, 0.72) !important; &:hover { color: $sp-white !important; } }
+}

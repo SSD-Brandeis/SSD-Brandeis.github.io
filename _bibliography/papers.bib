@@ -1,70 +1,293 @@
-@inproceedings{DBLP:conf/dbtest-ws/KaushikS24,
-  author    = {Shubham Kaushik and Subhadeep Sarkar},
-  title     = {Anatomy of the {LSM} Memory Buffer: Insights {\&} Implications},
-  booktitle = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
-  pages     = {23--29},
-  year      = {2024},
-  url       = {https://doi.org/10.1145/3662165.3662766},
-  doi       = {10.1145/3662165.3662766},
-  abbr      = {DBTest},
-  abstract  = {Log-structured merge (LSM) tree is an ingestion-optimized data structure that is widely used in modern NoSQL key-value stores. To support high throughput for writes, LSM-trees maintain an in-memory buffer that absorbs the incoming entries before writing them to slower secondary storage. We point out that the choice of the data structure and implementation of the memory buffer has a significant impact on the overall performance of LSM-based storage engines. In fact, even with the same implementation of the buffer, the performance of a storage engine can vary by up to several orders of magnitude if there is a shift in the input workload.
-               
-               <br>In this paper, we benchmark the performance of LSM-based storage engines with different memory buffer implementations and under different workload characteristics. We experiment with four buffer implementations, namely, (i) vector, (ii) skip-list, (iii) hash skip-list, and (iv) hash linked-list, and for each implementation, we vary any design choices (such as bucket count in a hash skip-list and prefix length in a hash linked-list). We present a comprehensive performance benchmark for each buffer configuration, and highlight how the relative performance of the different buffer implementations varies with a shift in input workload. Lastly, we present a guideline for selecting the appropriate buffer implementation for a given workload and performance goal.},
-  pdf       = {Anatomy_of_the_LSM_Memory_Buffer_Insights_&_Implications.pdf},
-  selected  = {true}
-}
-@inproceedings{DBLP:conf/dbtest-ws/ZhuSAS24,
-  author    = {Zichen Zhu and Arpita Saha and Manos Athanassoulis and Subhadeep Sarkar},
-  title     = {{KVB}ench: {A} Key-Value Benchmarking Suite},
-  booktitle = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
-  pages     = {9--15},
-  year      = {2024},
-  url       = {https://doi.org/10.1145/3662165.3662765},
-  doi       = {10.1145/3662165.3662765},
-  abbr      = {DBTest},
-  abstract  = {Key-value stores are at the core of several modern NoSQL-based data systems, and thus, a comprehensive benchmark tool is of paramount importance in evaluating their performance under different workloads. Prior research reveals that real-world workloads have a diverse range of characteristics, such as the fraction of point queries that target non-existing keys, point and range deletes, as well as, different distributions for queries and updates, all of which have very different performance implications. State-of-the-art key-value workload generators, such as YCSB and db_bench, fail to generate workloads that emulate these practical workloads, limiting the dimensions on which we can benchmark the systems' performance.
-               
-               <br>In this paper, we present KVBench, a novel synthetic workload generator that fills the gap between classical key-value workload generators and more complex real-life workloads. KVBench supports a wide range of operations, including point queries, range queries, inserts, updates, deletes, range deletes, and among these options, inserts, queries, and updates can be customized by different distributions. Compared to state-of-the-art key-value workload generators, KVBench offers a richer array of knobs, including the proportion of empty point queries, customized distributions for updates and queries, and range deletes with specific selectivity, constituting a significantly flexible framework that can better emulate real-world workloads.},
-  pdf       = {KVBench_A_Key-Value_Benchmarking_Suite.pdf},
-  selected  = {true}
+@article{Boao_vldb,
+  author      = {Boao Chen and Shubham Kaushik and Subhadeep Sarkar},
+  title       = {Mind the Buffer: Dissecting the {LSM}-Buffer Design Space},
+  journal     = {Proceedings of the {VLDB} Endowment},
+  volume      = {20},
+  number      = {3},
+  pages       = {784--797},
+  year        = {2027},
+  issn        = {2150-8097},
+  doi         = {10.14778/3860016.3860040},
+  url         = {https://doi.org/10.14778/3860016.3860040},
+  abbr        = {VLDB},
+  abstract    = {Log-structured merge (LSM)-trees are widely used as the storage layer data structure in modern NoSQL key-value stores due to their superior ingestion throughput, competitive query performance, and efficient space utilization. To enable fast ingestion, LSM-based storage engines first batch the incoming data in an in-memory buffer and then, opportunistically write the data to slower secondary storage as a collection of immutable sorted runs. We point out that while the data is largely storage-resident, the overall performance of an LSM-based storage engine is critically bottlenecked by the (i) implementation, (ii) tuning, and (iii) size of the in-memory buffer. In fact, even with the same buffer configuration, the performance of an LSM-engine may vary by several orders of magnitude if there is a shift in workload. Choosing the appropriate buffer design, thus, is crucial for performance, but, at the same time, hard, as the LSM-buffer design space is vast and largely unexplored.
+  
+  <br> In this paper, we evaluate and analyze the performance of LSM-engines with eleven different buffer implementations &ndash; including three hash-hybrid designs &ndash; while varying the tuning and size for each implementation to understand their implications on performance and the associated trade-offs. For each configuration, we further vary the workload composition and distribution, the LSM-tuning, and the underlying hardware to quantify their impact on performance. Additionally, we build an Adapt buffer that switches implementation on-the-fly based on the workload shift. To the best of our knowledge, this is the first comprehensive analysis of LSM-buffer design space. Finally, for practitioners, we present a handbook with 10 key guidelines for choosing the appropriate buffer design and tuning for a given workload and performance target.},
+  pdf         = {Mind_the_Buffer_Dissecting_the_LSM-Buffer_Design_Space.pdf},
+  code_repo   = {https://github.com/SSD-Brandeis/LSMMemoryProfiling},
+  selected    = {true},
+  bibtex_show = {true}
 }
 
-@inproceedings{DBLP:conf/edbt/Raman2025,
-  author    = {Raman, Aneesh and Karatsenidis, Konstantinos and Xie, Shaolin and Olma, Matthaios and Sarkar, Subhadeep and Athanassoulis, Manos},
-  title     = {{QuIT your B+-tree for the Quick Insertion Tree}},
-  booktitle = {Proceedings of the International Conference on Extending Database Technology (EDBT)},
-  year      = {2025},
-  pages     = {451-463},
-  publisher = {{EDBT}},
-  abbr      = {EDBT},
-  abstract  = {Search trees, like B+-trees, are often used as index structures in data systems to improve query performance at the cost of index construction and maintenance. Production data systems drastically reduce the index construction cost when the data arrives fully sorted by employing a fast-path ingestion technique to their B+-tree that directly appends the incoming entries to the tail leaf. However, this optimization is only effective if the incoming data is fully sorted or has very few out-of-order entries. The state-of-the-art sortedness-aware design (SWARE) employs an in-memory buffer to capture near-sortedness to reduce the index construction cost when the data is nearly sorted. This, however, sacrifices performance during lookups and introduces additional design complexity.
-              
-              <br>To address these challenges, we present Quick Insertion Tree (QuIT), a new sortedness-aware index that improves ingestion performance with minimal design complexity and no read over- head. QuIT maintains in memory a pointer to the predicted- ordered-leaf (𝑝𝑜ℓ𝑒) that provides a sortedness-aware fast-path optimization, and facilitates faster ingestion. The key benefit comes from accurately predicting 𝑝𝑜ℓ𝑒 throughout data ingestion. Further, QuIT achieves high memory utilization by maintaining tightly packed leaf nodes when the ingested data arrives with high sortedness. This, in turn, helps improve performance during range lookups. Overall, QuIT outperforms B+-tree (SWARE) by up to 3× (2×) for ingestion, while also offering up to 1.32× faster (than SWARE) point lookup performance and accessing up to 2× fewer leaf nodes than the B+-tree during range lookups.},
-  doi       = {10.48786/edbt.2025.36},
-  url       = {https://dx.doi.org/10.48786/edbt.2025.36},
-  pdf       = {QuIT_your_B+-tree_for_the_Quick_Insertion_Tree.pdf},
-  selected  = {true}
+@article{Teona_vldb,
+  author      = {Teona Bagashvili and Tarikul Islam Papon and Subhadeep Sarkar and Manos Athanassoulis},
+  title       = {Eliminating the Hidden Cost of Zone Management in ZNS SSDs},
+  journal     = {Proceedings of the {VLDB} Endowment},
+  volume      = {20},
+  number      = {2},
+  pages       = {270--283},
+  year        = {2027},
+  issn        = {2150-8097},
+  doi         = {10.14778/3849423.3849439},
+  url         = {https://doi.org/10.14778/3849423.3849439},
+  abbr        = {VLDB},
+  abstract    = {Zoned Namespace (ZNS) SSDs offer a new storage model that allows for high-throughput and low-latency storage by eliminating device-side garbage collection. The ZNS interface exposes storage as append-only zones, thus requiring host applications (e.g., database systems) to append, read, and garbage collect their pages. However, the ZNS storage abstraction hides the substantial differences across ZNS SSD controller designs. These differences affect both the performance and predictability of host applications. We find that existing ZNS designs exhibit (a) increased device-level write amplification (DLWA), (b) increased wear, and (c) increased interference with host I/O. We identify that (i) zone allocation granularity, (ii) zone geometry, (iii) write order, and (iv) zone mapping and management are the four main causes behind this.
+  
+  <br> To provide a predictable storage device, we propose SilentZNS, a new holistic zone management approach that expands the design space of zones and allocates blocks to zones on the fly, while minimizing wear, maintaining parallelism, and avoiding superfluous writes to the device. SilentZNS is a flexible zone allocation scheme that departs from traditional logical-to-physical zone mapping and allows arbitrary collections of blocks to be assigned to a zone. SilentZNS uses wear-aware allocation and maintains competitive read latency, while substantially reducing DLWA. We implement SilentZNS using the state-of-the-art ConfZNS++ emulator and evaluate it on synthetic microbenchmarks and a key-value storage engine. We show that SilentZNS reduces DLWA by 92% at a 10% zone occupancy threshold, reduces wear by 12%, and achieves up to 3.7&times; faster workload execution.},
+  pdf         = {Eliminating_the_Hidden_Cost_of_Zone_Management_in_ZNS_SSDs.pdf},
+  code_repo   = {https://github.com/BU-DiSC/SilentZNS-bench},
+  selected    = {true},
+  bibtex_show = {true}
 }
+
+@inproceedings{DBLP:journals/pvldb/ChandaKLS26,
+  author      = {Abhishek Chanda and Shubham Kaushik and Artem Lavrov and Subhadeep Sarkar},
+  title       = {TexBench: {A} Unified Benchmarking Suite for Shifting Workloads},
+  booktitle   = {Proceedings of the {VLDB} Endowment},
+  volume      = {19},
+  number      = {12},
+  pages       = {4730--4733},
+  year        = {2026},
+  doi         = {10.14778/3827998.3828108},
+  url         = {https://www.vldb.org/pvldb/vol19/p4730-sarkar.pdf},
+  abbr        = {VLDB},
+  abstract    = {Key-value stores are widely adopted as the storage engine for modern applications, as they offer high throughput for writes, support for heterogeneous workloads, and are easily tunable. Given the large number of key-value stores available and their performance variability with workload shifts, finding the suitable data store and tuning for a specific use case often entails extensive benchmarking and analysis. State-of-the-art key-value benchmarks, such as YCSB, db_bench, and KVBench, however, are unable to capture several key characteristics of modern application workloads, including dynamically shifting workload characteristics, data with varied degrees of sortedness, or application-specific data formats. Further, existing benchmarks do not provide a unified interface to benchmark and compare multiple databases against the same workload.
+               
+  <br>We present TexBench, a unified key-value benchmarking suite that enables benchmarking key-value stores against dynamically shifting and production-like workloads and comparing their performance side by side. TexBench is built on top of Tectonic, a highly configurable, Rust-based key-value workload generator that can generate multi-phased shifting workloads and supports a rich set of operations, operation-specific distributions, variable data sortedness, and custom data formats. TexBench's unified framework also allows users to benchmark multiple databases and perform an apples-to-apples comparison under the same workload readily within a single interface. Lastly, we augment TexBench with an LLM core that allows users to describe a workload in natural language, have that translated into a custom key-value workload, and benchmark and compare multiple databases against it in parallel.},
+  pdf         = {TexBench_A_Unified_Benchmarking_Suite_for_Shifting_Workloads.pdf},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{shubham_tpctc,
+  author      = {Shubham Kaushik and Abhishek Chanda and Subhadeep Sarkar},
+  editor      = {Raghunath Nambiar and Meikel Poess},
+  title       = {TexBench: Harnessing LLMs for Efficient Key-Value Benchmarking},
+  booktitle   = {Performance Evaluation and Benchmarking {TPC} Technology Conference ({TPCTC})},
+  series      = {Lecture Notes in Computer Science},
+  year        = {2026},
+  publisher   = {Springer},
+  abbr        = {{TPCTC}},
+  abstract    = {Key-value stores are widely adopted to serve modern heterogeneous workloads, yet selecting the best key-value store for a given workload and target performance remains an incredibly complex and time-consuming task, even for expert DBAs. In practice, this entails extensive, large-scale benchmarking and analysis involving dozens of candidate key-value stores. Comparing databases using existing key-value benchmarks, such as YCSB, KVBench, db_bench, and Tectonic, has several challenges. (A) It requires a substantial effort in setting up the benchmarking environment and connecting the databases, along with a thorough understanding of benchmark-specific configurations and tuning parameters. Further, existing benchmarks either (B) are completely unable to capture the dynamic and complex nature of real-world workloads, or (C) rely on fixed, templated benchmark workloads, with limited customization options. Thus, benchmarking key-value stores against application-specific, production-like workloads is difficult and does not scale, leading to suboptimal performance. 
+  
+  <br> We introduce TexBench, a unified key-value benchmarking suite that abstracts the complexities of workload configuration, benchmark setup, and database connections behind a unified interface, enabling users to evaluate multiple key-value stores against production-like workloads, and visually compare their performance side-by-side. To emulate the dynamic and complex properties of real-world workloads, TexBench uses Tectonic -- a Rust-based, highly configurable key-value benchmark -- under the hood. To facilitate benchmarking against custom workloads, TexBench integrates a large language model (LLM) plugin that captures benchmarking specifications expressed in natural language and translates them into a JSON format interpretable by Tectonic. TexBench currently supports four key-value stores - ScyllaDB, RocksDB, Cassandra, and Redis, and performs up to 16.7&times; faster in terms of workload generation compared to raw LLM prompting. The source code of TexBench is available at https://github.com/SSD-Brandeis/TexBench.},
+  pdf         = {TexBench_Harnessing_LLMs_for_Efficient_Key-Value_Benchmarking.pdf},
+  slides      = {TexBench_TPCTC.pdf},
+  code_repo   = {https://github.com/SSD-Brandeis/TexBench},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/damon/ChowdhuryESP26,
+  author      = {Farhan S. Chowdhury and Shadman Saqib Eusuf and Subhadeep Sarkar and Tarikul Islam Papon},
+  title       = {{ZARC}: Re-inventing Zone Allocation for LSMs on {ZNS} {SSD}},
+  booktitle   = {Proceedings of the International Workshop on Data Management on New Hardware ({DaMoN})},
+  pages       = {13:1--13:5},
+  year        = {2026},
+  publisher   = {{ACM}},
+  doi         = {10.1145/3789237.3809132},
+  url         = {https://doi.org/10.1145/3789237.3809132},
+  abbr        = {{DaMoN}},
+  abstract    = {Log-Structured Merge (LSM)-based storage engines offer high write throughput by storing the data on storage as immutable files that are opportunistically reorganized through compactions. Immutability of the files and their frequent garbage collection (GC), however, leads to a major performance bottleneck: high write amplification. This is further exacerbated by the device-level GC when LSM engines run on top of ZNS SSDs. While prior research has shown that compaction-aware file placement at the device level can reduce the overall write amplification, we point out that the proposed solutions are tuned exclusively for specific compaction strategies, SSD configurations, and workloads. 
+  
+  <br> In this early-stage work, we highlight that for LSM engines on ZNS SSDs, performance is governed by a critical four-way trade-off between the compaction file picking policy (LSM-side) and the file placement, GC, and new zone allocation policies (ZNS-side). To this end, we introduce ZARC, a novel framework for Zone Allocation & Reclamation after Compaction that offers a continuum of hy- brid file placement policies to bring the overall write amplification closer to its theoretical lower bound and allows the user to navi- gate this vast design space for a given workload and configuration. ZARC's hybrid file placement policies optimize performance for each LSM-level independently, leading to level-specific file placement, garbage collection, and zone allocation policies. Preliminary results from experimentation on ZenFS, a RocksDB file system for ZNS SSDs, show that ZARC's hybrid file placement policies reduce data movement by up to 86% and ZARC-GC improves ZenFS garbage col- lection performance by (i) reclaiming sufficient free space and (ii) maintaining a small reserve of empty zones to prevent GC-induced stalls, and (iii) reducing GC-induced data movement by 8.6%.},
+  preview     = {ZARC_Re-inventing_Zone_Allocation_for_LSMs_on_ZNS_SSD.png},
+  pdf         = {ZARC_Re-inventing_Zone_Allocation_for_LSMs_on_ZNS_SSD.pdf},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/icde/KaushikAS26,
+  author      = {Shubham Kaushik and Manos Athanassoulis and Subhadeep Sarkar},
+  title       = {{RangeReduce}: Query-Driven {LSM} Compactions},
+  booktitle   = {Proceedings of the IEEE International Conference on Data Engineering ({ICDE})},
+  pages       = {2601--2614},
+  year        = {2026},
+  publisher   = {{IEEE}},
+  doi         = {10.1109/ICDE65706.2026.00194},
+  url         = {https://doi.org/10.1109/ICDE65706.2026.00194},
+  abbr        = {ICDE},
+  abstract    = {Log-structured merge (LSM) trees are widely used in the storage layer of modern ingestion-optimized data stores.     The high ingestion throughput, however, comes at the cost of sub-optimal range query (RQ) performance. This is because LSM-trees arrange the data as a hierarchical collection of sorted runs, which implies that every RQ must (i) probe all sorted runs to locate the qualifying entries, (ii) scan and merge the entries from all qualifying runs, (iii) filter out the logically invalidated entries by updates and deletes on the fly, and (iv) return the most recent version of each qualifying key. This leads to high read amplification and significant redundant work in terms of superfluous I/Os to storage and wasted CPU cycles, which is exacerbated in the presence of updates and deletes. Additionally, during compactions, the same data is read and written multiple times, further amplifying the read and write amplification. 
+  
+  <br> In this paper, we introduce RangeReduce, an RQ-optimized LSM-engine that uses RQs as a hint to compact data that is already read into memory as part of the query, and thereby, improves the overall performance of the storage engine. The key intuition is to take advantage of the I/Os and CPU cycles spent on reading and merging data from slow storage during RQs and write the RQ-qualifying data back as part of a single sorted run. Such RQ-driven compactions enable RangeReduce to (i) read less data from fewer sorted runs for subsequent RQs, (ii) reduce overall data movement (reads and writes) due to RQs and compactions, and (iii) improve space amplification, while (iv) significantly reducing compaction debt. Experiments show that RangeReduce offers up to 90% lower compaction debt, 12% less data movement, and 20% lower space amplification while improving average RQ latency by up to 18%.},
+  preview     = {RangeReduce_Query-Driven_LSM_Compactions.png},
+  pdf         = {RangeReduce_Query-Driven_LSM_Compactions.pdf},
+  video       = {https://www.youtube.com/watch?v=xgJ2g_CLjSQ},
+  slides      = {RangeReduce_ICDE.pdf},
+  poster      = {RangeReduce.pdf},
+  code_repo   = {https://github.com/SSD-Brandeis/RangeReduce},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/edbt/RamanKXOSA25,
+  author      = {Aneesh Raman and Konstantinos Karatsenidis and Shaolin Xie and Matthaios Olma and Subhadeep Sarkar and Manos Athanassoulis},
+  editor      = {Alkis Simitsis and Bettina Kemme and Anna Queralt and Oscar Romero and Petar Jovanovic},
+  title       = {QuIT your B<sup>+</sup>-tree for the Quick Insertion Tree},
+  booktitle   = {Proceedings of the International Conference on Extending Database Technology ({EDBT})},
+  pages       = {451--463},
+  year        = {2025},
+  publisher   = {OpenProceedings.org},
+  doi         = {10.48786/EDBT.2025.36},
+  url         = {https://doi.org/10.48786/edbt.2025.36},
+  abbr        = {EDBT},
+  abstract    = {Search trees, like B<sup>+</sup>-trees, are often used as index structures in data systems to improve query performance at the cost of index construction and maintenance. For state-of-the-art B<sup>+</sup>-tree designs used in commercial data systems, this cost is negligible if the data arrives as fully sorted on the index attribute. Further, production systems employ a fast-path ingestion technique for B<sup>+</sup>-trees that directly appends the incoming entries to the tail leaf if the data is fully sorted, drastically reducing the index construction cost. However, this is only effective if the incoming data arrives fully sorted or with an extremely small number of out-of-order entries. In addition, the state-of-the-art sortedness-aware design (SWARE) navigates a tradeoff between reads and writes by buffering incoming data to absorb near-sortedness, which comes at the cost of slower query performance and increased overall design complexity.
+  
+  <br> To address these challenges, we present Quick Insertion Tree (QuIT), a sortedness-aware indexing data structure that improves ingestion performance with minimal design complexity and no read overhead. QuIT maintains in memory a pointer to the predicted ordered-leaf (pole) that provides a sortedness-aware fast-path optimization, and facilitates faster index ingestion. The key benefit comes from accurately predicting pole throughout data ingestion. Further, QuIT achieves high memory utilization by maintaining tightly packed leaf nodes when the ingested data arrives as near-sorted. This, in turn, helps improve performance during range lookups. Overall, we demonstrate that QuIT outperforms B<sup>+</sup>-tree (SWARE) by up to 3&times; (2&times;) for ingestion, while maintaining the same point lookup performance (up to 1.23&times; faster). QuIT also accesses up to 2&times; fewer leaf nodes than the B<sup>+</sup>-tree during range lookups.},
+  pdf         = {QuIT_your_B+_tree_for_the_Quick_Insertion_Tree.pdf},
+  preview     = {QuIT_your_B+_tree_for_the_Quick_Insertion_Tree.png},
+  slides      = {QuiT_EDBT.pdf},
+  code_repo   = {https://github.com/BU-DiSC/quick-insertion-tree},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/tpctc/OttKCS25,
+  author      = {Alexander H. Ott and Shubham Kaushik and Boao Chen and Subhadeep Sarkar},
+  editor      = {Raghunath Nambiar and Meikel Poess},
+  title       = {Tectonic: Bridging Synthetic and Real-World Workloads for Key-Value Benchmarking},
+  booktitle   = {Performance Evaluation and Benchmarking {TPC} Technology Conference ({TPCTC})},
+  series      = {Lecture Notes in Computer Science},
+  volume      = {16261},
+  pages       = {69--88},
+  year        = {2025},
+  publisher   = {Springer},
+  isbn        = {978-3-032-18070-4},
+  doi         = {10.1007/978-3-032-18070-4\_5},
+  url         = {https://doi.org/10.1007/978-3-032-18070-4\_5},
+  timestamp   = {Thu, 14 May 2026 12:26:27 +0200},
+  biburl      = {https://dblp.org/rec/conf/tpctc/OttKCS25.bib},
+  bibsource   = {dblp computer science bibliography, https://dblp.org},
+  abbr        = {{TPCTC}},
+  abstract    = {Key-value stores are the backbone of many modern SQLand NoSQL-based data systems, serving a variety of real-world applications. Despite their widespread adoption, existing key-value benchmarks fall short across multiple dimensions when accurately replicating complex and dynamic real-world workloads. For instance, state-of-the-art key-value benchmarks, such as YCSB, KVBench, and db_bench, are unable to (i) emulate dynamic workloads where the workload composition and distribution changes arbitrarily over time; (ii) generate composite keys with different prefix distributions; and (iii) generate workloads with varied degrees of data sortedness. These limitations result in inaccurate performance evaluations and limit the ability to understand how a commercial key-value store performs under dynamically shifting workloads. 
+  
+  <br> In this paper, we introduce Tectonic, a highly configurable and resource-efficient Rust-based key-value workload generator designed to model the temporal, structural, and dynamic properties of real-world workloads. Tectonic offers (i) fine-grained control over data access patterns for inserts, updates, merges, point and range queries, and point and range deletes; (ii) configurable composite key generation/selection strategies; (iii) dynamic workload generation where the workload properties change over time; and (iv) generation of workloads with user-specified data sortedness. Tectonic does so (v) at a 2&times higher throughput than the state-of-the-art, (vi) while recording up to 84% lower main memory footprint. By bridging the gap between synthetic and production workloads, Tectonic enables in-depth analysis of key-value data systems under conditions that better reflect the demands of real-world applications. We benchmark Tectonic's performance against YCSB and KVBench in terms of latency, resource utilization, and ability to emulate production workloads. The code for Tectonic is available at: https://github.com/SSDBrandeis/tectonic.},
+  preview     = {Tectonic_Bridging_Synthetic_and_Real-World_Workloads_for_Key-Value_Benchmarking.png},
+  pdf         = {Tectonic_Bridging_Synthetic_and_Real-World_Workloads_for_Key-Value_Benchmarking.pdf},
+  slides      = {Tectonic_TPCTC.pdf},
+  code_repo   = {https://github.com/SSD-Brandeis/tectonic},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/dbtest-ws/KaushikS24,
+  author      = {Shubham Kaushik and Subhadeep Sarkar},
+  title       = {Anatomy of the {LSM} Memory Buffer: Insights {\&} Implications},
+  booktitle   = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
+  pages       = {23--29},
+  year        = {2024},
+  publisher   = {{ACM}},
+  doi         = {10.1145/3662165.3662766},
+  url         = {https://doi.org/10.1145/3662165.3662766},
+  abbr        = {DBTest},
+  abstract    = {Log-structured merge (LSM) tree is an ingestion-optimized data structure that is widely used in modern NoSQL key-value stores. To support high throughput for writes, LSM-trees maintain an in-memory buffer that absorbs the incoming entries before writing them to slower secondary storage. We point out that the choice of the data structure and implementation of the memory buffer has a significant impact on the overall performance of LSM-based storage engines. In fact, even with the same implementation of the buffer, the performance of a storage engine can vary by up to several orders of magnitude if there is a shift in the input workload.
+  
+  <br>In this paper, we benchmark the performance of LSM-based storage engines with different memory buffer implementations and under different workload characteristics. We experiment with four buffer implementations, namely, (i) vector, (ii) skip-list, (iii) hash skip-list, and (iv) hash linked-list, and for each implementation, we vary any design choices (such as bucket count in a hash skip-list and prefix length in a hash linked-list). We present a comprehensive performance benchmark for each buffer configuration, and highlight how the relative performance of the different buffer implementations varies with a shift in input workload. Lastly, we present a guideline for selecting the appropriate buffer implementation for a given workload and performance goal.},
+  preview     = {Anatomy_of_the_LSM_Memory_Buffer_Insights_&_Implications.png},
+  pdf         = {Anatomy_of_the_LSM_Memory_Buffer_Insights_&_Implications.pdf},
+  slides      = {LSMMemoryBuffer_TPCTC.pdf},
+  code_repo   = {https://github.com/SSD-Brandeis/LSMMemoryProfiling},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/dbtest-ws/ZhuSAS24,
+  author      = {Zichen Zhu and Arpita Saha and Manos Athanassoulis and Subhadeep Sarkar},
+  title       = {KVBench: {A} Key-Value Benchmarking Suite},
+  booktitle   = {Proceedings of the International Workshop on Testing Database Systems ({DBT}est)},
+  pages       = {9--15},
+  year        = {2024},
+  publisher   = {{ACM}},
+  doi         = {10.1145/3662165.3662765},
+  url         = {https://doi.org/10.1145/3662165.3662765},
+  abbr        = {DBTest},
+  abstract    = {Key-value stores are at the core of several modern NoSQL-based data systems, and thus, a comprehensive benchmark tool is of paramount importance in evaluating their performance under different workloads. Prior research reveals that real-world workloads have a diverse range of characteristics, such as the fraction of point queries that target non-existing keys, point and range deletes, as well as, different distributions for queries and updates, all of which have very different performance implications. State-of-the-art key-value workload generators, such as YCSB and db_bench, fail to generate workloads that emulate these practical workloads, limiting the dimensions on which we can benchmark the systems' performance.
+ 
+  <br>In this paper, we present KVBench, a novel synthetic workload generator that fills the gap between classical key-value workload generators and more complex real-life workloads. KVBench supports a wide range of operations, including point queries, range queries, inserts, updates, deletes, range deletes, and among these options, inserts, queries, and updates can be customized by different distributions. Compared to state-of-the-art key-value workload generators, KVBench offers a richer array of knobs, including the proportion of empty point queries, customized distributions for updates and queries, and range deletes with specific selectivity, constituting a significantly flexible framework that can better emulate real-world workloads.},
+  pdf         = {KVBench_A_Key-Value_Benchmarking_Suite.pdf},
+  slides      = {KVBench_TPCTC.pdf},
+  code_repo   = {https://github.com/BU-DiSC/kv-bench},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/icde/RamanSOA23,
+  author      = {Aneesh Raman and Subhadeep Sarkar and Matthaios Olma and Manos Athanassoulis},
+  title       = {Indexing for Near-Sorted Data},
+  booktitle   = {Proceedings of the IEEE International Conference on Data Engineering ({ICDE})},
+  pages       = {1475--1488},
+  year        = {2023},
+  publisher   = {{IEEE}},
+  doi         = {10.1109/ICDE55515.2023.00117},
+  url         = {https://doi.org/10.1109/ICDE55515.2023.00117},
+  abbr        = {ICDE},
+  abstract    = {Indexing in modern data systems facilitates efficient query processing when the selection predicate is on an indexed key. As new data is ingested, indexes are gradually populated with incoming entries. In that respect, indexing can be perceived as the process of adding structure to incoming, otherwise unsorted data. Adding structure, however, comes at a cost. Instead of simply appending the incoming entries, we insert them into the index. If the ingestion order matches the indexed attribute order, the ingestion cost is entirely redundant and can be avoided altogether (e.g., via bulk loading in a B<sup>+</sup>-tree). However, classical tree index designs do not benefit when incoming data comes with an implicit ordering that is close to being sorted, but not fully sorted.
+               
+  <br>In this paper, we study how indexes can exploit near-sortedness. Particularly, we identify sortedness as a resource that can accelerate index ingestion. We propose a new sortedness-aware (SWARE) design paradigm that combines opportunistic bulk loading, index appends, variable node fill and split factors, and an intelligent buffering scheme, to optimize ingestion and read queries in a tree index in the presence of near-sortedness. We apply SWARE to two state-of-the-art search trees (B<sup>+</sup>-tree and B<sup>&epsilon;</sup>-tree), and we demonstrate that their Sortedness-Aware counterparts (SA B<sup>+</sup>-tree and SA B<sup>&epsilon;</sup>-tree) outperform their respective baselines by up to 8.8&times; (SA B<sup>+</sup>-tree) and 7.8&times; (SA B<sup>&epsilon;</sup>-tree) for a write-heavy workload in the presence of data sortedness, while offering competitive read performance, leading to overall benefits between 1.3&times;-5&times; for mixed read/write workloads with near-sorted data. Overall, we highlight that SWARE can be applied to other tree-like data structures to accelerate index ingestion and improve their performance in the presence of data sortedness.},
+  pdf         = {Indexing_for_Near-Sorted_Data.pdf},
+  preview     = {Indexing_for_Near-Sorted_Data.png},
+  slides      = {Sware_ICDE.pdf},
+  poster      = {SWARE_ICDE_poster.pdf},
+  code_repo   = {https://github.com/BU-DiSC/sware},
+  selected    = {true},
+  bibtex_show = {true}
+}
+
+@inproceedings{DBLP:conf/icde/SarkarDA23,
+  author      = {Subhadeep Sarkar and Niv Dayan and Manos Athanassoulis},
+  title       = {The {LSM} Design Space and its Read Optimizations},
+  booktitle   = {Proceedings of the IEEE International Conference on Data Engineering ({ICDE})},
+  pages       = {3578--3584},
+  year        = {2023},
+  publisher   = {{IEEE}},
+  doi         = {10.1109/ICDE55515.2023.00273},
+  url         = {https://doi.org/10.1109/ICDE55515.2023.00273},
+  abbr        = {ICDE},
+  abstract    = {Log-structured merge (LSM) trees have emerged as one of the most commonly used storage-based data structures in modern data systems as they offer high throughput for writes and good utilization of storage space. However, LSM-trees were not originally designed to facilitate efficient reads. Thus, state-of-the-art LSM engines employ numerous optimization techniques to make reads efficient. The goal of this tutorial is to present the fundamental principles of the LSM paradigm along with the various optimization techniques and hybrid designs adopted by LSM engines to accelerate reads.
+               
+  <br>Toward this, we first discuss the basic LSM operations and their access patterns. We then discuss techniques and designs that optimize point and range lookups in LSM-trees: (i) index and (ii) filter data structures, (iii) caching, and (iv) read- friendly data layouts. Next, we present the performance tradeoff between writes and reads, outlining the rich design space of the LSM paradigm and how one can navigate it to improve query performance. We conclude by discussing practical problems and open research challenges. This will be a 1.5-hour tutorial.},
+  pdf         = {The_LSM_Design_Space_and_its_Read_Optimizations.pdf},
+  preview     = {The_LSM_Design_Space_and_its_Read_Optimizations.png},
+  slides      = {ICDE_LSM_Tutorial.pdf},
+  selected    = {true},
+  bibtex_show = {true}
+}
+@inproceedings{DBLP:conf/sigmod/ZhuSA23,
+  author      = {Zichen Zhu and Subhadeep Sarkar and Manos Athanassoulis},
+  editor      = {Sudipto Das and Ippokratis Pandis and K. Sel{\c{c}}uk Candan and Sihem Amer{-}Yahia},
+  title       = {Acheron: Persisting Tombstones in {LSM} Engines},
+  booktitle   = {Proceedings of the {ACM SIGMOD} International Conference on Management of Data},
+  pages       = {131--134},
+  year        = {2023},
+  publisher   = {{ACM}},
+  doi         = {10.1145/3555041.3589719},
+  url         = {https://doi.org/10.1145/3555041.3589719},
+  abbr        = {SIGMOD},
+  abstract    = {Modern NoSQL storage engines frequently employ log-structured merge (LSM) trees as their core data structures because they offer high ingestion rates and low latency for query processing. Client writes are captured in memory first and are gradually merged on disk in a level-wise manner. While this out-of-place paradigm sustains fast ingestion rates, it implements delete operations via inserting tombstones which logically invalidate older entries. Thus, obsolete data cannot be removed instantly and may be retained for an arbitrarily long time. Therefore, out-of-place deletion in LSM trees may, on the one hand, violate data privacy regulations (e.g., the right to be forgotten in EU's GDPR, right to delete in California's CCPA and CPRA), and on the other hand, it hurts performance.
+               
+  <br>In this paper, we develop Acheron, which demonstrates the performance implications of out-of-place deletes and how our method achieves timely persistent deletes. We integrate both prior state-of-the-art compaction policies and our recently presented method, FADE, into Acheron and visualize the life cycle of tombstones in LSM trees. Using the Acheron visualization, users can observe that the state of the art does not provide guarantees on when obsolete entries can be physically removed and also observe that FADE can achieve timely persistent deletes without full tree compaction. Users can further customize the workload, LSM tuning knobs, and disk parameters to investigate their impact on tombstones and performance. This demonstration provides key insights into the impact of tombstones on LSM-interested researchers and practitioners.},
+  preview     = {Acheron_Persisting_Tombstones_in_LSM_Engines.png},
+  pdf         = {Acheron_Persisting_Tombstones_in_LSM_Engines.pdf},
+  website     = {https://disc-projects.bu.edu/acheron/research.html},
+  bibtex_show = {true}
+}
+
 
 
 @article{DBLP:journals/tods/SarkarPSZA23,
-  author    = {Subhadeep Sarkar and Tarikul Islam Papon and Zichen Zhu and Dimitris Staratzis and Manos Athanassoulis},
-  title     = {Enabling Timely and Persistent Deletion in {LSM-E}ngines},
-  journal   = {ACM Transactions on Database Systems},
-  volume    = {48},
-  issue     = {3},
-  pages     = {1--40},
-  publisher = {{ACM}},
-  year      = {2023},
-  abbr      = {TODS},
-  url       = {https://doi.org/10.1145/3612919},
-  doi       = {10.1145/3612919},
-  abstract  = {Data-intensive applications have fueled the evolution of log-structured merge (LSM) based key-value engines that employ the out-of-place paradigm to support high ingestion rates with low read/write interference. These benefits, however, come at the cost of treating deletes as second-class citizens. A delete operation inserts a tombstone that invalidates older instances of the deleted key. State-of-the-art LSM-engines do not provide guarantees as to how fast a tombstone will propagate to persist the deletion. 
+  author      = {Subhadeep Sarkar and Tarikul Islam Papon and Dimitris Staratzis and Zichen Zhu and Manos Athanassoulis},
+  title       = {Enabling Timely and Persistent Deletion in LSM-Engines},
+  journal     = {ACM Transactions on Database Systems},
+  volume      = {48},
+  number      = {3},
+  pages       = {8:1--8:40},
+  year        = {2023},
+  doi         = {10.1145/3599724},
+  url         = {https://doi.org/10.1145/3599724},
+  abbr        = {TODS},
+  abstract    = {Data-intensive applications have fueled the evolution of log-structured merge (LSM) based key-value engines that employ the out-of-place paradigm to support high ingestion rates with low read/write interference. These benefits, however, come at the cost of treating deletes as second-class citizens. A delete operation inserts a tombstone that invalidates older instances of the deleted key. State-of-the-art LSM-engines do not provide guarantees as to how fast a tombstone will propagate to persist the deletion. 
                
-               <br>Further, LSM-engines only support deletion on the sort key. To delete on another attribute (e.g., timestamp), the entire tree is read and re-written, leading to undesired latency spikes and increasing the overall operational cost of a database. Efficient and persistent deletion is key to support: (i) streaming systems operating on a window of data, (ii) privacy with latency guarantees on data deletion, and (iii) en masse cloud deployment of data systems. Further, we document that LSM-based key-value engines perform suboptimally in presence of deletes in a workload. Tombstone-driven logical deletes, by design, are unable to purge the deleted entries in a timely manner, and retaining the invalidated entries perpetually affects the overall performance of LSM-engines in terms of space amplification, write amplification, and read performance. Moreover, the potentially unbounded latency for persistent deletes brings in critical privacy concerns in light of the data privacy protection regulations, such as the right to be forgotten in EU's GDPR, the right to delete in California's CCPA and CPRA, and deletion right in Virginia's VCDPA. Toward this, we introduce the delete design space for LSM-trees and highlight the performance implications of the different classes of delete operations.
+  <br>Further, LSM-engines only support deletion on the sort key. To delete on another attribute (e.g., timestamp), the entire tree is read and re-written, leading to undesired latency spikes and increasing the overall operational cost of a database. Efficient and persistent deletion is key to support: (i) streaming systems operating on a window of data, (ii) privacy with latency guarantees on data deletion, and (iii) en masse cloud deployment of data systems. Further, we document that LSM-based key-value engines perform suboptimally in presence of deletes in a workload. Tombstone-driven logical deletes, by design, are unable to purge the deleted entries in a timely manner, and retaining the invalidated entries perpetually affects the overall performance of LSM-engines in terms of space amplification, write amplification, and read performance. Moreover, the potentially unbounded latency for persistent deletes brings in critical privacy concerns in light of the data privacy protection regulations, such as the right to be forgotten in EU's GDPR, the right to delete in California's CCPA and CPRA, and deletion right in Virginia's VCDPA. Toward this, we introduce the delete design space for LSM-trees and highlight the performance implications of the different classes of delete operations.
                
-               <br>To address these challenges, in this article, we build a new key-value storage engine, Lethe+, that uses a very small amount of additional metadata, a set of new delete-aware compaction policies, and a new physical data layout that weaves the sort and the delete key order. We show that Lethe+ supports any user-defined threshold for the delete persistence latency offering higher read throughput (1.17x-1.4x) and lower space amplification (2.1x-9.8x), with a modest increase in write amplification (between 4% and 25%) that can be further amortized to less than 1%. In addition, Lethe+ supports efficient range deletes on a secondary delete key by dropping entire data pages without sacrificing read performance or employing a costly full tree merge.
+  <br>To address these challenges, in this article, we build a new key-value storage engine, Lethe+, that uses a very small amount of additional metadata, a set of new delete-aware compaction policies, and a new physical data layout that weaves the sort and the delete key order. We show that Lethe+ supports any user-defined threshold for the delete persistence latency offering higher read throughput (1.17&times;-1.4&times;) and lower space amplification (2.1&times;-9.8&times;), with a modest increase in write amplification (between 4% and 25%) that can be further amortized to less than 1%. In addition, Lethe+ supports efficient range deletes on a secondary delete key by dropping entire data pages without sacrificing read performance or employing a costly full tree merge.
                },
-  pdf       = {Enabling_Timely_and_Persistent_Deletion_in_LSM-Engines.pdf},
-  selected  = {true}
+  pdf         = {Enabling_Timely_and_Persistent_Deletion_in_LSM-Engines.pdf},
+  bibtex_show = {true}
 }

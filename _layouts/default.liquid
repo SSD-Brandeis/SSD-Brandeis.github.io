@@ -49,19 +49,19 @@
     </div>
     </div>
   
-    {%  include news.liquid %}
-
-    {%  include research.liquid %}
-
-    {% include selected_papers.liquid %}
-
-    {%  include classes.liquid %}
-    
-    {% include team.liquid %}
-
-    {% comment %} {% include alumni.liquid %} {% endcomment %}
-
-    {% include contact.liquid %}
+    {% comment %}
+      Single-page homepage sections — only render on the home/about page,
+      not on standalone pages like research project detail pages.
+    {% endcomment %}
+    {% if page.layout == 'about' %}
+      {% include news.liquid %}
+      {% include research.liquid %}
+      {% include selected_papers.liquid %}
+      {% include classes.liquid %}
+      {% include team.liquid %}
+      {% comment %} {% include alumni.liquid %} {% endcomment %}
+      {% include contact.liquid %}
+    {% endif %}
 
     <!-- Footer -->
     {% include footer.liquid %}

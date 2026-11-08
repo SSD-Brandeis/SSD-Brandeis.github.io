@@ -961,23 +961,12 @@ html.transition *:after {
 }
 
 .top-container {
-  background-image: url('/assets/img/background.webp');
-  background-repeat: no-repeat;
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center;
-  height: 50vh;
+  background: none;
+  height: auto;
 }
 
 .top-container::before {
-  content: ""; /* Required for the pseudo-element to work */
-  position: absolute; /* Position it relative to the body */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7); /* Black with 50% opacity */
-  z-index: 1; /* Ensure it's above the background image */
-  height: 50vh;
+  display: none;
 }
 
 .container {

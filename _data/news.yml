@@ -1,45 +1,230 @@
+# Lab news, newest first. The homepage shows the first 15; the rest sit behind "Show more".
+#
+#   date:    "Mon YYYY"
+#   text:    one sentence; inline HTML allowed (links, <b>, <sup>)
+#   pdf:     file in assets/fulltext/ (or a full URL)
+#   slides:  file in assets/resources/ (or a full URL)
+#   poster:  file in assets/resources/ (or a full URL)
+#   video, code, demo: full URLs
+# Each link field renders as an icon after the text, like the publication icons.
 
+- date: Oct 2026
+  text: 'Our paper "Mind the Buffer: Dissecting the LSM-Buffer Design Space" is <b>accepted for publication</b> in <a href="https://vldb.org/2027/" target="_blank" rel="noopener">VLDB 2027</a>.'
+  pdf: Mind_the_Buffer_Dissecting_the_LSM-Buffer_Design_Space.pdf
+  code: https://github.com/SSD-Brandeis/LSMMemoryProfiling
 
+- date: Sep 2026
+  text: 'Our paper "Eliminating the Hidden Cost of Zone Management in ZNS SSDs" is <b>accepted for publication</b> in <a href="https://vldb.org/2027/" target="_blank" rel="noopener">VLDB 2027</a>.'
+  pdf: Eliminating_the_Hidden_Cost_of_Zone_Management_in_ZNS_SSDs.pdf
+  code: https://github.com/BU-DiSC/SilentZNS-bench
 
-- title: "We are hosting North-East Database Day 2025 at Brandeis! SSD Lab presents three posters!" 
-  date: Jan 2025
-  link: "/"
+- date: Sep 2026
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://2027.sigmod.org/" target="_blank" rel="noopener">SIGMOD Demo 2027</a>.'
 
+- date: Sep 2026
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://edbticdt2027.github.io/" target="_blank" rel="noopener">EDBT Demo 2027</a>.'
 
-# - title: "Congratulations, Arpita Saha, for starting her new position in as a PhD student at Tufts!" 
-#   date: Nov 2024
-#   link: "/"
+- date: Jul 2026
+  text: 'Our paper "TexBench: Harnessing LLMs for Efficient Key-Value Benchmarking" is <b>accepted for publication</b> in <a href="https://www.tpc.org/tpctc/tpctc2026/default5.asp" target="_blank" rel="noopener">TPCTC 2026</a>.'
+  pdf: TexBench_Harnessing_LLMs_for_Efficient_Key-Value_Benchmarking.pdf
+  slides: TexBench_TPCTC.pdf
+  code: https://github.com/SSD-Brandeis/TexBench
 
+- date: Jun 2026
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://icde2027.github.io/" target="_blank" rel="noopener">ICDE 2027</a>.'
 
-- title: "Our paper ''QuIT your B+Tree for Quick Insertion Tree'' is accepted for publication in EDBT 2025."
-  date: Oct 2024
-  # link: "/"
-  document_link: "#"
+- date: May 2026
+  text: 'Our demonstration paper "TexBench: A Unified Benchmarking Suite for Shifting Workloads" is <b>accepted for publication</b> in <a href="https://vldb.org/2026/demonstrations.html" target="_blank" rel="noopener">VLDB 2026</a>.'
+  pdf: TexBench_A_Unified_Benchmarking_Suite_for_Shifting_Workloads.pdf
+  code: https://github.com/SSD-Brandeis/TexBench
 
+- date: Apr 2026
+  text: 'Our paper "ZARC: Re-inventing Zone Allocation for LSMs on ZNS SSD" is <b>accepted for publication</b> in <a href="https://damon-db.github.io/2026/" target="_blank" rel="noopener">DaMoN 2026</a>.'
+  pdf: ZARC_Re-inventing_Zone_Allocation_for_LSMs_on_ZNS_SSD.pdf
 
-- title: "Congratulations, Alex Ott! Alex gets full scholarship to attend the Brandeis x Possible program." 
-  date: Sep 2024
-  link: "/"
+- date: Mar 2026
+  text: 'Our paper "RangeReduce: Query-Driven LSM Compactions" is <b>accepted for publication</b> in <a href="https://icde2026.github.io/program_details.html#R-38" target="_blank" rel="noopener">IEEE ICDE 2026</a>.'
+  pdf: RangeReduce_Query-Driven_LSM_Compactions.pdf
+  slides: RangeReduce_ICDE.pdf
+  poster: RangeReduce.pdf
+  video: https://www.youtube.com/watch?v=xgJ2g_CLjSQ
+  code: https://github.com/SSD-Brandeis/RangeReduce
 
-- title: "Our paper ''Anatomy of the LSM Memory Buffer: Insights & Implications'' is accepted for publication in DBTest 2024."
-  date: May 2024
-  slides_link: "#"
+- date: Feb 2026
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://vldb.org/2027/" target="_blank" rel="noopener">VLDB 2027</a>.'
 
-- title: "Our paper ''KVBench: A Key-Value Benchmarking Suite'' is accepted for publication in DBTest 2024."
-  date: May 2024
-  link: "/"
+- date: Jan 2026
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://vldb.org/2026/call-for-demonstrations.html" target="_blank" rel="noopener">VLDB Demo 2026</a>.'
 
+- date: Dec 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://edbticdt2027.github.io/" target="_blank" rel="noopener">EDBT 2027</a>.'
 
-- title: "SSD Lab goes to North-East Database Day 2024 with two posters!" 
-  date: Apr 2024
-  link: "/"
+- date: Oct 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://2026.sigmod.org/" target="_blank" rel="noopener">SIGMOD 2026</a>.'
 
+- date: Oct 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://icde2026.github.io/" target="_blank" rel="noopener">ICDE Demo 2026</a>.'
 
-- title: "Congratulations to Alex Ott for being selected for the Gordon Science Research Fellowship!" 
-  date: Mar 2024
-  link: "/"
+- date: Oct 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://2026.sigmod.org/" target="_blank" rel="noopener">SIGMOD Demo 2026</a>.'
 
+- date: Sep 2025
+  text: 'Prof. Sarkar will serve as the <b>General Co-Chair</b> of <a href="https://nedbday.github.io/2026/" target="_blank" rel="noopener">North-East Database Day 2026</a>.'
 
-- title: "Our paper ''Enabling Timely and Persistent Deletion in LSM-Engines'' is now published in ACM ToDS."
-  date: Aug 2023
-  link: "/"
+- date: Sep 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://conferences.cis.um.edu.mo/ieeebigdata2025/" target="_blank" rel="noopener">IEEE BigData 2025</a>.'
+
+- date: Aug 2025
+  text: 'Our paper "Tectonic: Bridging Synthetic and Real-World Workloads for Key-Value Benchmarking" is <b>accepted for publication</b> in <a href="https://www.tpc.org/tpctc/tpctc2025/default5.asp?lang=cn" target="_blank" rel="noopener">TPCTC 2025</a>.'
+  pdf: Tectonic_Bridging_Synthetic_and_Real-World_Workloads_for_Key-Value_Benchmarking.pdf
+  slides: Tectonic_TPCTC.pdf
+  code: https://github.com/SSD-Brandeis/tectonic
+
+- date: Jul 2025
+  text: 'Prof. Sarkar will serve as the <b>Proceedings Chair</b> of <a href="https://vldb.org/2026/?officers" target="_blank" rel="noopener">PVLDB 2025 – 2026</a>.'
+
+- date: Mar 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://adms-conf.org/adms_2025.html" target="_blank" rel="noopener">ADMS 2025</a>.'
+
+- date: Feb 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of VLDB Demo 2025.'
+
+- date: Jan 2025
+  text: 'We hosted <a href="https://nedbday.github.io/2025/" target="_blank" rel="noopener">North-East Database Day 2025</a> at Brandeis! The SSD Lab presented <b>three posters</b>.'
+
+- date: Jan 2025
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://www.vldb.org/pvldb/volumes/19/review-board" target="_blank" rel="noopener">VLDB 2026</a>.'
+
+# - date: Nov 2024
+#   text: 'Congratulations, Arpita Saha, on starting her new position as a PhD student at Tufts!'
+
+- date: Nov 2024
+  text: 'Prof. Sarkar will deliver a talk on "Building Deletion-Compliant Data Systems" at <b>Williams College</b>.'
+
+- date: Oct 2024
+  text: 'Our paper "QuIT your B<sup>+</sup>-tree for the Quick Insertion Tree" is <b>accepted for publication</b> in <a href="https://openproceedings.org/2025/conf/edbt/paper-118.pdf" target="_blank" rel="noopener">EDBT 2025</a>.'
+  pdf: QuIT_your_B+_tree_for_the_Quick_Insertion_Tree.pdf
+  slides: QuiT_EDBT.pdf
+  code: https://github.com/BU-DiSC/quick-insertion-tree
+
+- date: Sep 2024
+  text: 'Congratulations, Alex Ott! Alex received a <b>full scholarship</b> to attend the Brandeis x Possible program.'
+
+- date: Aug 2024
+  text: 'Prof. Sarkar will serve as the <b>General Chair</b> of <a href="https://nedbday.github.io/2025/" target="_blank" rel="noopener">North-East Database Day 2025</a>, to be held at Brandeis on Jan 9, 2025.'
+
+- date: Jun 2024
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://2025.sigmod.org/" target="_blank" rel="noopener">SIGMOD Demo 2025</a>.'
+
+- date: May 2024
+  text: 'Our paper "Anatomy of the LSM Memory Buffer: Insights &amp; Implications" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/10.1145/3662165.3662766" target="_blank" rel="noopener">DBTest 2024</a>.'
+  pdf: Anatomy_of_the_LSM_Memory_Buffer_Insights_&_Implications.pdf
+  slides: LSMMemoryBuffer_TPCTC.pdf
+  code: https://github.com/SSD-Brandeis/LSMMemoryProfiling
+
+- date: May 2024
+  text: 'Our paper "KVBench: A Key-Value Benchmarking Suite" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/10.1145/3662165.3662765" target="_blank" rel="noopener">DBTest 2024</a>.'
+  pdf: KVBench_A_Key-Value_Benchmarking_Suite.pdf
+  slides: KVBench_TPCTC.pdf
+  code: https://github.com/BU-DiSC/kv-bench
+
+- date: Apr 2024
+  text: 'Prof. Sarkar will serve as the <b>Program Chair</b> of <a href="https://bu-disc.github.io/nedbday/2024/" target="_blank" rel="noopener">North-East Database Day 2024</a>.'
+
+- date: Apr 2024
+  text: 'The SSD Lab goes to <a href="https://bu-disc.github.io/nedbday/2024/" target="_blank" rel="noopener">North-East Database Day 2024</a> with <b>two posters</b>!'
+
+- date: Apr 2024
+  text: 'Prof. Sarkar will deliver a <b>guest lecture</b> on "Toward Privacy-Aware Data Systems" at <b>Boston University</b>.'
+
+- date: Mar 2024
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="http://bigdataieee.org/BigData2024/index.html" target="_blank" rel="noopener">IEEE BigData 2024</a>.'
+
+- date: Mar 2024
+  text: 'Congratulations to Alex Ott on being selected for the <b>Gordon Science Research Fellowship</b>!'
+
+- date: Feb 2024
+  text: 'Prof. Sarkar will serve as the <b>Proceedings Chair</b> of <a href="https://vldb.org/2025/?officers" target="_blank" rel="noopener">PVLDB 2024 – 2025</a>.'
+
+- date: Jan 2024
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://www.vldb.org/pvldb/volumes/18/review-board" target="_blank" rel="noopener">VLDB 2025</a>.'
+
+- date: Oct 2023
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://sea-data.ml/" target="_blank" rel="noopener">SEAGraph 2024</a>.'
+
+- date: Aug 2023
+  text: 'Our paper "Enabling Timely and Persistent Deletion in LSM-Engines" is now <b>published</b> in <a href="https://dl.acm.org/doi/full/10.1145/3599724" target="_blank" rel="noopener">ACM TODS</a>.'
+  pdf: Enabling_Timely_and_Persistent_Deletion_in_LSM-Engines.pdf
+
+- date: Aug 2023
+  text: 'Prof. Sarkar will serve as the <b>Poster Chair</b> of <a href="https://acmsocc.org/2023/officers.html" target="_blank" rel="noopener">ACM SoCC 2023</a>.'
+
+- date: Apr 2023
+  text: 'Our paper "Enabling Timely and Persistent Deletion in LSM-Engines" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/full/10.1145/3599724" target="_blank" rel="noopener">ACM TODS</a>.'
+  pdf: Enabling_Timely_and_Persistent_Deletion_in_LSM-Engines.pdf
+
+- date: Mar 2023
+  text: 'Subhadeep Sarkar will be <b>joining Brandeis University as an Assistant Professor of Computer Science</b> in Fall 2023.'
+
+- date: Mar 2023
+  text: 'Our demonstration paper "Acheron: Persisting Tombstones in LSM Engines" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/10.1145/3555041.3589719" target="_blank" rel="noopener">SIGMOD 2023</a>.'
+  pdf: Acheron_Persisting_Tombstones_in_LSM_Engines.pdf
+  demo: https://disc-projects.bu.edu/acheron/
+
+- date: Mar 2023
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="https://vldb.org/2022/?call-for-demonstrations" target="_blank" rel="noopener">VLDB Demo 2023</a>.'
+
+- date: Feb 2023
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="http://bigdataieee.org/BigData2023/index.html" target="_blank" rel="noopener">IEEE BigData 2023</a>.'
+
+- date: Jan 2023
+  text: 'Our tutorial "The LSM Design Space and its Read Optimizations" is <b>accepted for publication</b> in <a href="https://ieeexplore.ieee.org/document/10184626" target="_blank" rel="noopener">ICDE 2023</a>.'
+  pdf: The_LSM_Design_Space_and_its_Read_Optimizations.pdf
+  slides: ICDE_LSM_Tutorial.pdf
+
+- date: Dec 2022
+  text: 'Our paper "Indexing for Near-Sorted Data" is <b>accepted for publication</b> in <a href="https://ieeexplore.ieee.org/document/10184781" target="_blank" rel="noopener">ICDE 2023</a>.'
+  pdf: Indexing_for_Near-Sorted_Data.pdf
+  slides: Sware_ICDE.pdf
+  poster: SWARE_ICDE_poster.pdf
+  code: https://github.com/BU-DiSC/sware
+
+- date: Nov 2022
+  text: 'Prof. Sarkar will deliver a talk on "Constructing and Analyzing the LSM Compaction Design Space" at <b>MongoDB</b>.'
+
+- date: Oct 2022
+  text: 'Prof. Sarkar will deliver an <b>invited talk</b> on "Toward Building Deletion-Compliant Data Systems" at <a href="http://hpts.ws/agenda.html" target="_blank" rel="noopener">HPTS 2022</a>.'
+  pdf: Toward_Building_Deletion_Compliant_Data_Systems.pdf
+  slides: HPTS.pdf
+
+- date: Aug 2022
+  text: 'Our paper "BoDS: A Benchmark on Data Sortedness" is <b>accepted for publication</b> in <a href="https://link.springer.com/chapter/10.1007/978-3-031-29576-8_2" target="_blank" rel="noopener">TPCTC 2022</a>.'
+  pdf: BODS_A_Benchmark_on_Data_Sortedness.pdf
+
+- date: May 2022
+  text: 'Prof. Sarkar will serve as the <b>Sponsorship Chair</b> and on the <b>Program Committee</b> of <a href="https://acmsocc.org/2022/officers.html" target="_blank" rel="noopener">ACM SoCC 2022</a>.'
+
+- date: Apr 2022
+  text: 'Prof. Sarkar will serve on the <b>Program Committee</b> of <a href="http://edbticdt2023.cs.uoi.gr/?contents=EDBT_Committee.html" target="_blank" rel="noopener">EDBT 2023</a>.'
+
+- date: Mar 2022
+  text: 'Our demonstration paper "Compactionary: A Dictionary for LSM Compactions" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/10.1145/3514221.3520169" target="_blank" rel="noopener">SIGMOD 2022</a>.'
+  pdf: Compactionary-A_Dictionary_for_LSM_Compactions.pdf
+  poster: Compactionary_poster.pdf
+  demo: https://disc-projects.bu.edu/compactionary/#interactiveDemo
+
+- date: Mar 2022
+  text: 'Our tutorial "Dissecting, Designing, and Optimizing LSM-based Data Stores" is <b>accepted for publication</b> in <a href="https://dl.acm.org/doi/10.1145/3514221.3522563" target="_blank" rel="noopener">SIGMOD 2022</a>.'
+  pdf: Dissecting_Designing_and_Optimizing_LSM-based_Data_Stores.pdf
+  slides: SIGMOD_LSM_Tutorial.pdf
+  video: https://www.youtube.com/watch?v=Al3krW4Sh3Q
+
+- date: Mar 2022
+  text: 'Our <i>invited paper</i> "Building Deletion-Compliant Data Systems" is now <b>published</b> in the <a href="http://sites.computer.org/debull/A22mar/issue1.htm" target="_blank" rel="noopener">IEEE Data Engineering Bulletin</a>.'
+  pdf: Building_Deletion-Compliant_Data_Systems.pdf
+
+- date: Feb 2022
+  text: 'Our paper "Query Language Support for Timely Data Deletion" is <b>accepted for publication</b> in <a href="https://conferences.inf.ed.ac.uk/edbticdt2022/?contents=accepted-papers-research-track.html" target="_blank" rel="noopener">EDBT 2022</a>.'
+  pdf: Query_Language_Support_for_Timely_Data_Deletion.pdf
+  slides: QL-slides_EDBT.pdf
+  video: https://www.youtube.com/watch?v=aUZ_SCPOtWo

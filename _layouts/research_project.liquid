@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="rp">
+  <div class="container rp-container">
+    <a href="{{ '/#research' | relative_url }}" class="rp-crumb">← Research</a>
+    <h1 class="rp-title">{{ page.title }}</h1>
+
+    {% if page.image %}
+      <div class="rp-figure">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </div>
+    {% endif %}
+
+    <article class="rp-content">
+      {{ content }}
+    </article>
+
+    <div class="rp-back">
+      <a href="{{ '/#research' | relative_url }}">← Back to all research</a>
+    </div>
+  </div>
+</div>

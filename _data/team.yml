@@ -1,13 +1,13 @@
 - name: Subhadeep Sarkar
   role: admin
-  image: /assets/img/sarkar_cropped.png
+  image: /assets/people/sarkar_cropped.png
   designation: Assistant Professor
-  email: subhadeep@brandeis.com
+  email: subhadeep@brandeis.edu
   office: "Office Volen 259"
   website: https://subhadeep.net/
 - name: Shubham Kaushik
   role: member
-  image: /assets/img/shubham_kaushik.jpg
+  image: /assets/people/shubham_kaushik.jpg
   designation: PhD Researcher
   email: kaushiks@brandeis.edu
   office: "Office Volen 110"
@@ -15,29 +15,69 @@
   website: https://shubhamkaushik.com/
 - name: James Chen
   role: member
-  image: /assets/img/james_chen.jpeg
+  image: /assets/people/james_chen.jpeg
   designation: PhD Researcher
   email: boaochen@brandeis.edu
   office: "Office Volen 111"
   alumni: false
+- name: Steven (Hongchen) Yang
+  role: member
+  image: /assets/people/steven_yang.jpg
+  designation: Undergraduate Researcher
+  alumni: false
+  website: https://www.linkedin.com/in/hongchen-yang-3803b4294/
+# Alumni, most recent first
+- name: Artem Lavrov
+  role: member
+  image: /assets/people/artem_lavrov.jpeg
+  designation: Undergraduate Researcher
+  alumni: true
+  website: https://www.linkedin.com/in/artem-lavrov-76371428b/
 - name: Yu-Cheng Huang
   role: member
-  image: /assets/img/yuchen_huang.jpg
-  designation: Researcher
+  image: /assets/people/yuchen_huang.jpg
+  designation: Graduate Researcher
   email: ychuang2@bu.edu
-  alumni: false
-  # office: "91011 Office Address"
-- name: Arpita Saha
-  role: member
-  image: /assets/img/arpita_saha.png
-  designation: Researcher
-  alumni: false
-  # email: arpitasaha1996@gmail.com
-  # office: "91011 Office Address"
+  alumni: true
+  now_at: Realtek Semiconductor Corp.
+  website: https://www.linkedin.com/in/yu-cheng-huang-181b67231/?locale=en
 - name: Alexander Ott
   role: member
-  image: /assets/img/alexander_ott.webp
-  designation: Researcher
-  email: alexanderott@brandeis.edu
-  alumni: false
-  # office: "91011 Office Address"
+  image: /assets/people/alexander_ott.webp
+  designation: Undergraduate Researcher
+  # email: alexanderott@brandeis.edu
+  alumni: true
+  website: https://www.linkedin.com/in/alexanderhott/
+- name: Parthiv Ganguly
+  role: member
+  image: /assets/people/placeholder_avatar.svg
+  designation: Graduate Researcher
+  alumni: true
+  now_at: Nebulaa IT Solutions
+- name: Minjie Tang
+  role: member
+  image: /assets/people/minjie_tang.jpeg
+  designation: Graduate Researcher
+  alumni: true
+  now_at: Circle Cat
+  website: https://www.linkedin.com/in/minjie-tang/
+- name: Arun Shrestha
+  role: member
+  image: /assets/people/arun_shrestha.JPG
+  designation: Graduate Researcher
+  alumni: true
+- name: Arpita Saha
+  role: member
+  image: /assets/people/arpita_saha.png
+  designation: Graduate Researcher
+  alumni: true
+  now_at: Tufts University (PhD)
+  website: https://www.linkedin.com/in/arp-saha/
+  # email: arpitasaha1996@gmail.com
+- name: Sherren Jielita
+  role: member
+  image: /assets/people/sherren_jielita.jpeg
+  designation: Undergraduate Researcher
+  alumni: true
+  now_at: Meta
+  website: https://www.linkedin.com/in/sherrenjie/

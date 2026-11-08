@@ -1,31 +1,70 @@
-<section class="team-section" id="team">
-    <div class="container">
-    <h1>Team</h1>
-    <div class="team-container">
-        {% for member in site.data.team %}
-            {% if member.role == 'admin' %}
-            <div class="admin-member">
-                <a href="{% if member.website %}{{member.website}}{% endif %}"><img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo"></a>
-                <div class="member-info">
-                    <div class="member-name">{{ member.name }}</div>
-                    <p><span class="designation">{{ member.designation }}</span>{% if member.office %}<br>{{ member.office }}{% endif %}<br><span  class="email">{{ member.email }}</span></p>
-                </div>
-            </div>
-            {% endif %}
-        {% endfor %}
-        {% for member in site.data.team %}
-            {% if member.role != 'admin' %}
-                {% if member.alumni == false %}
-            <div class="team-member">
-                <a href="{% if member.website %}{{member.website}}{% endif %}"><img src="{{ member.image }}" alt="{{ member.name }}" class="team-photo"></a>
-                <div class="member-info">
-                    <div class="member-name">{{ member.name }}</div>
-                    <p><span class="designation">{{ member.designation }}</span>{% if member.office %}<br>{{ member.office }}{% endif %}<br><span  class="email">{{ member.email }}</span></p>
-                </div>
-            </div>
+<section class="sp-section" id="team">
+  <div class="container">
+    <div class="sp-section-header">
+      <h2>Team</h2>
+      <div class="sp-rule"></div>
+    </div>
+
+    <div class="sp-students-grid">
+      {% for member in site.data.team %}
+        {% if member.alumni != true %}
+        <div class="sp-student-card">
+          {% if member.website %}
+          <a href="{{ member.website }}" target="_blank" rel="noopener">
+            <img src="{{ member.image }}" alt="{{ member.name }}">
+          </a>
+          {% else %}
+          <img src="{{ member.image }}" alt="{{ member.name }}">
+          {% endif %}
+          <div class="sp-student-name">{{ member.name }}</div>
+          <div class="sp-student-role">{{ member.designation }}</div>
+          {% if member.email %}
+          <div class="sp-student-email">{{ member.email }}</div>
+          {% endif %}
+        </div>
         {% endif %}
-            {% endif %}
+      {% endfor %}
+    </div>
+
+    {% assign alumni_count = 0 %}
+    {% for member in site.data.team %}
+      {% if member.alumni == true %}{% assign alumni_count = alumni_count | plus: 1 %}{% endif %}
     {% endfor %}
+
+    {% if alumni_count > 0 %}
+    <div class="sp-students-label sp-alumni-label">Alumni</div>
+    <div class="sp-alumni-grid">
+      {% for member in site.data.team %}
+        {% if member.alumni == true %}
+        <div class="sp-alumni-card">
+          {% if member.website %}
+          <a href="{{ member.website }}" target="_blank" rel="noopener">
+            <img src="{{ member.image }}" alt="{{ member.name }}">
+          </a>
+          {% else %}
+          <img src="{{ member.image }}" alt="{{ member.name }}">
+          {% endif %}
+          <div class="sp-alumni-name">{{ member.name }}</div>
+          <div class="sp-alumni-role">{{ member.designation }}</div>
+          {% if member.now_at %}
+          <div class="sp-alumni-now">Now at {{ member.now_at }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
     </div>
+    {% endif %}
+
+    {% if site.data.gallery.size > 0 %}
+    <div class="sp-students-label sp-gallery-label">Lab Life</div>
+    <div class="sp-gallery-grid">
+      {% for photo in site.data.gallery %}
+      <div class="sp-gallery-item">
+        <img src="{{ photo.image }}" alt="{{ photo.caption | default: 'SSD Lab' }}" loading="lazy">
+        {% if photo.caption %}<div class="sp-gallery-caption">{{ photo.caption }}</div>{% endif %}
+      </div>
+      {% endfor %}
     </div>
+    {% endif %}
+  </div>
 </section>

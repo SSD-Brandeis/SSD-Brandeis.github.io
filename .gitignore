@@ -11,3 +11,8 @@ assets/libs/
 node_modules/
 vendor
 .idea
+# Full-size originals of the Lab Life photos (web copies live one level up)
+assets/img/gallery/_originals/
+# Local-only tooling
+.claude/
+.DS_Store

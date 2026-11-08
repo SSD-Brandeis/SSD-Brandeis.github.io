@@ -1,32 +1,84 @@
-
-<section class="news-section container" id="news">
-<h1>Latest News</h1>
-    {% for post in site.data.news %}
-    <div class="news-item">
-      <p class="news-date" style="font-size: 13pt;"><span style="color: black;">{{ post.date | date: "%b, %Y" }} </span></p>
-      <div class="news-desc">
-          <h5 style="font-size: 13pt;">{{ post.title }}
-          {% if post.document_link %}
-            <a href="{{ post.document_link }}">
-              <span class="icon" style="color: #189dfb;"><i class="fa-solid fa-book-open-reader"></i></span> 
-            </a>
-        {% endif %}
-        {% if post.slides_link %}
-            <a href="{{ post.slides_link }}">
-              <span class="icon" style="color: rgb(255, 140, 0);"><i class="fa-brands fa-slideshare"></i></span> 
-            </a>
-        {% endif %}
-        {% if post.video_link %}
-            <a href="{{ post.video_link }}">
-              <span class="icon" style="color: rgb(247, 66, 66);"><i class="fa-solid fa-video"></i></span>
-            </a>
-        {% endif %}</h5>
-      </div>
+{% assign news_visible = 15 %}
+<section class="sp-section" id="news">
+  <div class="container">
+    <div class="sp-section-header">
+      <h2>Latest News</h2>
+      <div class="sp-rule"></div>
     </div>
-    {% endfor %}
+
+    <ul class="sp-news-list" id="sp-news-list" data-visible="{{ news_visible }}">
+      {% for post in site.data.news %}
+      <li{% if forloop.index > news_visible %} class="sp-news-extra"{% endif %}>
+        <span class="sp-news-date">{{ post.date }}</span>
+        <span class="sp-news-text">
+          {{ post.text }}
+          {% if post.pdf or post.slides or post.poster or post.video or post.code or post.demo %}
+          <span class="sp-news-links">
+            {%- if post.pdf -%}
+              {%- if post.pdf contains '://' %}{% assign href = post.pdf %}{% else %}{% assign href = post.pdf | prepend: '/assets/fulltext/' | relative_url %}{% endif -%}
+              <a href="{{ href }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="PDF"><i class="fa-regular fa-file-pdf"></i></a>
+            {%- endif -%}
+            {%- if post.slides -%}
+              {%- if post.slides contains '://' %}{% assign href = post.slides %}{% else %}{% assign href = post.slides | prepend: '/assets/resources/' | relative_url %}{% endif -%}
+              <a href="{{ href }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="Slides"><i class="fa-solid fa-chalkboard"></i></a>
+            {%- endif -%}
+            {%- if post.poster -%}
+              {%- if post.poster contains '://' %}{% assign href = post.poster %}{% else %}{% assign href = post.poster | prepend: '/assets/resources/' | relative_url %}{% endif -%}
+              <a href="{{ href }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="Poster"><i class="fa-regular fa-image"></i></a>
+            {%- endif -%}
+            {%- if post.video -%}
+              <a href="{{ post.video }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="Video"><i class="fa-regular fa-circle-play"></i></a>
+            {%- endif -%}
+            {%- if post.code -%}
+              <a href="{{ post.code }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="Code"><i class="fa-brands fa-github"></i></a>
+            {%- endif -%}
+            {%- if post.demo -%}
+              <a href="{{ post.demo }}" target="_blank" rel="noopener" class="pub-icon" role="button" aria-label="Demo"><i class="fa-solid fa-globe"></i></a>
+            {%- endif -%}
+          </span>
+          {% endif %}
+        </span>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% if site.data.news.size > news_visible %}
+    <div class="sp-news-toggle" hidden>
+      <button type="button" class="sp-news-btn" id="sp-news-more">Show more</button>
+      <button type="button" class="sp-news-btn" id="sp-news-less" hidden>Show less</button>
+    </div>
+    {% endif %}
+  </div>
 </section>
+<script>
+// Older items stay in the HTML (visible without JS); reveal them in steps of `data-visible`.
+(function () {
+  var list = document.getElementById('sp-news-list');
+  var wrap = document.querySelector('#news .sp-news-toggle');
+  if (!list || !wrap) return;
+  var rows = Array.from(list.querySelectorAll('li.sp-news-extra'));
+  var step = parseInt(list.dataset.visible, 10) || 15;
+  var more = document.getElementById('sp-news-more');
+  var less = document.getElementById('sp-news-less');
+  var shown = 0;
 
+  function render() {
+    rows.forEach(function (r, i) { r.hidden = i >= shown; });
+    more.hidden = shown >= rows.length;
+    less.hidden = shown === 0;
+  }
 
+  more.addEventListener('click', function () {
+    shown = Math.min(shown + step, rows.length);
+    render();
+  });
+  less.addEventListener('click', function () {
+    shown = 0;
+    render();
+    list.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 
-
-
+  wrap.hidden = false;
+  render();
+})();
+</script>
