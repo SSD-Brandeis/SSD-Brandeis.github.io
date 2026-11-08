@@ -884,7 +884,7 @@ body.sp-lb-lock { overflow: hidden; }
     color: $sp-text;
     line-height: 1.3;
 
-    b { font-weight: 700; color: #111; }
+    i:not([class]) { font-style: italic; color: #111; }  // text emphasis, not the icon glyphs
 
     a:not(.pub-icon) {
       color: $sp-blue-dk;
