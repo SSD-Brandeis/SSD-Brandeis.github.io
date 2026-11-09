@@ -25,7 +25,7 @@
   image: /assets/people/steven_yang.jpg
   designation: Undergraduate Researcher
   alumni: false
-  website: https://www.linkedin.com/in/hongchen-yang-3803b4294/
+  website: https://steventimes.github.io/
 - name: Artem Lavrov
   role: member
   image: /assets/people/artem_lavrov.jpeg
@@ -46,7 +46,6 @@
   email: ychuang2@bu.edu
   alumni: true
   next: Realtek Semiconductor Corp.
-  website: https://www.linkedin.com/in/yu-cheng-huang-181b67231/?locale=en
 - name: Arun Shrestha
   role: member
   image: /assets/people/arun_shrestha.JPG
