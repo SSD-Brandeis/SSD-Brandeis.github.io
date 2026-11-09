@@ -133,7 +133,7 @@ $sp-white:   #ffffff;
     width: 100%;
     max-width: 90vw;
     margin: 0 auto;
-    padding: 5.5rem 4rem 2.25rem;
+    padding: 7.25rem 4rem 3.75rem;
     position: relative;
     z-index: 1;
   }
@@ -180,7 +180,7 @@ $sp-white:   #ffffff;
   }
 
   @media (max-width: 768px) {
-    .sp-hero-inner { padding: 4.75rem 1rem 1.75rem; max-width: 100%; }
+    .sp-hero-inner { padding: 5.75rem 1rem 2.75rem; max-width: 100%; }
     h1 { font-size: 36px; margin-bottom: 14px; .sp-accent { font-size: 46px; } }
     h2 { font-size: 19px; margin-bottom: 0; }
   }
