@@ -57,14 +57,12 @@
   designation: Undergraduate Researcher
   alumni: true
   next: Meta
-  website: https://www.linkedin.com/in/sherrenjie/
 - name: Minjie Tang
   role: member
   image: /assets/people/minjie_tang.jpeg
   designation: Graduate Researcher
   alumni: true
   next: Circle Cat
-  website: https://www.linkedin.com/in/minjie-tang/
 - name: Parthiv Ganguly
   role: member
   image: /assets/people/placeholder_avatar.svg
@@ -77,5 +75,4 @@
   designation: Graduate Researcher
   alumni: true
   next: Tufts University (PhD)
-  website: https://www.linkedin.com/in/arp-saha/
   # email: arpitasaha1996@gmail.com
