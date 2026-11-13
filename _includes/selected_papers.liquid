@@ -30,6 +30,8 @@
   wrap.appendChild(colA);
   wrap.appendChild(colB);
 
+  var entries = [];
+
   items.forEach(function (li, i) {
     var entry = document.createElement('div');
     entry.className = 'pub-entry';
@@ -49,7 +51,7 @@
 
     entry.appendChild(thumb);
     entry.appendChild(details);
-    (i % 2 === 0 ? colA : colB).appendChild(entry);
+    entries.push(entry);
 
     // Clicking the details area or the PDF preview toggles the abstract.
     // Real links/icons (PDF, arXiv, Code, BibTeX, co-authors, …) keep
@@ -93,6 +95,19 @@
       entry.addEventListener('click', function () { setTimeout(adjustBlocks, 0); });
     }
   });
+
+  // Two columns read row by row (1 2 / 3 4 …) on wide screens; one column in
+  // the same order on phones. Re-flows when the viewport crosses the breakpoint.
+  var narrow = window.matchMedia('(max-width: 991px)');
+  function layout() {
+    entries.forEach(function (entry, i) {
+      (narrow.matches || i % 2 === 0 ? colA : colB).appendChild(entry);
+    });
+    colB.hidden = narrow.matches;
+  }
+  layout();
+  if (narrow.addEventListener) narrow.addEventListener('change', layout);
+  else if (narrow.addListener) narrow.addListener(layout);
 
   ol.parentNode.replaceChild(wrap, ol);
 })();

@@ -346,6 +346,19 @@ $sp-white:   #ffffff;
     flex: 0 0 auto;
   }
 
+  // Phones and tablets: one full-width column (the JS switches at the same 991px),
+  // a smaller thumbnail, and the expanded blocks re-aligned to it.
+  @media (max-width: 991px) {
+    .publications { width: auto; margin-left: 0; margin-right: 0; }  // theme default: 80vw, centred
+    .pub-cols { width: 100%; }
+    .pub-col[hidden] { display: none; }
+    .pub-entry { padding: 8px 0; gap: 12px; }
+    .pub-cols .pub-entry img.preview { width: 64px; height: 86px; }
+    .pub-cols .pub-entry div.abstract.hidden.open,
+    .pub-cols .pub-entry div.bibtex.hidden.open,
+    .pub-cols .pub-entry div.award.hidden.open { margin-left: -76px; width: calc(100% + 76px); }
+  }
+
   .pub-details {
     flex: 1 1 auto;
     min-width: 0;
