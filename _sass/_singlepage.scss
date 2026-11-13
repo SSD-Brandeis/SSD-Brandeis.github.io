@@ -308,6 +308,47 @@ $sp-white:   #ffffff;
   &:hover { border-left-color: $sp-blue-dk; }
 }
 
+// Tablets: two flexible columns instead of one narrow 320px column.
+@media (max-width: 991px) {
+  .sp-research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .sp-research-card {
+    width: auto;
+    margin: 0;
+    .sp-rc-title { white-space: normal; }
+    .sp-rc-desc  { -webkit-line-clamp: 6; line-clamp: 6; }  // narrower columns: allow the full teaser
+  }
+}
+
+// Phones: one column of compact cards — title across the top, figure beside
+// the summary — so the six themes take about half the scroll.
+@media (max-width: 576px) {
+  #research .sp-section-header p { font-size: 0.95rem; line-height: 1.55; }
+
+  .sp-research-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .sp-research-card {
+    display: grid;
+    grid-template-columns: 104px minmax(0, 1fr);
+    grid-template-areas: "title title" "img body";
+    column-gap: 12px;
+    padding: 12px 14px 14px 12px;
+
+    &:hover { transform: none; }
+
+    .sp-rc-title { grid-area: title; text-align: left; padding: 0 0 8px; font-size: 1.05rem; }
+    .sp-rc-img   { grid-area: img; height: 84px; padding: 0; background-position: center top; }
+    .sp-rc-body  { grid-area: body; padding: 0; margin-top: 0; }
+    .sp-rc-desc  { font-size: 0.85rem; line-height: 1.45; -webkit-line-clamp: 7; line-clamp: 7; }
+  }
+}
+
 
 // ── Publications ─────────────────────────────────────────────
 .sp-pub-section {
